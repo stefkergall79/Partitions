@@ -1,0 +1,126 @@
+\version "2.24.4"
+
+\header {
+  title = "VOUS ÊTES DANS MON ÂME"
+  composer = "Jeanne Barbey (née en 1977)"
+  % Supprimer le pied de page par défaut
+  tagline = ##f
+}
+
+\paper {
+  #(set-paper-size "a4")
+  % Add space for instrument names
+  indent = 10\mm
+}
+
+global = {
+  \key g \major
+  \numericTimeSignature
+  \time 6/8
+  \partial 8
+  \autoBeamOff
+  \mergeDifferentlyHeadedOn
+  \mergeDifferentlyDottedOn
+}
+
+soprano = \fixed c' {
+  \global
+  \sectionLabel "Couplets"
+  e8 g4 8 fis[g] fis e4. 4 8 a4 g8 fis4 8 4
+  8 8[g] a g4. fis8[g fis] g4. d4 g8 a4 8 4 g8 fis4. r4 \bar "||" \break
+
+  \sectionLabel "Refrain"
+  e8 b4 8 4 a8 b4. 4 e8 c'4 8 8[b] a b4. 8 e' d' c'4.~8[b] a b4. 4
+  g8 fis4 8 8[g] fis e4.~4 \bar "|."
+}
+
+alto = \fixed c' {
+  \global
+  e8 4 8 4 8 4 d8 c4 e8 4 8 4 8 dis4
+  8 fis8[e] dis e4. d d d4 8 fis4 8 4 e8 dis4. r4
+
+  e8 g4 8 4 fis8 g4. 4 e8 a4 8 8[g] fis g4. 8 a b e4.~4 8 g4. 8[fis]
+  e dis4 8 8[e] fis e4.~4
+}
+
+tenor = \fixed c {
+  \global
+  b8 4 8 a[b] a g4. 4 8 c'4 8 b4 8 4
+  8 8[g] fis b4. a8[g a] b4. 4 8 a4 8 4 b8 b4. r4
+
+  8 4 8 4 d'8 4. b4 8 e'4 8 4 8 b4. 8 a g c'[a b c' d'] e'8 4. 4
+  8 b4 8 4 a8 g4.~4
+}
+
+bass = \fixed c {
+  \global
+  e8 4 8 4 8 4. c4 b,8 a,4 8 b,4 8 4
+  8 4 8 e4. fis8[g fis] g4. 4 8 d4 8 dis4 e8 b,4. r4
+
+  e8 4 8 4 fis8 g4 fis8 e4 8 a4 8 8[g] fis e4. 8 8 8 a4.~4 8 e4. 4
+  8 b,4 8 8[cis] dis e4.~4
+}
+
+verseOne = \lyricmode {
+  \set stanza = "1."
+  Vous ê -- tes dans mon â -- me, Jé -- sus, ô Roi des Cieux_!
+  Mon cœur d'a -- mour s'en -- flam -- me, au com -- ble de mes vœux_!
+  Jé -- sus Eu -- cha -- ris -- ti -- e, ô Fils de l'É -- ter -- nel_!
+  Pour moi dans l'humble Hos -- ti -- e, Vous des -- cen -- dez du Ciel.
+}
+
+verseTwo = \lyricmode {
+  \set stanza = "2."
+  Doux Maî -- tre je Vous don -- ne ma foi, mon humble a -- mour,
+  que Vo -- tre main si bon -- ne me gui -- de cha -- que jour.
+}
+
+verseThree = \lyricmode {
+  \set stanza = "3."
+  Mon âme est triste et las -- se sans Vo -- tre bon se -- cours_;
+  j'im -- plo -- re Vo -- tre grâ -- ce, res -- tez en moi tou -- jours.
+}
+
+verseFour = \lyricmode {
+  \set stanza = "4."
+  Jé -- sus, mon  cœur Vous ai -- me, gar -- dez lui sa fer -- veur,
+  Jé -- sus, Bon -- té su -- prê -- me, Jé -- sus, Di -- vin Sau -- veur.
+}
+
+\score {
+  \new ChoirStaff <<
+    \new Staff \with {
+      midiInstrument = "choir aahs"
+      \consists Merge_rests_engraver
+      instrumentName = \markup \center-column { "S." "A." }
+    } <<
+      \new Voice = "soprano" { \voiceOne \soprano }
+      \new Voice = "alto" { \voiceTwo \alto }
+    >>
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "soprano" \verseOne
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "soprano" \verseTwo
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "soprano" \verseThree
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "soprano" \verseFour
+    \new Staff \with {
+      midiInstrument = "choir aahs"
+      \consists Merge_rests_engraver
+      instrumentName = \markup \center-column { "T." "B." }
+    } <<
+      \clef bass
+      \new Voice = "tenor" { \voiceOne \tenor }
+      \new Voice = "bass" { \voiceTwo \bass }
+    >>
+  >>
+  \layout { }
+  \midi {
+    \tempo 4=100
+  }
+}
