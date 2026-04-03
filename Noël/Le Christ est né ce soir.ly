@@ -1,9 +1,10 @@
 \include "../settings.ly"
 
 global = {
-  \key c \major
-  \time 4/4
+  \key d \major
+  \time 6/8
   \autoBeamOff
+  \partial 8
 }
 
 soprano = \fixed c' {
@@ -16,7 +17,7 @@ soprano = \fixed c' {
 
 alto = \fixed c' {
   \global
-  fis8 4 g8 4 fis8 4. b g4 fis8 e4 fis16[g] c4. 8 r8
+  fis8 4 g8 4 fis8 4. b g4 fis8 e4 fis16[g] cis4. 8 r8
   d8 4 g8 4 fis8 4. b g4 fis8 e4 d16[cis] b,4. 4 r8
   fis4.~8 e d e4 8 d4 8 4 cis8 d4 b,8 a, r a, b,4
   cis8 d4. e fis g a4 cis'8 b4 a8 fis4.
@@ -24,7 +25,7 @@ alto = \fixed c' {
 
 tenor = \fixed c {
   \global
-  
+  d'8 4 8 e'4
 }
 
 bass = \fixed c {
