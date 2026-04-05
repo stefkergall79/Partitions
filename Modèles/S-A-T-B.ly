@@ -61,16 +61,16 @@ verseFour = \lyricmode {
       instrumentName = "Soprano"
     } \new Voice = "soprano" \soprano
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseOne
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseTwo
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseThree
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseFour
     
     \new Staff \with {
@@ -78,16 +78,16 @@ verseFour = \lyricmode {
       instrumentName = "Alto"
     } \new Voice = "alto" \alto
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "alto" \verseOne
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "alto" \verseTwo
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "alto" \verseThree
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "alto" \verseFour
     
     \new Staff \with {
@@ -98,16 +98,16 @@ verseFour = \lyricmode {
       \new Voice = "tenor" \tenor
     }
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "tenor" \verseOne
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "tenor" \verseTwo
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "tenor" \verseThree
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "tenor" \verseFour
     
     \new Staff \with {
