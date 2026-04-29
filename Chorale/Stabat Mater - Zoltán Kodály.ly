@@ -1,4 +1,4 @@
-\include "../settings.ly"
+\version "2.24.4"
 
 global = {
     \key es \major
@@ -71,53 +71,51 @@ verseAmen = \lyricmode {
     A -- _ -- _ -- men,
     A -- _ -- men.
 }
-\paper {
-  score-markup-spacing = #'( (basic-distance . 0) (minimum-distance . 0) (padding . 1) (stretchability . 0) )
-}
 
-\score {
+\bookpart {
   \header {
     title = "STÁBAT MÁTER"
     composer = "Zoltán Kodály (1882-1967)"
+    tagline = ##f
   }
-
+  \tocItem \markup "Stabat Mater"
+  \score {
     \new ChoirStaff <<
-        \new Staff \with {
-            midiInstrument = "choir aahs"
-            instrumentName = \markup \center-column { "S." "A." }
-        } <<
-            \new Voice = "soprano" { \voiceOne \soprano }
-            \new Voice = "alto" { \voiceTwo \alto }
-        >>
-        \new Lyrics \with {
-            \override VerticalAxisGroup.staff-affinity = #CENTER
-        } \lyricsto "soprano" \verseOne
-        \new Lyrics \with {
-            \override VerticalAxisGroup.staff-affinity = #CENTER
-        } \lyricsto "soprano" \verseTwo
-        \new Lyrics \with {
-            \override VerticalAxisGroup.staff-affinity = #CENTER
-        } \lyricsto "soprano" \verseThree
-        \new Staff \with {
-            midiInstrument = "choir aahs"
-            instrumentName = \markup \center-column { "T." "B." }
-        } <<
-            \clef bass
-            \new Voice = "tenor" { \voiceOne \tenor }
-            \new Voice = "bass" { \voiceTwo \bass }
-        >>
-        \new Lyrics \with {
-            \override VerticalAxisGroup.staff-affinity = #CENTER
-        } \lyricsto "tenor" \verseAmen
-        
+      \new Staff \with {
+          midiInstrument = "choir aahs"
+          instrumentName = \markup \center-column { "S." "A." }
+      } <<
+          \new Voice = "soprano" { \voiceOne \soprano }
+          \new Voice = "alto" { \voiceTwo \alto }
+      >>
+      \new Lyrics \with {
+          \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano" \verseOne
+      \new Lyrics \with {
+          \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano" \verseTwo
+      \new Lyrics \with {
+          \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano" \verseThree
+      \new Staff \with {
+          midiInstrument = "choir aahs"
+          instrumentName = \markup \center-column { "T." "B." }
+      } <<
+          \clef bass
+          \new Voice = "tenor" { \voiceOne \tenor }
+          \new Voice = "bass" { \voiceTwo \bass }
+      >>
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "tenor" \verseAmen
     >>
     \layout { }
-    \midi {
-        \tempo 2=60
-    }
-}
-\markup{
-  \vspace #1
-  * Pour finir, on reprendra les quatre dernières mesures sur "\""A-men"\"",
-  avec un mi♮ à l'alto.
+    \midi {\tempo 2=60 }
+  }
+
+  \markup{
+    \vspace #1
+    * Pour finir, on reprendra les quatre dernières mesures sur "\""A-men"\"",
+    avec un mi♮ à l'alto.
+  }
 }

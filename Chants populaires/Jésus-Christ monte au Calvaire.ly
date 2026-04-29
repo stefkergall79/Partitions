@@ -1,9 +1,5 @@
-\include "../settings.ly"
-\paper {
-  print-page-number = ##f
-}
-
-global = {
+\version "2.24.4"
+global={
   \key g \major
   \time 3/4
   \partial 4
@@ -87,191 +83,195 @@ verseThree = \lyricmode {
   et que vous n’en pou -- vez plus.
 }
 
-\score {
+\bookpart {
   \header {
     title = "JÉSUS-CHRIST MONTE AU CALVAIRE"
     composer = "Giovanni Battista Pergolesi (1710-1736)"
+    tagline = ##f
   }
-  \new ChoirStaff <<
-    \new Staff \with {
-      midiInstrument = "choir aahs"
-    } <<
-      \new Voice = "soprano" { \voiceOne \soprano }
-      \new Voice = "alto" { \voiceTwo \alto }
+  \tocItem \markup "Jésus-Christ monte au Calvaire"
+  \score {
+    \new ChoirStaff <<
+      \new Staff \with {
+        midiInstrument = "choir aahs"
+      } <<
+        \new Voice = "soprano" { \voiceOne \soprano }
+        \new Voice = "alto" { \voiceTwo \alto }
+      >>
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano" \verseOne
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano" \verseTwo
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano" \verseThree
+      \new Staff \with {
+        midiInstrument = "choir aahs"
+      } <<
+        \clef bass
+        \new Voice = "tenor" { \voiceOne \tenor }
+        \new Voice = "bass" { \voiceTwo \bass }
+      >>
     >>
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano" \verseOne
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano" \verseTwo
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano" \verseThree
-    \new Staff \with {
-      midiInstrument = "choir aahs"
-    } <<
-      \clef bass
-      \new Voice = "tenor" { \voiceOne \tenor }
-      \new Voice = "bass" { \voiceTwo \bass }
-    >>
-  >>
-  \layout { }
-  \midi {
-    \tempo 4=80
-  }
-}
-
-\markup {
-  \vspace #2
-  \column {
-    \line \italic { \bold "4."
-      \column {
-        "Au chemin de la souffrance,"
-        "Pour l’aider, Marie est là."
-        "Elle veut par sa présence"
-        "Soutenir ses derniers pas."
-        "Ô Vierge, en notre faiblesse,"
-        "Nous avons besoin de vous ;"
-        "Puisque nous tombons sans cesse,"
-        "Demeurez tout près de nous."
-      }
-    }
-    \vspace #1
-    \line { \bold "5."
-      \column {
-        "Quand Simon, l’un de nos frères,"
-        "est choisi pour te porter,"
-        "Ô Croix, tu parais légère :"
-        "Qui voudrait se dérober ?"
-        "Pour la tâche, ô divin Maître,"
-        "S’il vous faut des ouvriers,"
-        "Me voilà, de tout mon être,"
-        "Je suis prêt à vous aider !"
-      }
-    }
-    \vspace #1
-    \line \italic { \bold "6."
-      \column {
-        "Tous vos traits, par la souffrance,"
-        "Sont creusés de durs sillons."
-        "Nos péchés et nos offenses"
-        "Sont gravés sur votre front."
-        "Souvent, on déforme encore"
-        "Votre image autour de nous ;"
-        "Au monde qui vous ignore,"
-        "Nous saurons parler de vous."
-      }
-    }
-    \vspace #1
-    \line { \bold "7."
-      \column {
-        "Votre pied heurte la pierre :"
-        "Vous tombez sur le chemin !"
-        "Votre Sang dans la poussière,"
-        "La marque d’un sceau divin."
-        "Ô Jésus, je vous adore,"
-        "Étendu sous votre Croix."
-        "Prosterné, je vous implore,"
-        "Moi qui tombe tant de fois."
-      }
+    \layout {}
+    \midi {
+      \tempo 4=80
     }
   }
 
-  %\hspace #3
-  \column {
-      \line \italic { \bold "8."
+  \markup {
+    \vspace #2
+    \column {
+      \line \italic { \bold "4."
         \column {
-          "« Vous pleurez sur mes souffrances :"
-          "Pleurez donc sur vos péchés,"
-          "Puisque c’est pour vos offenses"
-          "Que mon Sang sera versé."
-          "Suivez-moi vers le Calvaire,"
-          "Avec moi, sachez offrir"
-          "Vos souffrances pour vos frères :"
-          "Après moi, il faut souffrir ! »"
-        }
-      }
-      \vspace #0.9
-      \line { \bold "9."
-        \column {
-          "À quoi bon tant de souffrance,"
-          "À quoi bon verser son Sang,"
-          "Quand Il voit la foule immense"
-          "De pécheurs impénitents !"
-          "Et pourtant, Il se relève,"
-          "Prend la Croix à pleines mains,"
-          "Il poursuit et Il achève"
-          "Jusqu’au bout le dur chemin."
+          "Au chemin de la souffrance,"
+          "Pour l’aider, Marie est là."
+          "Elle veut par sa présence"
+          "Soutenir ses derniers pas."
+          "Ô Vierge, en notre faiblesse,"
+          "Nous avons besoin de vous ;"
+          "Puisque nous tombons sans cesse,"
+          "Demeurez tout près de nous."
         }
       }
       \vspace #1
-      \line \italic { \bold "10."
+      \line { \bold "5."
         \column {
-          "On dépouille votre taille,"
-          "Et plus rien pour vous couvrir !"
-          "né jadis nu sur la paille,"
-          "Vous voici nu pour mourir."
-          "Enseignez à tous vos frères"
-          "L’amour de la pauvreté,"
-          "Que les biens de cette terre"
-          "Sont toujours à mépriser."
+          "Quand Simon, l’un de nos frères,"
+          "est choisi pour te porter,"
+          "Ô Croix, tu parais légère :"
+          "Qui voudrait se dérober ?"
+          "Pour la tâche, ô divin Maître,"
+          "S’il vous faut des ouvriers,"
+          "Me voilà, de tout mon être,"
+          "Je suis prêt à vous aider !"
         }
       }
       \vspace #1
-      \line { \bold "11."
+      \line \italic { \bold "6."
         \column {
-          "À grands coups, le marteau frappe,"
-          "Dans la chair, rivant les clous,"
-          "Comme une divine grappe"
-          "Que l’on presse sous les coups !"
-          "De ses mains, le sang s’écoule,"
-          "De ses mains qui, si souvent,"
-          "Ont béni d’immenses foules"
-          "Et guéri tant de souffrants."
+          "Tous vos traits, par la souffrance,"
+          "Sont creusés de durs sillons."
+          "Nos péchés et nos offenses"
+          "Sont gravés sur votre front."
+          "Souvent, on déforme encore"
+          "Votre image autour de nous ;"
+          "Au monde qui vous ignore,"
+          "Nous saurons parler de vous."
+        }
+      }
+      \vspace #1
+      \line { \bold "7."
+        \column {
+          "Votre pied heurte la pierre :"
+          "Vous tombez sur le chemin !"
+          "Votre Sang dans la poussière,"
+          "La marque d’un sceau divin."
+          "Ô Jésus, je vous adore,"
+          "Étendu sous votre Croix."
+          "Prosterné, je vous implore,"
+          "Moi qui tombe tant de fois."
         }
       }
     }
-    
-  %\hspace #3
-  \column {
-      \line \italic { \bold "12."
-        \column {
-          "Voici donc l’instant suprême,"
-          "Qu’il attend depuis toujours,"
-          "De prouver à ceux qu’il aime,"
-          "Jusqu’où va son grand amour."
-          "Embrassant la terre entière,"
-          "Ses deux bras sont étendus ;"
-          "Il appelle tous ses frères"
-          "Et Il meurt pour leur salut."
+  
+    %\hspace #3
+    \column {
+        \line \italic { \bold "8."
+          \column {
+            "« Vous pleurez sur mes souffrances :"
+            "Pleurez donc sur vos péchés,"
+            "Puisque c’est pour vos offenses"
+            "Que mon Sang sera versé."
+            "Suivez-moi vers le Calvaire,"
+            "Avec moi, sachez offrir"
+            "Vos souffrances pour vos frères :"
+            "Après moi, il faut souffrir ! »"
+          }
+        }
+        \vspace #0.9
+        \line { \bold "9."
+          \column {
+            "À quoi bon tant de souffrance,"
+            "À quoi bon verser son Sang,"
+            "Quand Il voit la foule immense"
+            "De pécheurs impénitents !"
+            "Et pourtant, Il se relève,"
+            "Prend la Croix à pleines mains,"
+            "Il poursuit et Il achève"
+            "Jusqu’au bout le dur chemin."
+          }
+        }
+        \vspace #1
+        \line \italic { \bold "10."
+          \column {
+            "On dépouille votre taille,"
+            "Et plus rien pour vous couvrir !"
+            "né jadis nu sur la paille,"
+            "Vous voici nu pour mourir."
+            "Enseignez à tous vos frères"
+            "L’amour de la pauvreté,"
+            "Que les biens de cette terre"
+            "Sont toujours à mépriser."
+          }
+        }
+        \vspace #1
+        \line { \bold "11."
+          \column {
+            "À grands coups, le marteau frappe,"
+            "Dans la chair, rivant les clous,"
+            "Comme une divine grappe"
+            "Que l’on presse sous les coups !"
+            "De ses mains, le sang s’écoule,"
+            "De ses mains qui, si souvent,"
+            "Ont béni d’immenses foules"
+            "Et guéri tant de souffrants."
+          }
         }
       }
-      \vspace #1
-      \line { \bold "13."
-        \column {
-          "En vos bras, quand on vous livre"
-          "Votre Fils inanimé,"
-          "Vous lisez comme en un livre"
-          "Sur son corps tous nos péchés !"
-          "Dites-nous, ô tendre Mère,"
-          "Tout ce que vous avez vu :"
-          "Gravez en nos coeurs de pierre"
-          "Les blessures de Jésus !"
+      
+    %\hspace #3
+    \column {
+        \line \italic { \bold "12."
+          \column {
+            "Voici donc l’instant suprême,"
+            "Qu’il attend depuis toujours,"
+            "De prouver à ceux qu’il aime,"
+            "Jusqu’où va son grand amour."
+            "Embrassant la terre entière,"
+            "Ses deux bras sont étendus ;"
+            "Il appelle tous ses frères"
+            "Et Il meurt pour leur salut."
+          }
         }
-      }
-      \vspace #1
-      \line \italic { \bold "14."
-        \column {
-          "L’ennemi de votre gloire"
-          "Peut sourire, il est vainqueur ;"
-          "Et pourtant votre victoire"
-          "Est certaine, ô mon Sauveur !"
-          "Malgré la nuit de la tombe,"
-          "Le linceul sur votre Corps,"
-          "Aujourd’hui l’enfer succombe :"
-          "Vous avez vaincu la mort !"
+        \vspace #1
+        \line { \bold "13."
+          \column {
+            "En vos bras, quand on vous livre"
+            "Votre Fils inanimé,"
+            "Vous lisez comme en un livre"
+            "Sur son corps tous nos péchés !"
+            "Dites-nous, ô tendre Mère,"
+            "Tout ce que vous avez vu :"
+            "Gravez en nos coeurs de pierre"
+            "Les blessures de Jésus !"
+          }
         }
-      }
-  }     
+        \vspace #1
+        \line \italic { \bold "14."
+          \column {
+            "L’ennemi de votre gloire"
+            "Peut sourire, il est vainqueur ;"
+            "Et pourtant votre victoire"
+            "Est certaine, ô mon Sauveur !"
+            "Malgré la nuit de la tombe,"
+            "Le linceul sur votre Corps,"
+            "Aujourd’hui l’enfer succombe :"
+            "Vous avez vaincu la mort !"
+          }
+        }
+    }     
+  }
 }

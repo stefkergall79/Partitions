@@ -1,4 +1,4 @@
-\include "../settings.ly"
+\version "2.24.4"
 
 global = {
   \key bes \major
@@ -61,20 +61,23 @@ verseFour = \lyricmode {
   ô Croix de Jé -- sus -_Christ
 }
 
-\score {
+\bookpart {
   \header {
     title = "O CROIX DRESSÉE SUR LE MONDE"
     composer = "Jean Servel"
     poet = "Paroles : Saint Louis-Marie Grignon de Montfort"
+    tagline = ##f
   }
-
-  \new Staff \with {
-    midiInstrument = "choir aahs"
-  }{ \soprano }
-  \addlyrics {\verseOne}
-  \addlyrics {\verseTwo}
-  \addlyrics {\verseThree}
-  \addlyrics {\verseFour}
-  \layout {}
-  \midi { \tempo 4.=60 }
+  \tocItem \markup "Ô Croix dressée sur le monde"
+  \score {
+    \new Staff \with {
+      midiInstrument = "choir aahs"
+    }{ \soprano }
+    \addlyrics {\verseOne}
+    \addlyrics {\verseTwo}
+    \addlyrics {\verseThree}
+    \addlyrics {\verseFour}
+    \layout {}
+    \midi { \tempo 4.=60 }
+  }
 }

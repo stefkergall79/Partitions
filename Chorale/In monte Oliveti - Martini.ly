@@ -1,4 +1,4 @@
-\include "../settings.ly"
+\version "2.24.4"
 
 global = {
   \key bes \major
@@ -42,42 +42,43 @@ verse = \lyricmode {
   Fi -- at vo -- lún -- tas tu -- a.
 }
 
-\score {
+\bookpart {
   \header {
     title = "IN MONTE OLIVETI"
     composer = "Giambattista Martini (1706-1784)"
+    tagline = ##f
   }
-  
-  \new ChoirStaff <<
-    \new Staff \with {
-      midiInstrument = "choir aahs"
-      instrumentName = "Soprano"
-      \consists "Ambitus_engraver"
-    } \new Voice = "soprano1" \sopranoOne
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano1" \verse
-    
-    \new Staff \with {
-      midiInstrument = "choir aahs"
-      instrumentName = "Mezzo"
-      \consists "Ambitus_engraver"
-    } \new Voice = "soprano2" \sopranoTwo
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano2" \verse
-    
-    \new Staff \with {
-      midiInstrument = "choir aahs"
-      instrumentName = "Alto"
-      \consists "Ambitus_engraver"
-    } \new Voice = "alto" \alto
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "alto" \verse
-  >>
-  \layout { }
-  \midi {
-    \tempo 4=100
+  \tocItem \markup "In monte Oliveti"
+  \score {
+    \new ChoirStaff <<
+      \new Staff \with {
+        midiInstrument = "choir aahs"
+        instrumentName = "Soprano"
+        \consists "Ambitus_engraver"
+      } \new Voice = "soprano1" \sopranoOne
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano1" \verse
+      
+      \new Staff \with {
+        midiInstrument = "choir aahs"
+        instrumentName = "Mezzo"
+        \consists "Ambitus_engraver"
+      } \new Voice = "soprano2" \sopranoTwo
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano2" \verse
+      
+      \new Staff \with {
+        midiInstrument = "choir aahs"
+        instrumentName = "Alto"
+        \consists "Ambitus_engraver"
+      } \new Voice = "alto" \alto
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "alto" \verse
+    >>
+    \layout { }
+    \midi { \tempo 4=100 }
   }
 }
