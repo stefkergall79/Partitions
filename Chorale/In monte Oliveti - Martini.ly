@@ -1,4 +1,4 @@
-\version "2.24.4"
+\version "2.24.3"
 
 global = {
   \key bes \major
@@ -42,15 +42,17 @@ verse = \lyricmode {
   Fi -- at vo -- lún -- tas tu -- a.
 }
 
-\bookpart {
+\paper {
+  print-all-headers = ##t
+}
+\tocItem \markup "In monte Oliveti"
+\score {
   \header {
     title = "IN MONTE OLIVETI"
     composer = "Giambattista Martini (1706-1784)"
     tagline = ##f
   }
-  \tocItem \markup "In monte Oliveti"
-  \score {
-    \new ChoirStaff <<
+  \new ChoirStaff <<
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = "Soprano"
@@ -81,4 +83,3 @@ verse = \lyricmode {
     \layout { }
     \midi { \tempo 4=100 }
   }
-}

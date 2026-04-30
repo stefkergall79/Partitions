@@ -1,11 +1,10 @@
-\version "2.24.4"
+\version "2.24.3"
 
 \header {
   title = "VOYEZ Ô NOTRE-DAME"
   composer = "Mélodie populaire de Guyenne"
   arranger = "Harmonisation : Bernard Lallement (1936-2023)"
   poet = "Paroles : Jacques Chailley (1910-1999)"
-  % Supprimer le pied de page par défaut
   tagline = ##f
 }
 
@@ -13,7 +12,6 @@
 
 global = {
   \key c \major
-  \numericTimeSignature
   \time 9/8
   \partial 8
   \autoBeamOff

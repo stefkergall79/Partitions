@@ -1,3 +1,4 @@
+\version "2.24.3"
 global = {
   \key g \major
   \time 4/4
@@ -42,11 +43,15 @@ quos pre -- ti -- ó -- so sán -- gui -- ne, quos pre -- ti -- ó -- so sán --
 re -- de -- mís -- ti.
 }
 
-
+\paper {
+  print-all-headers = ##t
+}
+\tocItem \markup "Jesu Salvator Mundi"
 \score {
   \header {
     title = "JESU, SALVÁTOR MÚNDI"
     composer = "Menegali (XVIIIe)"
+    tagline = ##f
   }
 
   \new ChoirStaff <<

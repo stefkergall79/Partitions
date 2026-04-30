@@ -1,4 +1,4 @@
-\version "2.24.4"
+\version "2.24.3"
 
 \header {
   title = "MAGNIFICAT"
@@ -17,7 +17,7 @@ global = {
 
 psalm = \fixed c' {
   \global
-  \override Staff.TimeSignature.stencil = ##f
+  \once \omit Staff.TimeSignature
   \sectionLabel "Psalmodia"
   f8 g8[a] a\breve c'8 bes a8 g2 \bar "|"
   g\breve a8 bes8[a] g4 f2 \bar "||"
@@ -25,7 +25,6 @@ psalm = \fixed c' {
 
 soprano = \fixed c' {
   \global
-  \override Staff.TimeSignature.stencil = ##t
   \sectionLabel "Falsus bordonus"
   c'\breve \bar "|" \cadenzaOff
   f'4(e' d'4 4) c'2. r4
@@ -62,13 +61,15 @@ verseTwo = \lyricmode {
 }
 
 verseThree = \lyricmode {
-  \set stanza = "3."
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 3.
   Qui -- a "respéxit humilitátem an" -- cíl -- læ sú -- æ,
   "ecce enim ex hoc beátam me dícent ómnes gene" -- ra -- ti -- ó -- nes.
 }
 
 verseFour = \lyricmode {
-  \set stanza = "4."
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 4.
   "Quia fécit míhi mágna qui" pó__________-_____________tens est_:
   "et sánctum nómen" é -- jus.
 }
@@ -86,13 +87,15 @@ verseSix = \lyricmode {
 }
 
 verseSeven = \lyricmode {
-  \set stanza = "7."
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 7.
   De -- pó -- "suit po" -- téntes de sé -- de,
   "et exal" -- tá -- vit hú -- miles.
 }
 
 verseEight = \lyricmode {
-  \set stanza = "8."
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 8.
    "Esuriéntes implévit" bó -- nis_: "et dívites dimísit i" -- ná -- nes.
 }
 
@@ -109,15 +112,17 @@ verseTen = \lyricmode {
 }
 
 verseEleven = \lyricmode {
-  \set stanza = "11."
-   Gló -- ri -- a Pátri et Fí -- lio
-   "et Spirí" -- tu -- i Sán -- cto.
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 11.
+  Gló -- ri -- a Pátri et Fí -- lio
+  "et Spirí" -- tu -- i Sán -- cto.
 }
 
 verseTwelve = \lyricmode {
-    \set stanza = "12."
-   "Sicut érat in princípio, et nunc, et       " sém -- per,
-   "et in saécula sæculórum." A -- men.
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 12.
+  "Sicut érat in princípio, et nunc, et       " sém -- per,
+  "et in saécula sæculórum." A -- men.
 }
 
 \score {

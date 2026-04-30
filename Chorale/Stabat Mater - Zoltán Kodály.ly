@@ -1,4 +1,4 @@
-\version "2.24.4"
+\version "2.24.3"
 
 global = {
     \key es \major
@@ -72,19 +72,21 @@ verseAmen = \lyricmode {
     A -- _ -- men.
 }
 
-\bookpart {
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "Stabat Mater"
+\score {
   \header {
     title = "STÁBAT MÁTER"
     composer = "Zoltán Kodály (1882-1967)"
-    tagline = ##f
   }
-  \tocItem \markup "Stabat Mater"
-  \score {
-    \new ChoirStaff <<
-      \new Staff \with {
-          midiInstrument = "choir aahs"
-          instrumentName = \markup \center-column { "S." "A." }
-      } <<
+  \new ChoirStaff <<
+    \new Staff \with {
+        midiInstrument = "choir aahs"
+        instrumentName = \markup \center-column { "S." "A." }
+     } <<
           \new Voice = "soprano" { \voiceOne \soprano }
           \new Voice = "alto" { \voiceTwo \alto }
       >>
@@ -111,11 +113,9 @@ verseAmen = \lyricmode {
     >>
     \layout { }
     \midi {\tempo 2=60 }
-  }
-
-  \markup{
-    \vspace #1
-    * Pour finir, on reprendra les quatre dernières mesures sur "\""A-men"\"",
-    avec un mi♮ à l'alto.
-  }
+}
+\markup{
+  %\vspace #1
+  * Pour finir, on reprendra les quatre dernières mesures sur "\""A-men"\"",
+  avec un mi♮ à l'alto.
 }

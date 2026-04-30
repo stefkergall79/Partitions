@@ -1,15 +1,4 @@
-\version "2.24.4"
-
-\header {
-  title = "ADORÉMUS"
-  composer = "Michael Georg Haller (1840-1915)"
-  % Supprimer le pied de page par défaut
-  tagline = ##f
-}
-
-\paper {
-  #(set-paper-size "a4")
-}
+\version "2.24.3"
 
 global = {
   \key d \major
@@ -18,7 +7,6 @@ global = {
 
 soprano = \fixed c' {
   \global
-  % En avant la musique.
   fis2.^\pp 4 g1\espressivo fis2 r4 a^\<~4 4 b2 cis'4\! 4 d'4. 8 cis'4 b2 a4 1^\> 1\!\fermata\bar "||"
 
   \break\cadenzaOn fis\breve \cadenzaOff \bar"||"
@@ -52,8 +40,7 @@ bass = \fixed c {
 }
 
 verseOne = \lyricmode {
-  % Ajouter ici des paroles.
-  A2. -- do4 -- ré1 -- mus2. in2 æ4 -- tér2 -- num4 San -- ctís4. -- si8 -- mum4 Sa2 -- cra4 -- mén1 -- tum.1
+ A2. -- do4 -- ré1 -- mus2. in2 æ4 -- tér2 -- num4 San -- ctís4. -- si8 -- mum4 Sa2 -- cra4 -- mén1 -- tum.1
   \set stanza = "      1."
   "Quam dilécta tabernácula tua  //  Dómine vir-       "\breve tú2 -- tum_;1.
   "concupíscit, et déficit ánima mea  //  in átria        "\breve Dó4. -- mi8 -- ni.1.
@@ -90,10 +77,19 @@ verseFive = \lyricmode {
 
 versete = \lyricmode {
   1*8
-  \markup { \italic B.F. }
+  \markup \italic B.F.
 }
 
+\paper{
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "Adoremus"
 \score {
+  \header {
+    title = "ADORÉMUS"
+    composer = "Michael Georg Haller (1840-1915)"
+  }
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -125,7 +121,5 @@ versete = \lyricmode {
     \new Lyrics\versete
   >>
   \layout { }
-  \midi {
-    \tempo 4=90
-  }
+  \midi {\tempo 4=90 }
 }

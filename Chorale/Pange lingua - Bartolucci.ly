@@ -1,15 +1,4 @@
-\version "2.24.4"
-
-\header {
-  title = "PANGE LINGUA"
-  composer = "Dom Domenico Bartolucci (1917-2013)"
-  % Supprimer le pied de page par défaut
-  tagline = ##f
-}
-
-\paper {
-  #(set-paper-size "a4")
-}
+\version "2.24.3"
 
 global = {
   \key as \major
@@ -69,8 +58,8 @@ verseOne = \lyricmode {
 }
 
 verseTwo = \lyricmode {
-  \set stanza = "2."
-  % Ajouter ici des paroles.
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 2.
   No -- bis da -- tus, no -- bis na -- tus
   ex in -- tác -- ta Vír -- gi -- ne,
   et in mun -- do con -- ver -- sá -- tus,
@@ -78,6 +67,7 @@ verseTwo = \lyricmode {
   Su -- i mo -- ras in -- co -- lá -- tus
   mi -- ro clau -- sit ór -- di -- ne,
   mi -- ro clau -- sit ór -- di -- ne.
+  \override LyricText.font-series = #'bold
   A -- men.
 }
 
@@ -91,8 +81,16 @@ verseThree = \lyricmode {
   ci -- bum tur -- bae du -- o -- dé -- nae
   Se dat su -- is má -- ni -- bus, Se dat su -- is má -- ni -- bus.
 }
-
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "Pange Lingua"
 \score {
+  \header {
+    title = "PANGE LINGUA"
+    composer = "Dom Domenico Bartolucci (1917-2013)"
+  }
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -102,13 +100,13 @@ verseThree = \lyricmode {
       \new Voice = "alto" { \voiceTwo \alto }
     >>
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseOne
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseTwo
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseThree
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -120,27 +118,36 @@ verseThree = \lyricmode {
     >>
   >>
   \layout { }
-  \midi {
-    \tempo 2=80
-  }
+  \midi { \tempo 2=80 }
 }
 
 
-\markup \column{
-\line {\bold 4. Verbum caro, panem verum verbo carnem éfficit ;} 
-"    Fitque sanguis Christi merum, et, si sensus déficit,"
-"    Ad firmándum cor sincérum sola fides súfficit."
-\vspace #1 }
-
-\markup \column {
-\line {\bold 5. Tantum ergo Sacraméntum venerémur cérnui,} 
-"    Et antíquum documéntum novo cedat rítui ;"
-"    Præstet fides supplémentum sénsuum deféctui."
-\vspace #1 }
-
-\markup \column {
-\line {\bold 6. Genitóri Genitóque laus et jubilátio,} 
-"    Salus, honor, virtus quoque sit et benedíctio ;"
-"    Procedénti ab utróque compar sit laudátio."
-"    Amen."}
-
+\markup{
+  \column \italic {
+    \line {\bold 4. Verbum caro, panem verum}
+    "    Verbo carnem éfficit ;"
+    "    Fitque sanguis Christi merum,"
+    "    Et, si sensus déficit,"
+    "    Ad firmándum cor sincérum"
+    "    Sola fides súfficit."
+  }
+  \hspace #4
+  \column {
+    \line {\bold 5. Tantum ergo Sacraméntum}
+    "    Venerémur cérnui,"
+    "    Et antíquum documéntum"
+    "    Novo cedat rítui ;"
+    "    Præstet fides supplémentum"
+    "    Sénsuum deféctui."
+  }
+  \hspace #4
+  \column \italic {
+    \line {\bold 6. Genitóri Genitóque}
+    "    Laus et jubilátio,"
+    "    Salus, honor, virtus quoque"
+    "    Sit et benedíctio ;"
+    "    Procedénti ab utróque"
+    "    Compar sit laudátio."
+    \line \bold { "    Amen."}
+  }
+}

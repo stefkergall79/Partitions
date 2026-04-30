@@ -1,4 +1,4 @@
-\version "2.24.4"
+\version "2.24.3"
 global={
   \key g \major
   \time 3/4
@@ -83,14 +83,18 @@ verseThree = \lyricmode {
   et que vous n’en pou -- vez plus.
 }
 
-\bookpart {
-  \header {
+\paper {
+  print-all-headers = ##t
+}
+\tocItem \markup "Jésus-Christ monte au Calvaire"
+  
+\score {
+    \header {
     title = "JÉSUS-CHRIST MONTE AU CALVAIRE"
     composer = "Giovanni Battista Pergolesi (1710-1736)"
     tagline = ##f
   }
-  \tocItem \markup "Jésus-Christ monte au Calvaire"
-  \score {
+
     \new ChoirStaff <<
       \new Staff \with {
         midiInstrument = "choir aahs"
@@ -120,7 +124,7 @@ verseThree = \lyricmode {
       \tempo 4=80
     }
   }
-
+  \pageBreak
   \markup {
     \vspace #2
     \column {
@@ -274,4 +278,3 @@ verseThree = \lyricmode {
         }
     }     
   }
-}

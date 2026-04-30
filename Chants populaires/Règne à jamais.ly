@@ -1,4 +1,4 @@
-\version "2.24.4"
+\version "2.24.3"
 
 global = {
   \key es \major
@@ -83,15 +83,17 @@ verseFive= \lyricmode {
   sur les bre -- bis et les pas -- teurs_!
 }
 
-\bookpart {
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "Règne à jamais"
+\score {
   \header {
     title = "RÈGNE À JAMAIS"
     composer = "Michael Prætorius (1571-1620)"
-    tagline = ##f
   }
-  \tocItem \markup "Règne à jamais"
-  \score {
-    \new ChoirStaff <<
+  \new ChoirStaff <<
       \new Staff \with {
         midiInstrument = "choir aahs"
         \consists Merge_rests_engraver
@@ -127,4 +129,3 @@ verseFive= \lyricmode {
     \layout {\context{\Staff \RemoveAllEmptyStaves}}
     \midi { \tempo 2.=65 }
   }
-}

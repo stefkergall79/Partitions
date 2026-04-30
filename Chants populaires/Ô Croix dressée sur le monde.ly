@@ -1,4 +1,4 @@
-\version "2.24.4"
+\version "2.24.3"
 
 global = {
   \key bes \major
@@ -61,23 +61,24 @@ verseFour = \lyricmode {
   ô Croix de Jé -- sus -_Christ
 }
 
-\bookpart {
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "Ô Coix dressée sur le monde"
+\score {
   \header {
     title = "O CROIX DRESSÉE SUR LE MONDE"
     composer = "Jean Servel"
     poet = "Paroles : Saint Louis-Marie Grignon de Montfort"
-    tagline = ##f
   }
-  \tocItem \markup "Ô Croix dressée sur le monde"
-  \score {
-    \new Staff \with {
+  \new Staff \with {
       midiInstrument = "choir aahs"
-    }{ \soprano }
-    \addlyrics {\verseOne}
-    \addlyrics {\verseTwo}
-    \addlyrics {\verseThree}
-    \addlyrics {\verseFour}
-    \layout {}
-    \midi { \tempo 4.=60 }
-  }
+  }{ \soprano }
+  \addlyrics {\verseOne}
+  \addlyrics {\verseTwo}
+  \addlyrics {\verseThree}
+  \addlyrics {\verseFour}
+  \layout {}
+  \midi { \tempo 4.=60 }
 }

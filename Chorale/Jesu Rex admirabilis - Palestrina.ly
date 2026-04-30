@@ -1,4 +1,4 @@
-\version "2.24.4"
+\version "2.24.3"
 
 globalo = {
   \key f \major
@@ -15,7 +15,7 @@ soprane = \fixed c' {
 }
 
 alti = \fixed c' {
-  \global
+  \globalo
   % En avant la musique.
   bes2 a4 g a a bes4. 8 4 4 a bes a g fis4. 8 2 r2
   a cis' cis' d'4 bes a4. 8 4 4 4 g a4. 8 4 4 bes2 r d' bes4 a g4. 8 4 fis g2
@@ -49,8 +49,9 @@ verst = \lyricmode {
 
 \paper {
   print-all-headers = ##t
-  tagline = ##f}
-
+  tagline = ##f
+}
+\tocItem \markup "Jesu Rex admirabilis"
 \score {
   \header {
     title = "JESU, REX ADMIRÁBILIS"
@@ -72,7 +73,6 @@ verst = \lyricmode {
 
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "H."
     } << \clef bass \new Voice = "tenor" \tenors >>
     \new Lyrics \with { \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "tenor" \verst

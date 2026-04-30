@@ -1,6 +1,6 @@
-\version "2.24.4"
+\version "2.24.3"
 
-global = {
+globalOne = {
   \key f \major
   \numericTimeSignature
   \time 6/8
@@ -9,7 +9,7 @@ global = {
 }
 
 sopranoVoice = \fixed c' {
-  \global
+  \globalOne
   \sectionLabel "Couplets"
   \repeat unfold 2 {
     f4 8 8[e] f g a g f4.
@@ -54,23 +54,25 @@ verseThree = \lyricmode {
   en mou -- rant ra -- chè -- te le mon -- de.
 }
 
-\bookpart {
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "Vive Jésus, vive sa Croix"
+\score {
   \header {
     title = "VIVE JÉSUS, VIVE SA CROIX"
     poet = "Paroles : Saint Louis-Marie Grignon de Montfort"
-    tagline = ##f
   }
-  \tocItem \markup "Vive Jésus, vive sa Croix !"
-  \score {
-    \new Staff \with {
-      midiInstrument = "choir aahs"
-    } { \sopranoVoice }
-    \addlyrics { \verseOne }
-    \addlyrics { \verseTwo }
-    \addlyrics { \verseThree }
-    \layout { }
-    \midi {\tempo 4.=70}
-  }
+  \new Staff \with {
+    midiInstrument = "choir aahs"
+  } { \sopranoVoice }
+  \addlyrics { \verseOne }
+  \addlyrics { \verseTwo }
+  \addlyrics { \verseThree }
+  \layout { }
+  \midi {\tempo 4.=70}
+}
   
   \markup {
     \vspace #2
@@ -117,4 +119,3 @@ verseThree = \lyricmode {
         }
       }
   }
-}
