@@ -44,40 +44,29 @@ bass = \fixed c {
 
 verseOne = \lyricmode {
   \set stanza = "2."
-  Su -- mens il -- lud A -- ve
-  Ga -- bri -- e -- lis o -- re,
-  fun -- da nos in pa -- ce,
-  mu -- tans He -- væ no -- men.
+  Sú -- mens íl -- lud A -- ve
+  Ga -- bri -- é -- lis ó -- re,
+  fún -- da nos in pá -- ce,
+  mú -- tans Hé -- væ nó -- men.
 }
 
 verseTwo = \lyricmode {
   \override LyricText.font-shape = #'italic
   \set stanza = \markup \italic 4.
-  Mons -- tra te esse ma -- trem_:
-  Su -- mat per te pre -- ces,
-  qui pro no -- bis na -- tus
-  tu -- lit es -- se tu -- us.
+  Móns -- tra t(e)_és -- se má -- trem_:
+  Sú -- mat per te pré -- ces,
+  qui pro nó -- bis ná -- tus
+  tú -- lit és -- se tú -- us.
   \override LyricText.font-shape = #'roman
   A -- men.
 }
 
 verseThree = \lyricmode {
   \set stanza = "5."
-  Vi -- tam præs -- ta pu -- ram,
-  i -- ter pa -- ra tu -- tum,
-  ut vi -- den -- tes Je -- sum,
-  sem -- per col -- læ -- te -- mur.
-}
-
-verseFour = \lyricmode {
-  \override LyricText.font-shape = #'italic
-  \set stanza = \markup \italic 4.
-  
-}
-
-verseFive = \lyricmode {
-  \set stanza = "5."
-  
+  Ví -- tam prǽs -- ta pú -- ram,
+  i -- ter pá -- ra tú -- tum,
+  ut vi -- dén -- tes Jé -- sum,
+  sem -- per col -- læ -- té -- mur.
 }
 
 \paper {
@@ -114,12 +103,6 @@ verseFive = \lyricmode {
       \new Lyrics \with {
         \override VerticalAxisGroup.staff-affinity = #CENTER
       } \lyricsto "soprano" \verseThree
-      \new Lyrics \with {
-        \override VerticalAxisGroup.staff-affinity = #CENTER
-      } \lyricsto "soprano" \verseFour
-      \new Lyrics \with {
-        \override VerticalAxisGroup.staff-affinity = #CENTER
-      } \lyricsto "soprano" \verseFive
       
       \new Staff \with {
         midiInstrument = "choir aahs"

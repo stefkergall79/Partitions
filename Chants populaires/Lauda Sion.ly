@@ -81,8 +81,37 @@ verseFour = \lyricmode {
 }
 
 verseFive = \lyricmode {
+  \repeat unfold 23 \skip1
   \set stanza = "5."
-  
+  In hac men -- sa no -- vi Re -- gis,
+  no -- vum Pa -- scha no -- væ le -- gis,
+  pha -- se ve -- tus ter -- mi -- nat.
+}
+
+verseSix = \lyricmode {
+  \override LyricText.font-shape = #'italic
+  \repeat unfold 23 \skip1
+  \set stanza = \markup \italic 6.
+  Quod in ce -- na Chris -- tus ges -- sit,
+  fa -- ci -- en -- dum hoc ex -- pres -- sit,
+  in su -- i me -- mo -- ri -- am.
+}
+
+verseSeven = \lyricmode {
+  \repeat unfold 23 \skip1
+  \set stanza = "7."
+  Doc -- ti sa -- cris ins -- ti -- tu -- tis,
+  pa -- nem, vi -- num in sa -- lu -- tis
+  con -- se -- cra -- mus hos -- ti -- am.
+}
+
+verseEight = \lyricmode {
+  \override LyricText.font-shape = #'italic
+  \repeat unfold 23 \skip1
+  \set stanza = \markup \italic 8.
+  Dog -- ma da -- tur chris -- ti -- a -- nis,
+  quod in car -- nem tran -- sit pan -- is
+  et vi -- num in san -- gui -- nem.
 }
 
 \paper {
@@ -118,6 +147,15 @@ verseFive = \lyricmode {
       \new Lyrics \with {
         \override VerticalAxisGroup.staff-affinity = #CENTER
       } \lyricsto "soprano" \verseFive
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano" \verseSix
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano" \verseSeven
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano" \verseEight
       
       \new Staff \with {
         midiInstrument = "choir aahs"
@@ -128,26 +166,3 @@ verseFive = \lyricmode {
   \midi {\tempo 4=70}
 }
 
-\markup {
-  \vspace #2
-  \hspace #5
-  \column {
-    \line { \bold 5. In hac mensa novi Regis,}
-    "    Novum Pascha novæ legis,"
-    "    Phase vetus terminat."
-    \vspace #1
-    \line { \bold 6. Quod in cena Christus gessit,}
-    "    Faciendum hoc expressit,"
-    "    In sui memoriam."      
-  }
-  \hspace #5
-  \column {
-    \line { \bold 7. Docti sacris institutis,}
-    "    Panem, vinum in salutis"
-    "    Consecramus hostiam."
-    \vspace #1
-    \line { \bold 8. Dogma datur christianis,}
-    "    Quod in carnem transit panis"
-    "    Et vinum in sanguinem."
-  }
-}

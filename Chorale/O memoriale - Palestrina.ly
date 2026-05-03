@@ -57,12 +57,12 @@ bass = \fixed c {
 }
 
 verseOne = \lyricmode {
-  O me -- mo -- ri -- á -- le mor -- tis Dó -- mi -- ni,
-  Pa -- nis vi -- vus vi -- tam praes -- tans hó -- mi -- ni.
-  Praes -- ta me -- ae men -- ti de te ví -- ve -- re
-  Te dul -- ce sa -- pé -- re.
-  Pi -- e pel -- li -- cá -- ne Je -- su Dó -- mi -- ne,
-  Me im -- mún -- dum mun -- da tu -- o sán -- gui -- ne.
+  O me -- mo -- ri -- á -- le mór -- tis Dó -- mi -- ni,
+  Pá -- nis ví -- vus ví -- tam prǽs -- tans hó -- mi -- ni.
+  Prǽs -- ta mé -- æ mén -- ti de te ví -- ve -- re
+  Te dúl -- ce sa -- pé -- re.
+  Pí -- e pel -- li -- cá -- ne Jé -- su Dó -- mi -- ne,
+  me im -- mún -- dum mún -- da tú -- o sán -- gui -- ne.
   A -- men.
 }
 
@@ -70,11 +70,11 @@ verseOne = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "Panis angelicus"
+\tocItem \markup "O Memoriále"
 \score {
   \header {
-    title = "PANIS ANGELICUS"
-    composer = "Giovanni Pierluigi da Palestrina (1525-1594)"
+    title = "O MEMORIALE"
+    composer = "Giovanni da Palestrina (1525-1594)"
   }
   \new ChoirStaff <<
       \new Staff \with {

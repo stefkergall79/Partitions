@@ -16,38 +16,38 @@ soprano = \fixed c' {
 alto = \fixed c' {
   \global
   c'4 b a g a8. 16 e2
-  8. 16 2 4 g4 2 b c' a b e4 g4 1 1
+  8. 16 2 f4 d4 g2 b c' f b e4 g4 2.(f4) g1
 }
 
 tenor = \fixed c {
   \global
   c'4 b a g a8. 16 e2
-  8. 16 c'2 4 d' e'2 g'2
-  2 c' g' c'8[d']e'[f'] d'1 e'
+  8. 16 c'2 4 b c'2 g'2
+  2 c' g' c'4 e' d'1 e'
 }
 
 bass = \fixed c {
   \global
   c'4 b a g a8. 16 e2
-  8. 16 a,2 4 b, c2 g,
-  c f d c4 4 d2(g,) c1
+  8. 16 a2 f4 g c(e) g2
+  c f g c8[d] e[f] g2(g,) c1
 }
 
 verseOne = \lyricmode {
-  San -- cte Pi -- e De -- ci -- me,
-  glo -- ri -- o -- se Pa -- tro -- ne,
-  o -- ra, o -- ra pro no -- bis_!
+  Sǽn -- cte Pí -- e Dé -- ci -- me,
+  glo -- ri -- ó -- se Pa -- tró -- ne,
+  ó -- ra, ó -- ra pro nó -- bis_!
 }
 
 \paper {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "Sancte Pie Decime"
+\tocItem \markup "Sáncte Píe Décime"
 \score {
   \header {
     title = "SANCTE PIE DECIME"
-    composer = ""
+    composer = "Harmonisation simple"
   }
   \new ChoirStaff <<
       \new Staff \with {

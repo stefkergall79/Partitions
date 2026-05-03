@@ -1,9 +1,10 @@
-\version "2.24.3"
+\version "2.26.0"
 
 global = {
   \key c \major
   \time 4/4
   \autoBeamOff
+  \dynamicUp
 }
 
 soprano = \fixed c' {

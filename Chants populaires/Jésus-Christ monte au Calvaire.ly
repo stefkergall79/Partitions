@@ -85,48 +85,45 @@ verseThree = \lyricmode {
 
 \paper {
   print-all-headers = ##t
+  tagline = ##f
 }
 \tocItem \markup "Jésus-Christ monte au Calvaire"
   
 \score {
-    \header {
+  \header {
     title = "JÉSUS-CHRIST MONTE AU CALVAIRE"
     composer = "Giovanni Battista Pergolesi (1710-1736)"
-    tagline = ##f
   }
-
-    \new ChoirStaff <<
-      \new Staff \with {
-        midiInstrument = "choir aahs"
-      } <<
-        \new Voice = "soprano" { \voiceOne \soprano }
-        \new Voice = "alto" { \voiceTwo \alto }
+  \new ChoirStaff <<
+    \new Staff \with {
+      midiInstrument = "choir aahs"
+    } <<
+      \new Voice = "soprano" { \voiceOne \soprano }
+      \new Voice = "alto" { \voiceTwo \alto }
       >>
-      \new Lyrics \with {
-        \override VerticalAxisGroup.staff-affinity = #CENTER
-      } \lyricsto "soprano" \verseOne
-      \new Lyrics \with {
-        \override VerticalAxisGroup.staff-affinity = #CENTER
-      } \lyricsto "soprano" \verseTwo
-      \new Lyrics \with {
-        \override VerticalAxisGroup.staff-affinity = #CENTER
-      } \lyricsto "soprano" \verseThree
-      \new Staff \with {
-        midiInstrument = "choir aahs"
-      } <<
-        \clef bass
-        \new Voice = "tenor" { \voiceOne \tenor }
-        \new Voice = "bass" { \voiceTwo \bass }
-      >>
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "soprano" \verseOne
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "soprano" \verseTwo
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "soprano" \verseThree
+    \new Staff \with {
+      midiInstrument = "choir aahs"
+    } <<
+      \clef bass
+      \new Voice = "tenor" { \voiceOne \tenor }
+      \new Voice = "bass" { \voiceTwo \bass }
     >>
-    \layout {}
-    \midi {
-      \tempo 4=80
-    }
-  }
-  \pageBreak
+  >>
+  \layout {}
+  \midi { \tempo 4=80 }
+}
+\pageBreak
   \markup {
-    \vspace #2
+    \hspace #-5
     \column {
       \line \italic { \bold "4."
         \column {

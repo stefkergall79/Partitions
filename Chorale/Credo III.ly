@@ -1,6 +1,4 @@
-\version "2.24.4"
-
-\header { tagline = ##f}
+\version "2.24.3"
 
 global = {
   \key d \major
@@ -36,6 +34,15 @@ verse = \lyricmode {
   ex Ma -- rí -- a Vír -- gi -- ne, et hó -- mo fac -- tus est.
 }
 
+\paper {
+  tagline = ##f
+}
+\tocItem \markup "Credo III"
+\markup \column {
+  \fill-line {\bold \fontsize #5 "CREDO III" }
+  \vspace #0.8
+  \vspace #1
+}
 \score {
   \new ChoirStaff <<
     \new Staff \with {

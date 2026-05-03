@@ -121,10 +121,10 @@ verseTwo = \lyricmode {
     "    À vous ma prière, Parure du ciel."
     \vspace #1
     \italic{
-      \line { \bold 6. Trône de sagesse, de grâce et d'honneur,}
-      "    Source d'allégresse, notre vrai bonheur,"
+      \line { \bold 6. Trône de sagesse, Ô vase d'honneur,}
+      "    Source d'allégresse, notre seul bonheur,"
       "    Reine d'espérance, guérissez nos cœurs ;"
-      "    Notre délivrance, sauvez les pécheurs."
+      "    Notre délivrance, Salut des pécheurs."
     }
   }
 }
