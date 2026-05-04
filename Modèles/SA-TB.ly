@@ -1,4 +1,4 @@
-\version "2.24.3"
+\version "2.26.0"
 
 global = {
   \key c \major
@@ -57,7 +57,10 @@ verseFive = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup ""
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "" ""
+}
 \score {
   \header {
     title = ""

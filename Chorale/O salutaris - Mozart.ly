@@ -59,7 +59,10 @@ verseTwo = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "O salutaris Hostia"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "O salutaris Hostia" "Mozart"
+}
 \score {
   \header {
     title = "O SALUTARIS HOSTIA"

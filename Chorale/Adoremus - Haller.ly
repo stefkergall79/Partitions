@@ -89,7 +89,10 @@ versete = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "Adoremus"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "Adoremus" "Haller"
+}
 \score {
   \header {
     title = "ADORÉMUS"

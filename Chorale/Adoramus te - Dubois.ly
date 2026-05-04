@@ -59,7 +59,10 @@ verseOne = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "Adoramus te"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "Adoramus te" "Dubois"
+}
 \score {
   \header {
     title = "ADORÁMUS TE CHRISTE"

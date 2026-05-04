@@ -51,7 +51,10 @@ verst = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "Jesu Rex admirabilis"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "Jesu Rex admirabilis" "Palestrina"
+}
 \score {
   \header {
     title = "JESU, REX ADMIRÁBILIS"
@@ -81,8 +84,8 @@ verst = \lyricmode {
   \midi { \tempo 4=85}
 }
 
-\markup {
-  \hspace #3
+\markup \fill-line {
+  \null
   \column {
       \line { \bold "2-"
         \column {
@@ -102,7 +105,7 @@ verst = \lyricmode {
       \vspace #3
   }
 
-  \hspace #5
+  \null
   \column {
       \line { \bold "4-"
         \column {
@@ -120,4 +123,5 @@ verst = \lyricmode {
           "Et nunc et in perpétuum."
     }}
   }
+  \null
 }

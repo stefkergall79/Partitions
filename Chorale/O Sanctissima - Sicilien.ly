@@ -57,7 +57,10 @@ verseOne = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "O Sanctissima - Mélodie sicilienne"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "O Sanctissima" "Mélodie sicilienne"
+}
 \score {
   \header {
     title = "O SANCTISSIMA"

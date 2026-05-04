@@ -45,73 +45,66 @@ bass = \fixed c {
 }
 
 verseOne = \lyricmode {
-  Lau -- da, Si -- on, Sal -- va -- to -- rem,
-  lau -- da du -- cem et pas -- to -- rem,
-  in hym -- nis et can -- ti -- cis.
+  Láu -- da, Sí -- on, Sal -- va -- tó -- rem,
+  láu -- da dú -- cem et pás -- to -- rem,
+  in hým -- nis et cán -- ti -- cis.
   \set stanza = "1."
-  Quan -- tum po -- tes, tan -- tum au -- de,
-  qui -- a ma -- jor om -- ni lau -- de
-  nec lau -- da -- re suf -- fi -- cis.
+  Quán -- tum pó -- tes, tán -- tum áu -- de,
+  quí -- a má -- jor óm -- ni láu -- de
+  nec láu -- da -- re súf -- fi -- cis.
 }
-
 verseTwo = \lyricmode {
   \override LyricText.font-shape = #'italic
   \repeat unfold 23 \skip1
   \set stanza = \markup \italic 2.
-  Lau -- dis the -- ma spe -- ci -- a -- lis,
-  Pan -- is vi -- vus et vi -- ta -- lis
-  ho -- di -- e pro -- po -- ni -- tur.
+  Láu -- dis thé -- ma spe -- ci -- á -- lis,
+  Pá -- nis ví -- vus et ví -- ta -- lis
+  hó -- di -- e pro -- pó -- ni -- tur.
 }
-
 verseThree = \lyricmode {
   \repeat unfold 23 \skip1
   \set stanza = "3."
-  Quem in sa -- cræ men -- sa ce -- næ
-  tur -- bæ fra -- trum du -- o -- de -- næ
-  da -- tum non am -- bi -- gi -- tur.
+  Quem in sá -- cræ mén -- sa cé -- næ
+  túr -- bæ frá -- trum du -- ó -- de -- næ
+  dá -- tum non am -- bí -- gi -- tur.
 }
-
 verseFour = \lyricmode {
   \override LyricText.font-shape = #'italic
   \repeat unfold 23 \skip1
   \set stanza = \markup \italic 4.
-  Sit laus ple -- na, sit so -- no -- ra_;
-  sit ju -- cun -- da, sit de -- co -- ra_;
-  men -- tis ju -- bi -- la -- ti -- o.
+  Sit laus plé -- na, sit so -- nó -- ra_;
+  sit ju -- cún -- da, sit de -- có -- ra_;
+  mén -- tis ju -- bi -- lá -- ti -- o.
 }
-
 verseFive = \lyricmode {
   \repeat unfold 23 \skip1
   \set stanza = "5."
-  In hac men -- sa no -- vi Re -- gis,
-  no -- vum Pa -- scha no -- væ le -- gis,
-  pha -- se ve -- tus ter -- mi -- nat.
+  In hac mén -- sa nó -- vi Ré -- gis,
+  nó -- vum Pás -- cha nó -- væ lé -- gis,
+  phá -- se vé -- tus tér -- mi -- nat.
 }
-
 verseSix = \lyricmode {
   \override LyricText.font-shape = #'italic
   \repeat unfold 23 \skip1
   \set stanza = \markup \italic 6.
-  Quod in ce -- na Chris -- tus ges -- sit,
-  fa -- ci -- en -- dum hoc ex -- pres -- sit,
-  in su -- i me -- mo -- ri -- am.
+  Quod in cé -- na Chrís -- tus gés -- sit,
+  fa -- ci -- én -- dum hoc ex -- prés -- sit,
+  in su -- í me -- mó -- ri -- am.
 }
-
 verseSeven = \lyricmode {
   \repeat unfold 23 \skip1
   \set stanza = "7."
-  Doc -- ti sa -- cris ins -- ti -- tu -- tis,
-  pa -- nem, vi -- num in sa -- lu -- tis
-  con -- se -- cra -- mus hos -- ti -- am.
+  Dóc -- ti sá -- cris ins -- ti -- tú -- tis,
+  pá -- nem, ví -- num in sa -- lú -- tis
+  con -- se -- crá -- mus hós -- ti -- am.
 }
-
 verseEight = \lyricmode {
   \override LyricText.font-shape = #'italic
   \repeat unfold 23 \skip1
   \set stanza = \markup \italic 8.
-  Dog -- ma da -- tur chris -- ti -- a -- nis,
-  quod in car -- nem tran -- sit pan -- is
-  et vi -- num in san -- gui -- nem.
+  Dóg -- ma dá -- tur chris -- ti -- á -- nis,
+  quod in cár -- nem trán -- sit pá -- nis
+  et ví -- num in sán -- gui -- nem.
 }
 
 \paper {

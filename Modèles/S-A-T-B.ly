@@ -1,4 +1,4 @@
-\include "../settings.ly"
+\version "2.26.0"
 
 global = {
   \key c \major
@@ -26,35 +26,35 @@ bass = \fixed c {
   
 }
 
-verseOne = \lyricmode {
-  \set stanza = "1."
+verseSoprano = \lyricmode {
   
 }
 
-verseTwo = \lyricmode {
-  \override LyricText.font-shape = #'italic
-  \set stanza = \markup \italic 2.
+verseAlto = \lyricmode {
   
 }
 
-verseThree = \lyricmode {
-  \set stanza = "3."
+verseTenor = \lyricmode {
   
 }
 
-verseFour = \lyricmode {
-  \override LyricText.font-shape = #'italic
-  \set stanza = \markup \italic 4.
+verseBass = \lyricmode {
   
 }
 
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "" ""
+}
 \score {
   \header {
     title = ""
     composer = ""
   }
-
-\score {
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -62,16 +62,7 @@ verseFour = \lyricmode {
     } \new Voice = "soprano" \soprano
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano" \verseOne
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano" \verseTwo
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano" \verseThree
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano" \verseFour
+    } \lyricsto "soprano" \verseSoprano
     
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -79,16 +70,7 @@ verseFour = \lyricmode {
     } \new Voice = "alto" \alto
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "alto" \verseOne
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "alto" \verseTwo
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "alto" \verseThree
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "alto" \verseFour
+    } \lyricsto "alto" \verseAlto
     
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -99,16 +81,7 @@ verseFour = \lyricmode {
     }
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "tenor" \verseOne
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "tenor" \verseTwo
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "tenor" \verseThree
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "tenor" \verseFour
+    } \lyricsto "tenor" \verseTenor
     
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -117,6 +90,9 @@ verseFour = \lyricmode {
       \clef bass
       \new Voice = "bass" \bass
     }
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "tenor" \verseBass
   >>
   \layout {\context{\Staff \RemoveAllEmptyStaves}}
   \midi {\tempo 4=70}

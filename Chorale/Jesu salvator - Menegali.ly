@@ -45,15 +45,17 @@ re -- de -- mís -- ti.
 
 \paper {
   print-all-headers = ##t
+  tagline = ##f
 }
-\tocItem \markup "Jesu Salvator Mundi"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "Jesu Salvator Mundi" "Menegali"
+}
 \score {
   \header {
     title = "JESU, SALVÁTOR MÚNDI"
     composer = "Menegali (XVIIIe)"
-    tagline = ##f
   }
-
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"

@@ -70,7 +70,10 @@ verseOne = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "O Memoriále"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "O Memoriále" "Palestrina"
+}
 \score {
   \header {
     title = "O MEMORIALE"

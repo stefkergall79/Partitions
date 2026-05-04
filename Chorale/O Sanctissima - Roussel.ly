@@ -80,7 +80,10 @@ verseThree = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "O Sanctissima - Roussel"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "O Sanctissima" "Roussel"
+}
 \score {
   \header {
     title = "O SANCTISSIMA"

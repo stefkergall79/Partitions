@@ -5,7 +5,7 @@ global = {
   \autoBeamOff
   \partial 2
 }
-
+#(ly:set-option 'backend 'cairo)
 soprano = \fixed c' {
   \global
   d4 a a g4 8[f e f] e2
@@ -57,7 +57,7 @@ verseTwo = \lyricmode {
   Sú -- mat per te pré -- ces,
   qui pro nó -- bis ná -- tus
   tú -- lit és -- se tú -- us.
-  \override LyricText.font-shape = #'roman
+  \override LyricText.font-shape = #'upright
   A -- men.
 }
 
@@ -72,16 +72,17 @@ verseThree = \lyricmode {
 \paper {
   tagline = ##f
 }
-\tocItem \markup "Ave Maris Stella"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "Ave Maris Stella" "Perruchot"
+}
 \markup \column {
   \fill-line {\bold \fontsize #5 "AVE MARIS STELLA" }
   \vspace #0.2
   \fill-line { \null "Mgr Louis-Lazare Perruchot (1852-1930)"}
   \vspace #0.8
   \fill-line {
-    \null
-    \epsfile #X #60 #"../Grégorien/Ave Maris Stella.eps"
-    \null
+    \epsfile #X #115 #"../Grégorien/AVE MARIS STELLA.png"
   }
   \vspace #1
 }

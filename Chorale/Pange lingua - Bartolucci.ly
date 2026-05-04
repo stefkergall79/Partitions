@@ -89,7 +89,10 @@ verseThree = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "Pange Lingua"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "Pange Lingua" "Bartolucci"
+}
 \score {
   \header {
     title = "PANGE LINGUA"
@@ -126,7 +129,8 @@ verseThree = \lyricmode {
 }
 
 
-\markup{
+\markup \fill-line {
+  \null
   \column \italic {
     \line {\bold 4. Verbum caro, panem verum}
     "    Verbo carnem éfficit ;"
@@ -135,7 +139,7 @@ verseThree = \lyricmode {
     "    Ad firmándum cor sincérum"
     "    Sola fides súfficit."
   }
-  \hspace #4
+  \null
   \column {
     \line {\bold 5. Tantum ergo Sacraméntum}
     "    Venerémur cérnui,"
@@ -144,7 +148,7 @@ verseThree = \lyricmode {
     "    Præstet fides supplémentum"
     "    Sénsuum deféctui."
   }
-  \hspace #4
+  \null
   \column \italic {
     \line {\bold 6. Genitóri Genitóque}
     "    Laus et jubilátio,"
@@ -154,4 +158,5 @@ verseThree = \lyricmode {
     "    Compar sit laudátio."
     \line \bold { "    Amen."}
   }
+  \null
 }

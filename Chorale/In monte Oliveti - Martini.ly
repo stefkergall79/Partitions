@@ -14,7 +14,7 @@ sopranoOne = \fixed c'' {
     d4 4 cis(d d cis) d2
     a,4 8 8 bes,4 4 c c d2 4 4 bes,2 c4 bes, a,2 2
     b, c4 d es8[d] c4 4(bes, a,2) g,1
-  } \bar "|."
+  } \bar ":|."
 }
 
 sopranoTwo = \fixed c' {
@@ -45,7 +45,10 @@ verse = \lyricmode {
 \paper {
   print-all-headers = ##t
 }
-\tocItem \markup "In monte Oliveti"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "In monte Oliveti" "Martini"
+}
 \score {
   \header {
     title = "IN MONTE OLIVETI"

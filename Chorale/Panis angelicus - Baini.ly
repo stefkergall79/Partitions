@@ -67,7 +67,10 @@ verseOne = \lyricmode {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "Panis angelicus"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "Panis angelicus" "Casciolini"
+}
 \score {
   \header {
     title = "PANIS ANGELICUS"

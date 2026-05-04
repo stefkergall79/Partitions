@@ -1,10 +1,9 @@
-\version "2.24.3"
+\version "2.26.0"
 
 \header {
   title = "NOBLE ÉPOUX DE MARIE"
   composer = "Jean-Noël Laprise (né en 1945)"
-  arranger = "Harmonisation : Stéphane Kergall"
-  % Supprimer le pied de page par défaut
+  arranger = "Harmonisation : Stéphane Kergall (né en 2007)"
   tagline = ##f
 }
 
@@ -52,7 +51,7 @@ alto = \fixed c' {
   e4 8 4 8
   e fis e d4.
   fis4 8 g4 fis8
-  e e d d4.
+  e a, a, a,4.
 }
 
 tenor = \fixed c {
@@ -71,15 +70,14 @@ tenor = \fixed c {
   b4. b4 g8
   b4 g8 b a g
   a4. a4 a8
-  d'4 8 cis' b a
-  a4.
+  d'4 8 cis' b a fis4.
 }
 
 bass = \fixed c {
   \global
   % En avant la musique.
   d4 8 8 8 8
-  <fis, fis>4. 4.
+  fis4. 4.
   b,4 8 d cis d
   e4. r
   d4 8 8 8 8
@@ -139,70 +137,61 @@ verseTwo = \lyricmode {
     >>
   >>
   \layout { }
-  \midi {
-    \tempo 4.=60
-  }
+  \midi {\tempo 4.=60 }
 }
 
-\markup {
-  \fill-line {
-    \hspace #0
-    \column {
-
-      \line { \bold \italic "3-"
-        \column {
-          "Témoin de sa naissance,"
-          "Et de ses jeunes ans,"
-          "Gardien de son enfance,"
-          "Veillez sur vos enfants !"
-        }}
-      \null \vspace #1
-
-      \line { \bold \italic "4-"
-        \column {
-          "Au jour de la colère,"
-          \line {Vous \concat{ravît \italic \bold es } aux tyrans}
-          "Le Sauveur et sa Mère ;"
-          "Veillez sur vos enfants !"
-        }}
-      \null \vspace #1
-
+\markup \fill-line {
+  \null
+  \column {
+     \line { \bold \italic "3-"
+       \column {
+         "Témoin de sa naissance,"
+         "Et de ses jeunes ans,"
+         "Gardien de son enfance,"
+         "Veillez sur vos enfants !"
+     }}
+     \vspace #1
+     \line { \bold \italic "4-"
+       \column {
+         "Au jour de la colère,"
+         \line {Vous \concat{ravît \italic \bold es } aux tyrans}
+         "Le Sauveur et sa Mère ;"
+         "Veillez sur vos enfants !"
+      }}
+      \vspace #1
       \line { \bold \italic "5-"
         \column {
           "Vous dont l'obéissance,"
           "En ces dangers pressants,"
           "Devint leur providence,"
           "Veillez sur vos enfants !"
-        }}}
-
-    \hspace #0.1
-    
-    \column {
-
-      \line { \bold \italic "6-"
-        \column {
-          "Vous dont la main féconde"
-          "A nourri si longtemps"
-          "Le Créateur du monde,"
-          "Veillez sur vos enfants !"
-      }}
-      \null \vspace #1
-
-      \line { \bold \italic "7-"
-        \column {
-          "Que votre main bénisse,"
-          "Ô Patron des mourrants,"
-          "Mon dernier sacrifice ;"
-          "Veillez sur vos enfants !"
-      }}
-      \null \vspace #1
-
-      \line { \bold \italic "8-"
-        \column {
-          "Votre amour nous rassemble :"
-          "Gardez-nous innocents !"
-          "Nous vous prions ensemble :"
-          "Veillez sur vos enfants !"
-      }}}
-    \hspace #0.1
-}}
+        }}
+  }
+  \hspace #0.1
+  \column {
+    \line { \bold \italic "6-"
+      \column {
+        "Vous dont la main féconde"
+        "A nourri si longtemps"
+        "Le Créateur du monde,"
+        "Veillez sur vos enfants !"
+    }}
+    \vspace #1
+    \line { \bold \italic "7-"
+      \column {
+        "Que votre main bénisse,"
+        "Ô Patron des mourrants,"
+        "Mon dernier sacrifice ;"
+        "Veillez sur vos enfants !"
+    }}
+    \vspace #1
+    \line { \bold \italic "8-"
+      \column {
+        "Votre amour nous rassemble :"
+        "Gardez-nous innocents !"
+        "Nous vous prions ensemble :"
+        "Veillez sur vos enfants !"
+    }}
+  }
+  \null
+}

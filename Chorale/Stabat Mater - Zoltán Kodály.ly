@@ -1,4 +1,4 @@
-\version "2.24.3"
+\version "2.26.0"
 
 global = {
     \key es \major
@@ -66,17 +66,14 @@ verseThree = \lyricmode {
     Má -- ter U -- ni -- gé -- ni -- ti_!
 }
 
-verseAmen = \lyricmode {
-    \repeat unfold 23 {1}
-    A -- _ -- _ -- men,
-    A -- _ -- men.
-}
-
 \paper {
   print-all-headers = ##t
   tagline = ##f
 }
-\tocItem \markup "Stabat Mater"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "Stabat Mater" "Kodaly"
+}
 \score {
   \header {
     title = "STÁBAT MÁTER"
@@ -107,15 +104,13 @@ verseAmen = \lyricmode {
           \new Voice = "tenor" { \voiceOne \tenor }
           \new Voice = "bass" { \voiceTwo \bass }
       >>
-      \new Lyrics \with {
-        \override VerticalAxisGroup.staff-affinity = #CENTER
-      } \lyricsto "tenor" \verseAmen
+      \new Lyrics \lyricmode {
+        \repeat unfold 12 \skip1 A1. -- men,2 A1 -- men.1 }
     >>
     \layout { }
     \midi {\tempo 2=60 }
 }
 \markup{
-  %\vspace #1
   * Pour finir, on reprendra les quatre dernières mesures sur "\""A-men"\"",
   avec un mi♮ à l'alto.
 }
