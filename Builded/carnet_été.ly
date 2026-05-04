@@ -33,6 +33,7 @@
 \include "../Chorale/Jesu salvator - Menegali.ly"
 \include "../Chorale/Jesu Rex admirabilis - Palestrina.ly" \pageBreak
 \include "../Chorale/Tollite Hostias - Saint-Saëns.ly" \pageBreak
+\include "../Chants populaires/Christus vincit.ly"
 
 \pageBreak
 \tocItem \markup {\bold "Saint-Sacrement" \vspace #1 }

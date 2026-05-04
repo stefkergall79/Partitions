@@ -31,10 +31,12 @@ bass = \fixed c {
 }
 
 verseOne = \lyricmode {
+  \sectionLabel "Refrain"
   Chrí -- stus vín -- cit,
   Chrí -- stus ré -- gnat,
   Chrí -- stus, Chrí -- stus ím -- pe -- rat_!
   \set stanza = "1."
+  \sectionLabel "Couplets"
   Dó -- mi -- "nus regnávit, decórem" in -- dú -- "tus est :"
   "indútus est Dóminus fortitúdinem," et præ -- cín -- xit_se.
 }
@@ -84,6 +86,21 @@ verseSeven = \lyricmode {
   "domum tuam decet sanctitúdo, Dómine, in longitúdi - " -- nem di -- é -- rum.
 }
 
+verseEight = \lyricmode {
+  \repeat unfold 15 \skip1
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 8.
+  Gló -- ri -- a_Patri, et Fí -- lio,
+  et_Spirí -- tu -- i San -- cto.
+}
+
+verseNine = \lyricmode {
+  \repeat unfold 15 \skip1
+  \set stanza = "7."
+  Si -- cut "erat in princípio, et nunc," et sem -- per,
+  "et in sǽcula sæcu" -- ló -- rum. A -- men.
+}
+
 \paper {
   print-all-headers = ##t
   tagline = ##f
@@ -126,6 +143,12 @@ verseSeven = \lyricmode {
       \new Lyrics \with {
         \override LyricText.self-alignment-X = #LEFT
       } \lyricsto "soprano" \verseSeven
+      \new Lyrics \with {
+        \override LyricText.self-alignment-X = #LEFT
+      } \lyricsto "soprano" \verseEight
+      \new Lyrics \with {
+        \override LyricText.self-alignment-X = #LEFT
+      } \lyricsto "soprano" \verseNine
       
       \new Staff \with {
         midiInstrument = "choir aahs"
