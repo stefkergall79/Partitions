@@ -1,5 +1,4 @@
-\include "../settings.ly"
-
+\version "2.26.0"
 global = {
   \key g \major
   \time 4/4
@@ -21,7 +20,7 @@ alto = \fixed c' {
   \global
   s4 \skip1 s2. r4 \skip1 * 5 s2. r4
   b2 a4 g e(fis) g2 d8[c] b,4 e8[d] cis4 d4.(cis8) d4 r
-  \skip1 r2 r4 g4 4 fis g a g2 d4
+  R1 r2 r4 g4 4 fis g a g2 d4
   g8[f] e4 d c e d(c) b,(e) g2(fis4.) g8 2
 }
 
@@ -38,7 +37,7 @@ bass = \fixed c {
   \global
   s4 \skip1 * 8
   b4(g) fis g a2 g d4 dis e a, d2 4 r
-  \skip1 * 3 r2 r4 g,4 a, b, c cis d(dis) e(a,) d2 2 <g g,>
+  R1 * 3 r2 r4 g,4 a, b, c cis d(dis) e(a,) d2 2 <g g,>
 }
 
 verseOne = \lyricmode {
@@ -86,6 +85,11 @@ verseFour = \lyricmode {
 
 }
 
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "Adeste, fideles"
 \score {
   \header {
     title = "ADESTE, FIDELES"
@@ -123,7 +127,5 @@ verseFour = \lyricmode {
     >>
   >>
   \layout {\context{\Staff \RemoveAllEmptyStaves}}
-  \midi {
-    \tempo 4=110
-  }
+  \midi {\tempo 4=110 }
 }

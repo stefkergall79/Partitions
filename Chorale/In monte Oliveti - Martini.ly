@@ -86,3 +86,9 @@ verse = \lyricmode {
     \layout { }
     \midi { \tempo 4=100 }
   }
+\markup \column {
+  "Sur le mont des Oliviers, Il pria son Père :"
+  "« Mon Père, s'il est possible que ce calice s'éloigne de moi ;"
+  "   Car l'esprit est prompt, mais la chair est faible."
+  "   Mais que Ta volonté soit faite. »"
+}

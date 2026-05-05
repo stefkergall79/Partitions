@@ -102,5 +102,15 @@ verseOne = \lyricmode {
     >>
     \layout {\context{\Staff \RemoveAllEmptyStaves}}
     \midi {\tempo 4=90}
-  }
+}
 
+\markup \column {
+  "O mémorial de la mort du Seigneur,"
+  "Pain vivant qui donnez la vie à l'homme,"
+  "Donnez à mon âme de ne vivre que de Vous"
+  "Et de trouver toujours en Vous"
+  "Sa joie et ses délices."
+  "Pieux Pélican, Seigneur Jésus,"
+  "Que Votre Sang me purifie de mes souillures."
+  "Amen."
+}

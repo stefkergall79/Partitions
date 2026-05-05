@@ -79,5 +79,12 @@ verseOne = \lyricmode {
     >>
     \layout {\context{\Staff \RemoveAllEmptyStaves}}
     \midi {\tempo 2=80}
-  }
-
+}
+\markup \column {
+  "Haute et bienheureuse Trinité,"
+  "Que nous adorons sans cesse."
+  "Trinité glorieuse."
+  "Unité merveilleuse."
+  "Tu es une manne savoureuse"
+  "Et tant désirée."
+}

@@ -91,5 +91,9 @@ verseOne = \lyricmode {
     >>
     \layout {\context{\Staff \RemoveAllEmptyStaves}}
     \midi {\tempo 4=70}
-  }
+}
 
+\markup \column {
+  "Nous Vous adorons, ô Christ, et nous Vous bénissons,"
+  "Parce que Vous avez racheté le monde par Votre sainte Croix."
+}

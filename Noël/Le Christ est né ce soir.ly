@@ -1,5 +1,4 @@
-\include "../settings.ly"
-
+\version "2.26.0"
 global = {
   \key d \major
   \time 6/8
@@ -41,59 +40,82 @@ bass = \fixed c {
 
 verseOne = \lyricmode {
   \set stanza = "1."
-  Le Christ est né ce soir de la Vier -- ge Ma -- ri -- e,
-  sous le ciel é -- toi -- lé, hors de l’hô -- tel -- le -- ri -- e,
-  et dé -- jà Ré -- demp -- teur en des -- cen -- dant du Ciel,
-  il a de son ber -- ceau fait son pre -- mier au -- tel.
+  Le Christ est né ce soir
+  de la Vier -- ge Ma -- ri -- e,
+  sous le ciel é -- toi -- lé,
+  hors de l’hô -- tel -- le -- ri -- e,
+  et dé -- jà Ré -- demp -- teur
+  en des -- cen -- dant du Ciel,
+  il a de son ber -- ceau
+  fait son pre -- mier au -- tel.
 }
 verseOneTenor = \lyricmode {
   \set stanza = "1."
-  Le Christ est né ce soir de la Vier -- ge Ma -- ri -- e,
-  sous le ciel é -- toi -- lé, hors de l’hô -- tel -- le -- ri -- e,
-  et dé -- jà Ré -- demp -- teur en des -- cen -- dant du Ciel,
-  il a de son ber -- ceau, il a fait son pre -- mier au -- tel.
+  Le Christ est né ce soir
+  de la Vier -- ge Ma -- ri -- e,
+  sous le ciel é -- toi -- lé,
+  hors de l’hô -- tel -- le -- ri -- e,
+  et dé -- jà Ré -- demp -- teur
+  en des -- cen -- dant du Ciel,
+  il a de son ber -- ceau,
+  il a fait son pre -- mier au -- tel.
 }
 
 
 verseTwo = \lyricmode {
   \override LyricText.font-shape = #'italic
   \set stanza = \markup \italic 2.
-  Ce soir comme un é -- cho du fond de Pa -- les -- ti -- ne,
-  de val -- lon en val -- lon, de col -- line en col -- li -- ne,
-  les clo -- ches se sont dit l’an -- gé -- li -- que No -- ël_;
-  aux hom -- mes paix sur terre et gloire au Dieu du ciel_!
+  Ce soir comme un é -- cho
+  du fond de Pa -- les -- ti -- ne,
+  de val -- lon en val -- lon,
+  de col -- line en col -- li -- ne,
+  les clo -- ches se sont dit
+  l’an -- gé -- li -- que No -- ël_;
+  aux hom -- mes paix sur terre
+  et gloire au Dieu du ciel_!
 }
 verseTwoTenor = \lyricmode {
   \override LyricText.font-shape = #'italic
   \set stanza = \markup \italic 2.
-  Ce soir comme un é -- cho du fond de Pa -- les -- ti -- ne,
-  de val -- lon en val -- lon, de col -- line en col -- li -- ne,
-  les clo -- ches se sont dit l’an -- gé -- li -- que No -- ël_;
-  aux hom -- mes paix sur terre et gloire, et gloire au Dieu du ciel_!
+  Ce soir comme un é -- cho
+  du fond de Pa -- les -- ti -- ne,
+  de val -- lon en val -- lon,
+  de col -- line en col -- li -- ne,
+  les clo -- ches se sont dit
+  l’an -- gé -- li -- que No -- ël_;
+  aux hom -- mes paix sur terre et gloire,
+  et gloire au Dieu du ciel_!
 }
 
 verseThree = \lyricmode {
   \set stanza = "3."
-  A -- vec les pas -- tou -- reaux, loin du mon -- de cou -- pa -- ble,
-  ah_! Ve -- nez à ge -- noux au seuil de cette é -- ta -- ble.
-  Jé -- sus no -- tre Sau -- veur at -- tend comme au -- tre -- fois
-  l’hom -- ma -- ge de nos cœurs_: Il est le Roi des rois_!
+  A -- vec les pas -- tou -- reaux,
+  loin du mon -- de cou -- pa -- ble,
+  ah_! Ve -- nez à ge -- noux
+  au seuil de cette é -- ta -- ble.
+  Jé -- sus no -- tre Sau -- veur
+  at -- tend comme au -- tre -- fois
+  l’hom -- ma -- ge de nos cœurs_:
+  Il est le Roi des rois_!
 }
 verseThreeTenor = \lyricmode {
   \set stanza = "3."
-  A -- vec les pas -- tou -- reaux, loin du mon -- de cou -- pa -- ble,
-  ah_! Ve -- nez à ge -- noux au seuil de cette é -- ta -- ble.
-  Jé -- sus no -- tre Sau -- veur at -- tend comme au -- tre -- fois
-  l’hom -- ma -- ge de nos cœurs_: Il est, Il est le Roi des rois_!
+  A -- vec les pas -- tou -- reaux,
+  loin du mon -- de cou -- pa -- ble,
+  ah_! Ve -- nez à ge -- noux
+  au seuil de cette é -- ta -- ble.
+  Jé -- sus no -- tre Sau -- veur
+  at -- tend comme au -- tre -- fois
+  l’hom -- ma -- ge de nos cœurs_:
+  Il est, Il est le Roi des rois_!
 }
 
 
-verseFour = \lyricmode {
-  \override LyricText.font-shape = #'italic
-  \set stanza = \markup \italic 4.
-  
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
 }
-
+\tocItem \markup "Le Christ est né ce soir"
 \score {
   \header {
     title = "LE CHRIST EST NÉ CE SOIR"
@@ -104,7 +126,6 @@ verseFour = \lyricmode {
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Soprano"
     } \new Voice = "soprano" \soprano
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
@@ -115,13 +136,9 @@ verseFour = \lyricmode {
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseThree
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano" \verseFour
     
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Alto"
     } \new Voice = "alto" \alto
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
@@ -132,13 +149,9 @@ verseFour = \lyricmode {
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "alto" \verseThree
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "alto" \verseFour
     
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Ténor"
     } {
       \clef "treble_8"
       \new Voice = "tenor" \tenor
@@ -152,13 +165,9 @@ verseFour = \lyricmode {
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "tenor" \verseThreeTenor
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "tenor" \verseFour
     
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Basse"
     } {
       \clef bass
       \new Voice = "bass" \bass
@@ -172,13 +181,8 @@ verseFour = \lyricmode {
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "bass" \verseThree
-    \new Lyrics \with {
-      \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "bass" \verseFour
     
   >>
-  \layout {
-    \context{\Staff \RemoveAllEmptyStaves}
-  }
-  \midi {\tempo 4=70}
+  \layout { \context{\Staff \RemoveAllEmptyStaves}}
+  \midi {\tempo 4=90}
 }

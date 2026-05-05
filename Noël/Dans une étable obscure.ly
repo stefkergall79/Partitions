@@ -1,5 +1,4 @@
-\include "../settings.ly"
-
+\version "2.26.0"
 global = {
   \key f \major
   \time 4/4
@@ -77,7 +76,11 @@ verseThree = \lyricmode {
   Le monde en -- tier t'ac -- cla -- me
   dans l'a -- do -- ra -- ble nuit.
 }
-
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "Dans une étable obscure"
 \score {
   \header {
     title = "DANS UNE ÉTABLE OBSCURE"

@@ -96,5 +96,12 @@ verseOne = \lyricmode {
     >>
     \layout {\context{\Staff \RemoveAllEmptyStaves}}
     \midi {\tempo 4=85}
-  }
+}
 
+\markup \column {
+  "Le pain des anges devient le pain des hommes."
+  "Le pain céleste met fin aux apparences."
+  "Ô merveille !"
+  "Le pauvre, le serviteur et l'humble"
+  "Mange le Seigneur."
+}

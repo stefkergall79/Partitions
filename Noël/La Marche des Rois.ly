@@ -1,14 +1,5 @@
-\version "2.24.3"
+\version "2.26.0"
 
-\header {
-  title = "La Marche des Rois"
-  composer = "Musique : Jean-Baptiste Lully"
-  poet = "Paroles : Joseph-François Domergue"
-  % Supprimer le pied de page par défaut
-  tagline = ##f
-}
-
-#(set-global-staff-size 17)
 
 global = {
   \key bes \major
@@ -36,7 +27,7 @@ soprano = \fixed c' {
   g[fis] d r16 a a4 a
   bes a8. g16 a4 bes
   c'4. r16 bes c'4 d'
-  ees'8 d' c' bes bes4 a g4..\bar "|."
+  ees'8 d' c' bes bes4 a g4.\bar "|."
 }
 
 alto = \fixed c' {
@@ -57,7 +48,7 @@ alto = \fixed c' {
   d4 d8 r16 fis fis4 fis
   g fis8. ees16 fis4 g
   a4. r16 g fis4 f
-  ees8 ees ees g fis4 fis d4..
+  ees8 ees ees g fis4 fis d4.
 }
 
 tenor = \fixed c {
@@ -78,7 +69,7 @@ tenor = \fixed c {
   a4 fis8 r16 d' d'4 d'
   d' d'8. d'16 d'4 d'
   d'4. r16 d' d'4 d'
-  g8 g c' d' d'4 d' bes4..
+  g8 g c' d' d'4 d' bes4.
 }
 
 bass = \fixed c {
@@ -99,7 +90,7 @@ bass = \fixed c {
   d4 d8 r16 d d4 d
   d d8. d16 d4 d
   d4. r16 d16 a,4 bes,
-  c8 bes, a, g, d4 d4 g4..
+  c8 bes, a, g, d4 d4 g4.
 }
 
 verseOne = \lyricmode {
@@ -116,7 +107,17 @@ verseOne = \lyricmode {
 }
 
 
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "La Marche des Rois"
 \score {
+  \header {
+    title = "LA MARCHE DES ROIS"
+    composer = "Musique : Jean-Baptiste Lully"
+    poet = "Paroles : Joseph-François Domergue"
+  }
   \new ChoirStaff <<
 
     \new Staff \with {
@@ -129,7 +130,7 @@ verseOne = \lyricmode {
     >>
 
     \new Lyrics \with {
-      \override VerticalAxisGroup #'staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseOne
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -146,34 +147,34 @@ verseOne = \lyricmode {
   }}
 
 
-\markup {
-  \fill-line {
-    \hspace #0
-    \column {
-      \line { \italic "2-"
-        \column {
-          "Puis sur un char doré de toutes parts,"
-          "On voit trois rois modestes comme d'anges,"
-          "Puis sur un char doré de toutes parts,"
-          "On voit trois rois parmi les étendards."
-          "L'étoile luit et les rois conduits"
-          "par long chemin devant une pauvre étable,"
-          "L'étoile luit et les rois conduits"
-          "par long chemin devant l'humble réduit."
-        }}}
-
-    \hspace #0.1
-    \column {
-      \line { \italic "3-"
-        \column {
-          "Au Fils de Dieu qui naquit en ces lieux,"
-          "Ils viennent tous présenter leurs hommages,"
-          "Au Fils de Dieu qui naquit en ces lieux,"
-          "Ils viennent tous présenter leurs doux vœux."
-          "De beaux présents, or, myrrhe et encens,"
-          "Ils vont offrir au Maître tant admirable,"
-          "De beaux présents, or, myrrhe et encens,"
-          "Ils vont offrir au bienheureux Enfant."
-      }}}
-    \hspace #0.1
-  }}
+\markup \fill-line {
+  \null
+  \column \italic {
+    \line { \bold "2-"
+      \column {
+        "Puis sur un char doré de toutes parts,"
+        "On voit trois rois modestes comme d'anges,"
+        "Puis sur un char doré de toutes parts,"
+        "On voit trois rois parmi les étendards."
+        "L'étoile luit et les rois conduits"
+        "Par long chemin devant une pauvre étable,"
+        "L'étoile luit et les rois conduits"
+        "Par long chemin devant l'humble réduit."
+    }}
+  }
+  \null
+  \column {
+    \line { \bold "3-"
+      \column {
+        "Au Fils de Dieu qui naquit en ces lieux,"
+        "Ils viennent tous présenter leurs hommages,"
+        "Au Fils de Dieu qui naquit en ces lieux,"
+        "Ils viennent tous présenter leurs doux vœux."
+        "De beaux présents, or, myrrhe et encens,"
+        "Ils vont offrir au Maître tant admirable,"
+        "De beaux présents, or, myrrhe et encens,"
+        "Ils vont offrir au bienheureux Enfant."
+    }}
+  }
+  \null
+}

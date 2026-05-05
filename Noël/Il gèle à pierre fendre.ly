@@ -1,5 +1,4 @@
-\include "../settings.ly"
-
+\version "2.26.0"
 global = {
   \key f \major
   \time 3/8
@@ -65,7 +64,7 @@ soprano = \fixed c' {
 
 alto = \fixed c' {
   \global
-  f4. e e f d~d cis
+  f4. e e f d d cis
   d e e d cis a, f e e d d4 cis8 d4.
   f8 f g f4 8 e4. e f8 f f e4 8 f4.
   d cis d d d4 cis8 d4.
@@ -73,6 +72,8 @@ alto = \fixed c' {
 
 tenor = \fixed c {
   \global
+  %\mergeDifferentlyHeadedOn
+  \mergeDifferentlyDottedOn
   d4. d cis d4 e8 f4. e e\fermata
   f bes a f a4 g8 f4. f g a f a a
   d'8 8 8 c'4 g8 4. g a8 bes a c'4 bes8 a4.
@@ -88,7 +89,7 @@ bass = \fixed c {
 }
 
 verseOne = \lyricmode {
-  \repeat unfold 19 { \skip1 }
+  \repeat unfold 19 \skip1
   \set stanza = "1."
   Le vent chas -- sant la nei -- ge
   s’en -- gouf -- fre sous le toit.
@@ -96,8 +97,8 @@ verseOne = \lyricmode {
 
 verseTwo = \lyricmode {
   \override LyricText.font-shape = #'italic
-  B.F.
-  \repeat unfold 18 { \skip1 }
+  B.F. \repeat unfold 6 \skip1
+  \repeat unfold 2 {B.F. \repeat unfold 5 \skip1 }
   \set stanza = \markup \italic 2.
   Il n’y a pas de pla -- ce,
   ils ont frap -- pé par -- tout.
@@ -111,6 +112,11 @@ verseThree = \lyricmode {
   c'est l'hi -- ver dans nos cœurs.
 }
 
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "Il gèle à pierre fendre"
 soloPart = << \new Staff \with {
   shortInstrumentName = "Sl."
     midiInstrument = "choir aahs"
@@ -153,7 +159,9 @@ choirPart = \new ChoirStaff <<
 \score {
   \header {
     title = "IL GÈLE À PIERRE FENDRE"
-    composer = "Harmonisation : Jehan Revert (1920-2015)"
+    arranger = "Harmonisation : Jehan Revert (1920-2015)"
+    composer = "Mélodie : Noël de Saintonge"
+    poet = "Paroles : R. Coutelle"
   }
   <<
     \soloPart

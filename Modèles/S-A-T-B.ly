@@ -92,7 +92,7 @@ verseBass = \lyricmode {
     }
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "tenor" \verseBass
+    } \lyricsto "bass" \verseBass
   >>
   \layout {\context{\Staff \RemoveAllEmptyStaves}}
   \midi {\tempo 4=70}

@@ -1,5 +1,4 @@
-\include "../settings.ly"
-
+\version "2.26.0"
 global = {
   \key c \major
   \time 3/4
@@ -87,6 +86,11 @@ verseFour = \lyricmode {
   qu'at -- ten -- dait Is -- ra -- ël_!
 }
 
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
+\tocItem \markup "Douce nuit"
 \score {
   \header {
     title = "DOUCE NUIT"
