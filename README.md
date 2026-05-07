@@ -25,7 +25,7 @@ nano ~/.bashrc
 ```
 et collez à la fin du fichier :
 ```bash
-alias save-ly='git add . && git commit -a -m "Sauvegarde" && git push'
+alias save-ly='cd ~/Partitions && git add . && git commit -a -m "Sauvegarde" && git push'
 ```
 `Ctrl+O` puis `Entrée` pour enregistrer, puis `Ctrl+X` pour sortir.
 
