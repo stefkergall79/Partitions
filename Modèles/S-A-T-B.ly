@@ -58,7 +58,8 @@ verseBass = \lyricmode {
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Soprano"
+      instrumentName = "S."
+      \consists "Ambitus_engraver"
     } \new Voice = "soprano" \soprano
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
@@ -66,7 +67,8 @@ verseBass = \lyricmode {
     
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Alto"
+      instrumentName = "A."
+      \consists "Ambitus_engraver"
     } \new Voice = "alto" \alto
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
@@ -74,7 +76,8 @@ verseBass = \lyricmode {
     
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Ténor"
+      instrumentName = "T."
+      \consists "Ambitus_engraver"
     } {
       \clef "treble_8"
       \new Voice = "tenor" \tenor
@@ -85,7 +88,8 @@ verseBass = \lyricmode {
     
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Basse"
+      instrumentName = "B."
+      \consists "Ambitus_engraver"
     } {
       \clef bass
       \new Voice = "bass" \bass
@@ -94,6 +98,6 @@ verseBass = \lyricmode {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "bass" \verseBass
   >>
-  \layout {\context{\Staff \RemoveAllEmptyStaves}}
+  \layout {}
   \midi {\tempo 4=70}
 }

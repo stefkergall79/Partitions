@@ -1,11 +1,4 @@
-\version "2.24.4"
-
-\header {
-    title = "O JESU CHRISTE"
-    composer = "Jakob Van Berchem (1505-1567)"
-    % Supprimer le pied de page par défaut
-    tagline = ##f
-}
+\version "2.26.0"
 
 global = {
     \key d \major
@@ -73,7 +66,7 @@ sopranoVerse = \lyricmode {
     O Jé -- su Chrí -- ste, mi -- se -- ré -- re mé -- i,
     quum do -- ló -- re lan -- gúe -- o, quum do -- ló -- re lan -- gúe -- o,
     quum do -- ló -- re lan -- gúe -- o.
-    Dó -- mi -- ne, Dó -- mi -- ne, Tu es spes mé -- _ -- a.
+    Dó -- mi -- ne, Dó -- mi -- ne, Tu es spes mé -- _ a.
     Cla -- má -- vi, cla -- má -- vi ad Te.
     Mi -- se -- ré -- re, mi -- se -- ré -- re mé -- i, mé -- i.
 }
@@ -83,7 +76,7 @@ altoVerse = \lyricmode {
     mi -- se -- ré -- re, mi -- se -- ré -- re,
     quum do -- ló -- re lan -- gúe -- o, do -- ló -- re lan -- gúe -- o.
     Dó -- mi -- ne, Dó -- mi -- ne, Tu es spes mé -- a.
-    Cla -- má -- vi, cla -- má -- vi ad -- _ -- _ Te.
+    Cla -- má -- vi, cla -- má -- vi ad _ _ Te.
     Mi -- se -- ré -- re, mi -- se -- ré -- re mé -- i,
     mi -- se -- ré -- re mé -- i.
 }
@@ -111,8 +104,17 @@ bassVerse = \lyricmode {
 tempog = #60
 instrument = "acoustic grand"
 
+\tocItem \markup "O Jesu Christe"
+\paper {
+  print-all-headers = ##t
+  tagline = ##f
+}
 \score {
-    \new ChoirStaff <<
+  \header {
+    title = "O JESU CHRISTE"
+    composer = "Jakob Van Berchem (1505-1567)"
+  }
+  \new ChoirStaff <<
         \new Staff \with {
             midiInstrument = \instrument
             instrumentName = "S."

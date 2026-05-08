@@ -112,5 +112,5 @@ verseThree = \lyricmode {
 }
 \markup{
   * Pour finir, on reprendra les quatre dernières mesures sur "\""A-men"\"",
-  avec un mi♮ à l'alto.
+  avec un mi \tiny { \text-accidental #0 } à l'alto.
 }

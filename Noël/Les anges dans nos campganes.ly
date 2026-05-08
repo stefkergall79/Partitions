@@ -72,6 +72,13 @@ verseSopranoOne = \lyricmode {
 verseSopranoTwo = \lyricmode {
   \override LyricText.font-shape = #'italic
   \set stanza = \markup \italic 2.
+  Cher -- chons tous l’heu -- reux vil -- la -- ge
+  qui l’a vu naî -- tre sous ses toits_;
+  of -- frons -_lui le tendre hom -- ma -- ge
+  et de nos cœurs et de nos voix_:
+}
+verseSopranoThree = \lyricmode {
+  \set stanza = "3."
   Ber -- gers, quit -- tez vos re -- trai -- tes,
   u -- nis -- sez -_vous à leurs con -- certs,
   et que vos ten -- dres mu -- set -- tes
@@ -104,10 +111,17 @@ verseTenorOne = \lyricmode {
 verseTenorTwo = \lyricmode {
   \override LyricText.font-shape = #'italic
   \set stanza = \markup \italic 2.
-  Ber -- gers, quit -- tez vos re -- trai -- tes,
-  u -- nis -- sez -_vous à leurs con -- certs,
-  et que vos, que vos ten -- dres mu -- set -- tes
-  fas -- sent re -- ten -- tir dans les airs_:
+  Cher -- chons tous l’heu -- reux vil -- la -- ge
+  qui l’a vu naî -- tre sous ses toits_;
+  of -- frons, of -- frons -_lui le tendre hom -- ma -- ge
+  et de nos cœurs et de nos voix_:
+}
+verseTenorThree = \lyricmode {
+ \set stanza = "3."
+ Ber -- gers, quit -- tez vos re -- trai -- tes,
+ u -- nis -- sez -_vous à leurs con -- certs,
+ et que vos, que vos ten -- dres mu -- set -- tes
+ fas -- sent re -- ten -- tir dans les airs_:
 }
 
 verseBassOne = \lyricmode {
@@ -118,8 +132,12 @@ verseBassOne = \lyricmode {
 }
 verseBassTwo = \lyricmode {
   \override LyricText.font-shape = #'italic
+  Qui l’a vu naî -- tre sous ses toits_;
+  Et de nos cœurs et de nos voix_:
+}
+verseBassThree = \lyricmode {
   U -- nis -- sez -_vous à leurs con -- certs,
-  fas -- sent re -- ten -- tir dans les airs_:
+  Fas -- sent re -- ten -- tir dans les airs_:
 }
   
 \paper {
@@ -128,17 +146,18 @@ verseBassTwo = \lyricmode {
 }
 \tocItem \markup {
   \pad-to-box #'(0 . 40) #'(0 . 0)
-  "Les anges dans nos campagnes" ""
+  "Les anges dans nos campagnes" "Gevaert"
 }
 \score {
   \header {
     title = "LES ANGES DANS NOS CAMPAGNES"
-    composer = ""
+    composer = "Harmonisation : François-Auguste Gevaert (1828-1908)"
   }
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Soprano"
+      instrumentName = "S."
+      \consists "Ambitus_engraver"
     } \new Voice = "soprano" \soprano
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
@@ -146,10 +165,14 @@ verseBassTwo = \lyricmode {
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseSopranoTwo
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "soprano" \verseSopranoThree
     
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Alto"
+      instrumentName = "A."
+      \consists "Ambitus_engraver"
     } \new Voice = "alto" \alto
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
@@ -157,10 +180,14 @@ verseBassTwo = \lyricmode {
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "alto" \verseSopranoTwo
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "alto" \verseSopranoThree
     
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Ténor"
+      instrumentName = "T."
+      \consists "Ambitus_engraver"
     } {
       \clef "treble_8"
       \new Voice = "tenor" \tenor
@@ -171,10 +198,14 @@ verseBassTwo = \lyricmode {
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "tenor" \verseTenorTwo
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "tenor" \verseTenorThree
     
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = "Basse"
+      instrumentName = "B."
+      \consists "Ambitus_engraver"
     } {
       \clef bass
       \new Voice = "bass" \bass
@@ -185,8 +216,11 @@ verseBassTwo = \lyricmode {
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "bass" \verseBassTwo
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "bass" \verseBassThree
     
   >>
-  \layout {\context{\Staff \RemoveAllEmptyStaves}}
+  \layout {}
   \midi {\tempo 2=60}
 }
