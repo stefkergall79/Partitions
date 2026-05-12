@@ -29,6 +29,7 @@ tenors = \fixed c {
 }
 
 verso = \lyricmode {
+  \set stanza = "1."
   Jé -- su, Rex Ad -- mi -- rá -- bi -- lis,
 et Tri -- um -- phá -- tor nó -- bi -- lis,
 Dul -- cé -- do in -- ef -- fá -- bi -- lis
@@ -50,6 +51,7 @@ verst = \lyricmode {
 \paper {
   print-all-headers = ##t
   tagline = ##f
+  system-system-spacing.basic-distance = #15
 }
 \tocItem \markup {
   \pad-to-box #'(0 . 40) #'(0 . 0)
@@ -61,7 +63,7 @@ verst = \lyricmode {
     composer = "Giovanni da Palestrina (1525-1594)"
     }
   \new ChoirStaff <<
-    \new Staff \with {
+    \new Staff = "upStaff" \with {
       midiInstrument = "choir aahs"
       \consists Merge_rests_engraver
       instrumentName = \markup \center-column { "S." "A." }
@@ -69,10 +71,12 @@ verst = \lyricmode {
       \new Voice = "soprano" { \voiceOne \soprane }
       \new Voice = "alto" { \voiceTwo \alti } >>
 
+    \new Lyrics \with { 
+      \override VerticalAxisGroup.staff-affinity = #DOWN
+      alignAboveContext = #"upStaff"
+    } \lyricsto "soprano" \versa
     \new Lyrics \with { \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "soprano" \verso
-    \new Lyrics \with { \override VerticalAxisGroup.staff-affinity = #CENTER
-    } \lyricsto "alto" \versa
+    } \lyricsto "alto" \verso
 
     \new Staff \with {
       midiInstrument = "choir aahs"

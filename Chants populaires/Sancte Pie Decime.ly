@@ -34,7 +34,7 @@ bass = \fixed c {
 }
 
 verseOne = \lyricmode {
-  Sǽn -- cte Pí -- e Dé -- ci -- me,
+  Sán -- cte Pí -- e Dé -- ci -- me,
   glo -- ri -- ó -- se Pa -- tró -- ne,
   ó -- ra, ó -- ra pro nó -- bis_!
 }
@@ -74,3 +74,4 @@ verseOne = \lyricmode {
     \midi {\tempo 4=85}
   }
 
+\markup "Saint Pie X, glorieux patron, priez pour nous !"

@@ -58,6 +58,7 @@ verseTwo = \lyricmode {
 \paper {
   print-all-headers = ##t
   tagline = ##f
+  system-system-spacing.basic-distance = #12
 }
 \tocItem \markup {
   \pad-to-box #'(0 . 40) #'(0 . 0)

@@ -11,12 +11,12 @@ soprano = \fixed c' {
   \global
   \sectionLabel "Refrain"
   \cadenzaOn
-  d'4 4 4 2 \bar"|"
-  4 cis' d' b2 \bar"|"
-  4 4 4 2 \bar"|"
-  4 a b cis'2 \bar"|"
-  d'4 4 2 \bar"|"
-  4 cis'4. d'8 2 \bar "||" \break
+  d'4 4 4 \bar"|" 2 \bar"|"
+  4 cis' d'\bar"|" b2 \bar"|"
+  4 4 4\bar"|" 2 \bar"|"
+  4 a b\bar"|" cis'2 \bar"|"
+  d'4 4\bar"|" 2 \bar"|"
+  4 cis'4. d'8\bar"|" 2 \bar "||" \break
   \cadenzaOff \time 3/4 \sectionLabel "Couplets" \once \omit Score.MetronomeMark \tempo 2.=60
   fis4 4 4 b2. cis'4 d' cis' b2.
   fis4 4 4 a2. g4 fis e d2
@@ -109,7 +109,12 @@ verseEight = \lyricmode {
 
 \paper {
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup "Lauda Sion"
 \score {
