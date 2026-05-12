@@ -4,6 +4,7 @@ global = {
   \key a \major
   \time 4/4
   \autoBeamOff
+  \tempo "Adagio"
 }
 
 sopranoVoice = \fixed c' {
@@ -15,7 +16,7 @@ sopranoVoice = \fixed c' {
   }
   2 d' | b cis' |
   a2. b4 |
-  4 r2 4 |
+  2 r4 4 |
   cis'4. 8 a4 b |
   cis'4. 8 b4 a |
   b2 2 | r2 4 4 
@@ -145,7 +146,7 @@ soprano = \fixed c' {
   a4. gis8 a4 b |
   cis'4. 8 2 |
   d'2 b4 4 | a1 |
-  d'2 b4 4 |
+  b2 a4 gis4 |
   a2. 4 |
   4. 8 4 4 |
   4. 8 4 cis' |
@@ -322,10 +323,10 @@ choirPart = \new ChoirStaff <<
   >>
 >>
 
-
+lv=\ppppp
 rightOne = \fixed c' {
   \global
-  <a cis>4.\ppppp <gis b,>8 a4 <a fis>4(|
+  <a cis>4.\lv <gis b,>8 a4 <a fis>4(|
   a4.)fis8 gis4 a
   | b1 |a|
   \repeat unfold 2 {
@@ -408,7 +409,7 @@ rightOne = \fixed c' {
 rightTwo = \fixed c' {
   \global
   \autoBeamOn
-   e2.\ppppp cis4 |
+   e2.\lv cis4 |
    <e b,>2. cis4 |
    fis2 e 4 d |
    cis1 |
@@ -453,7 +454,7 @@ rightTwo = \fixed c' {
 
 left = \fixed c {
   \global
-  a4.\ppppp e8 a4 d |
+  a4.\lv e8 a4 d |
   e2. <a fis>4 |
   <a d>2 <gis e> |
   <a a,>1 |
@@ -461,11 +462,11 @@ left = \fixed c {
     <cis' a>4. <e b>8 <a cis'>4 <e gis> |
     <a, a>2 2 |
   }
-  <<{a1 | gis |}\\{a,2 d | e cis |}>> |
+  <<{a1\lv | gis |}\\{a,2\lv d | e cis |}>> |
   <a fis>2. <e gis>4 |
   4 4 4 4 |
   <a a,>2 <fis cis'>4 <e e'> |
-  <<{e'2. a4}\\{a2 e4 fis}>> |
+  <<{e'2.\lv a4}\\{a2\lv e4 fis}>> |
   <gis e>2 2(
   |4)4 4 4 |
   <a a,>2 <fis cis'>4 e |
@@ -477,10 +478,10 @@ left = \fixed c {
   cis2 2 |
   fis4. cis8 fis4 b, |
   cis2 fis4
-  <<{ a4 |
+  <<{ a4\lv |
     b cis' fis b8 a |
     gis1 | <a e>2. e4 |
-  }\\{ fis, |
+  }\\{ fis,\lv |
     gis,4 a, b, <b, b,,>|
     <e e,>2 4 <d, d> |
     <cis cis,>4. <b, b,,>8 <a, a,,>4 <gis, gis,,> |
@@ -488,15 +489,15 @@ left = \fixed c {
   fis,4. <cis cis,>8 <d d,>4 <a,a,,> |
   <d d,>4. <a, a,,>8 <b, b,,>4 <fis fis,>4 |
   <d d,>2. <cis cis,>4|
-  <<{cis4 4 4 eis}\\{cis,2. cis4}>> |
+  <<{cis4\lv 4 4 eis}\\{cis,2.\lv cis4}>> |
   fis4. <cis eis>8 fis4 <e gis>4 |
   <<{
-    <a e>2 a4 ais |
+    <a e>2\lv a4 ais |
     b a gis2 |
     a1 |
     fis4 d' b 
   }\\{
-    a,2 fis, | b, e | fis1 |
+    a,2\lv fis, | b, e | fis1 |
     b,2 e4
   }>> e |
   <a a,>2 <a, e>4 <a, a> |
@@ -514,11 +515,11 @@ left = \fixed c {
   4 e e e |
   a, r4 <fis, fis> <e e,> |
   a, r4 <e e,> <fis fis,> |
-  <<{e2 2~4 4 4 4}\\{e,1~1}>>|
+  <<{e2\lv 2~4 4 4 4}\\{e,1\lv~1}>>|
   a,2 <fis fis,>4 <e e,> |
   a,2 <e e,>4 <fis fis,> |
   <<{
-    e2 2~|
+    e2\lv 2~|
     4 2 4 |
     1 | eis |
     fis4. cis8 fis4 b, |
@@ -527,7 +528,7 @@ left = \fixed c {
     cis4 r4 fis a |
     b cis' fis b8 a |
   }\\{
-    e,1~1 |
+    e,1\lv~1 |
     a, | cis |
     fis,4 r4 4 r4 |
     s4 r s2
@@ -540,16 +541,16 @@ left = \fixed c {
   <fis, fis,,>4. <cis cis,>8 <d, d>4 a, |
   d4. a,8 b,4 fis, |
   <d, b>2. <cis, gis>4 |
-  <<{gis4 cis4 4 4}\\{cis,2. r4}>> |
+  <<{gis4\lv cis4 4 4}\\{cis,2.\lv r4}>> |
   <fis fis,>4. <cis, cis>8 <fis fis,>4 <e e,> |
   <<{
-    a,2 <a fis,>4 ais |
+    a,2\lv <a fis,>4 ais |
     <b fis> a <gis e>2 |
     <fis a>1 |
     <fis b,,>4 r <b e> e |
     <e a,,> r2 a,4 |
   }\\{
-    a,,4 r4 fis2 |
+    a,,4\lv r4 fis2 |
     b,,4 b, e, r |
     fis, r s2 |
     b,2 e,4 4 |
@@ -559,9 +560,9 @@ left = \fixed c {
   d2 a,4 4 |
   <a, d,>2. <d a>4 |
   <<{
-    <cis' e a,>1(1)(1) |
+    <cis'\lv e a,>1(1)(1) |
   }\\{
-    a,,4 r4 r2 |
+    a,,4\lv r4 s2 |
     a,,4 r4 a,,4 r4 |
     a,,1\fermata |
   }>>
@@ -586,7 +587,6 @@ pianoPart = \new PianoStaff \with {
     \italic \with-color #blue 
     \with-url #"mailto:stef.kergall@gmail.com"
     "stef.kergall@gmail.com"
-    
     "- Partitions sur commande"
   }
 }
@@ -604,11 +604,10 @@ pianoPart = \new PianoStaff \with {
     \choirPart
     \pianoPart
   >>
-    
   \layout {\context{
     \Staff
     \RemoveAllEmptyStaves
     \omit DynamicText
   }}
-  \midi { \tempo 4=100 }
+  \midi { \tempo 4=90 }
 }
