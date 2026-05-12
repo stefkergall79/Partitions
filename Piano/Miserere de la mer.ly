@@ -1,8 +1,7 @@
-\version "2.24.4"
+\version "2.26.0"
 
 \header {
   title = "MISERERE DE LA MER"
-  % Supprimer le pied de page par défaut
   tagline = ##f
 }
 
