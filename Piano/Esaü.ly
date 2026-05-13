@@ -1,8 +1,7 @@
-\version "2.24.4"
+\version "2.26.0"
 
 \header {
   title = "Esaü"
-  % Supprimer le pied de page par défaut
   tagline = ##f
 }
 
@@ -28,9 +27,11 @@ right = \fixed c' {
 }
 
 left = \fixed c {
-  \global
-  r8 \repeat unfold 2 {\repeat unfold 4 {<e g b>4.}
-  <d fis a>4. 4. <e g b>4. 4. 4. 4.}
+  \global r8
+  \repeat unfold 2 {
+    <e g b>4. 4. 4. 4.
+    <d fis a>4. 4. <e g b>4. 4. 4. 4.
+  }
   <e g b>4. 4. <d fis a> <c e g>4. 4. 4. <b, d fis>4. 4. <e g b>4.
   4. <d g b> <d fis a>4. 4. <c e g>4. 4. <b, dis fis>4.
   4. 4. 4. <e g b> <d g b> 4. <e g b>4. 4. 4. <d g b>4. 4.
@@ -40,25 +41,24 @@ left = \fixed c {
 }
 
 verse = \lyricmode {
-  % Ajouter ici des paroles.
   À l’é -- po -- que ter -- tiai -- re
-vi -- vait un grand bar -- bu,
-E -- sa -- ü_!
-Sa barb’ trai -- nait par ter -- re,
-son corps é -- tait ve -- lu,
-E -- sa -- ü_!
-Pour lui pas be -- soin de cu -- lot -- te,
-de che -- mise ou de re -- din -- go -- te,
-E -- sa -- ü_!
-Ah! mais oui, c’é -- tait é -- pa -- tant,
-c’é -- tait é -- ton -- nant, a -- bra -- ca -- da -- brant!
-Non, vrai -- ment on ne ver -- ra plus,
-de bar -- bus com -- me E -- sa -- ü,
-E -- sa -- ü, E -- sa -- ü, E -- sa -- ü, E -- sa -- ü,
-c’est le roi des bar -- bus,
-c’est le roi des poi -- lus,
-c’est le roi des ve -- lus,
-E -- sa -- ü_!
+  vi -- vait un grand bar -- bu,
+  E -- sa -- ü_!
+  Sa barb’ trai -- nait par ter -- re,
+  son corps é -- tait ve -- lu,
+  E -- sa -- ü_!
+  Pour lui pas be -- soin de cu -- lot -- te,
+  de che -- mise ou de re -- din -- go -- te,
+  E -- sa -- ü_!
+  Ah! mais oui, c’é -- tait é -- pa -- tant,
+  c’é -- tait é -- ton -- nant, a -- bra -- ca -- da -- brant!
+  Non, vrai -- ment on ne ver -- ra plus,
+  de bar -- bus com -- me E -- sa -- ü,
+  \repeat unfold 4 { E -- sa -- ü, }
+  c’est le roi des bar -- bus,
+  c’est le roi des poi -- lus,
+  c’est le roi des ve -- lus,
+  E -- sa -- ü_!
 }
 
 \score {
@@ -73,7 +73,5 @@ E -- sa -- ü_!
   } { \clef bass \left }
 >>
 \layout { }
-  \midi {
-    \tempo 4=170
-  }
+  \midi { \tempo 4=170 }
 }
