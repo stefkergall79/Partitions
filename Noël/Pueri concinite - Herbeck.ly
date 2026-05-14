@@ -530,7 +530,7 @@ left = \fixed c {
   }\\{
     e,1\lv~1 |
     a, | cis |
-    fis,4 r4 4 r4 |
+    fis,4 r4 r4 4 |
     s4 r s2
     fis,4 r4 s2 |
     s4 r4 fis,4 4 |
