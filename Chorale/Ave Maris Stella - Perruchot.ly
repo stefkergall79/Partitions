@@ -1,4 +1,4 @@
-\version "2.24.3"
+\version "2.26.0"
 global = {
   \key f \major
   \time 4/4
@@ -12,7 +12,7 @@ soprano = \fixed c' {
   f4 g a bes4 8[a g a] g2
   a4 d' b e'4 8[d' c' b] c'2
   d'4 bes! g a4 8[g f e] \partial 2 d2\bar"||"
-  a4(d' c'8)[bes a g] a1\bar "|."
+  a4(d' c'8[bes a g]) a1\bar "|."
 }
 
 alto = \fixed c' {
@@ -28,7 +28,7 @@ tenor = \fixed c {
   \global
   d'4 4 4 g a2 2
   4 c'4 4 bes c'(d') e'2
-  c'4 b gis a a gis a2
+  c'4 b gis a a(gis) a2
   4 bes c'4 4 bes(a8.)[g16] f2
   d'1 1
 }
@@ -37,7 +37,7 @@ bass = \fixed c {
   \global
   d4 8[c] bes4 c f(d) a,2
   d4 c f g f2 c
-  f4 d e c d e a,2
+  f4 d e c d(e) a,2
   d4 g c f g(a8)[a,]d2
   4(bes, g,2) d1
 }
@@ -70,7 +70,12 @@ verseThree = \lyricmode {
 }
 
 \paper {
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup {
   \pad-to-box #'(0 . 40) #'(0 . 0)

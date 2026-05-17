@@ -1,4 +1,4 @@
-\version "2.24.3"
+\version "2.26.0"
 
 global = {
   \key bes \major
@@ -44,6 +44,12 @@ verse = \lyricmode {
 
 \paper {
   print-all-headers = ##t
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup {
   \pad-to-box #'(0 . 40) #'(0 . 0)

@@ -1,12 +1,4 @@
-\version "2.24.3"
-
-\header {
-  title = "MAGNIFICAT"
-  subtitle = \markup{\concat{VI \super ème} ton royal}
-  composer = "Ton dit “de Lourdes” "
-  arranger = "Harmonisation : J. Besnier"
-  tagline = ##f
-}
+\version "2.26.0"
 
 global = {
   \key f \major
@@ -125,9 +117,28 @@ verseTwelve = \lyricmode {
   "Sicut érat in princípio, et nunc, et       " sém -- per,
   "et in saécula sæculórum." A -- men.
 }
-
+\paper {
+  print-all-headers = ##t
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
+}
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "Magnificat" "ton royal"
+}
 \score {
-    \new Staff \with {
+    \header {
+    title = "MAGNIFICAT"
+    subtitle = \markup{\concat{VI \super ème} ton royal}
+    composer = "Ton dit “de Lourdes” "
+    arranger = "Harmonisation : J. Besnier"
+  }
+  
+  \new Staff \with {
         midiInstrument = "choir aahs"
     }
       <<

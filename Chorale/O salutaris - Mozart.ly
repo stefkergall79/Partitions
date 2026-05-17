@@ -1,4 +1,4 @@
-\version "2.24.3"
+\version "2.26.0"
 
 global = {
   \key g \major
@@ -57,7 +57,12 @@ verseTwo = \lyricmode {
 }
 \paper {
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
   system-system-spacing.basic-distance = #12
 }
 \tocItem \markup {
@@ -94,6 +99,6 @@ verseTwo = \lyricmode {
       >>
     >>
     \layout {\context{\Staff \RemoveAllEmptyStaves}}
-    \midi {\tempo 4=70}
+    \midi {\tempo 4=90}
   }
 

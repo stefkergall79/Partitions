@@ -11,7 +11,7 @@ sopranoVoice = \fixed c' {
   \global
   R1*4
   \repeat unfold 2 {
-    a4.\ff gis8 a4 b |
+    a4.\f gis8 a4 b |
     cis'4. 8 2 |
   }
   2 d' | b cis' |
@@ -323,7 +323,7 @@ choirPart = \new ChoirStaff <<
   >>
 >>
 
-lv=\ppppp
+lv=\ppp
 rightOne = \fixed c' {
   \global
   <a cis>4.\lv <gis b,>8 a4 <a fis>4(|

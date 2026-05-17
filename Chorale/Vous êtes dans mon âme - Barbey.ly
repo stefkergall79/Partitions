@@ -1,17 +1,4 @@
-\version "2.24.4"
-
-\header {
-  title = "VOUS ÊTES DANS MON ÂME"
-  composer = "Jeanne Barbey (née en 1977)"
-  % Supprimer le pied de page par défaut
-  tagline = ##f
-}
-
-\paper {
-  #(set-paper-size "a4")
-  % Add space for instrument names
-  indent = 10\mm
-}
+\version "2.26.0"
 
 global = {
   \key g \major
@@ -36,7 +23,7 @@ soprano = \fixed c' {
 
 alto = \fixed c' {
   \global
-  e8 4 8 4 8 4 d8 c4 e8 4 8 4 8 dis4
+  e8 4 8 4 8 4(d8)c4 e8 4 8 4 8 dis4
   8 fis8[e] dis e4. d d d4 8 fis4 8 4 e8 dis4. r4
 
   e8 g4 8 4 fis8 g4. 4 e8 a4 8 8[g] fis g4. 8 a b e4.~4 8 g4. 8[fis]
@@ -70,7 +57,8 @@ verseOne = \lyricmode {
 }
 
 verseTwo = \lyricmode {
-  \set stanza = "2."
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 2.
   Doux Maî -- tre je Vous don -- ne ma foi, mon humble a -- mour,
   que Vo -- tre main si bon -- ne me gui -- de cha -- que jour.
 }
@@ -82,12 +70,28 @@ verseThree = \lyricmode {
 }
 
 verseFour = \lyricmode {
-  \set stanza = "4."
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 4.
   Jé -- sus, mon  cœur Vous ai -- me, gar -- dez lui sa fer -- veur,
   Jé -- sus, Bon -- té su -- prê -- me, Jé -- sus, Di -- vin Sau -- veur.
 }
 
+
+\paper {
+  print-all-headers = ##t
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  } 
+}
 \score {
+  \header {
+    title = "VOUS ÊTES DANS MON ÂME"
+    composer = "Jeanne Barbey (née en 1977)"
+  }
+
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -120,7 +124,5 @@ verseFour = \lyricmode {
     >>
   >>
   \layout { }
-  \midi {
-    \tempo 4=100
-  }
+  \midi { \tempo 4=100 }
 }

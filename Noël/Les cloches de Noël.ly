@@ -1,6 +1,6 @@
 \version "2.26.0"
 
-#(set-global-staff-size 18)
+#(set-global-staff-size 17.8)
 
 global = {
   \key d \major
@@ -42,7 +42,7 @@ soprano = \fixed c' {
   
   fis2 4 g b a fis2 a g4 fis e fis e2
   2 dis4 e g fis e2 g4 b a e g fis4 2
-  \bar"||" \override Staff.TimeSignature.break-visibility = #all-invisible
+  \bar"||" \break \override Staff.TimeSignature.break-visibility = #all-invisible
   
   fis2(b)ais1 d2(g)fis1
   a2 4 4 4(b a g)a1\bar"|."
@@ -203,7 +203,12 @@ choirPart =  \new ChoirStaff <<
 
 \paper {
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup {
   \pad-to-box #'(0 . 40) #'(0 . 0)
@@ -211,8 +216,8 @@ choirPart =  \new ChoirStaff <<
 }
 \score {
   \header {
-    title = "AVE MARIA D'AUTRICHE"
-    composer = ""
+    title = "AVE MARIA"
+    subtitle = "Noël autrichien"
   }
   <<
     \sopranoVoicePart

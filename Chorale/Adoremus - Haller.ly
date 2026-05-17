@@ -87,7 +87,12 @@ versete = \lyricmode {
 
 \paper{
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup {
   \pad-to-box #'(0 . 40) #'(0 . 0)

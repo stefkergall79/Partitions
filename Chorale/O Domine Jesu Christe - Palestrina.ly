@@ -1,4 +1,4 @@
-\version "2.24.3"
+\version "2.26.0"
 
 globalo = {
   \key c \major
@@ -54,7 +54,12 @@ verse = \lyricmode {
 }
 \paper{
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup "O Domine Jesu Christe"
 \score {

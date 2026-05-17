@@ -1,4 +1,4 @@
-\version "2.24.3"
+\version "2.26.0"
 
 global = {
   \key d \major
@@ -30,7 +30,7 @@ tenor = \fixed c {
   \global
   a2 b a4~8 g8 fis4(g)
   a2 b a4~8 g8 fis4(g)
-  a2 2 b cis'4 d' cis'2(b) cis'1
+  a2 2 b cis'4 d' cis'2(b) cis'1 \breathe
   e4.(fis8)e4 fis g4.(a8)g2
   fis4.(g8)fis4 g a4.(b8) cis'2
   d'4(cis')b(a) d'(b)a g fis2(<a e>) <a d>1\fermata
@@ -122,6 +122,6 @@ verseThree = \lyricmode {
       >>
     >>
     \layout {\context{\Staff \RemoveAllEmptyStaves}}
-    \midi {\tempo 4=70}
+    \midi {\tempo 4=80}
   }
 

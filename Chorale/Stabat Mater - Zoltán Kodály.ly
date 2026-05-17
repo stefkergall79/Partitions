@@ -10,7 +10,7 @@ soprano = \fixed c' {
     \global
     g2 as2 2 g2 4(c') es'(d') d'2 c'\fermata
     bes c'4(d') es'2 bes2 2 as2 2 g\fermata
-    g c' d' es' f' es' d'1\fermata
+    g c' d' es' f' es' d'1\fermata \bar "||"
     es'2 b c' as g b c'1\fermata \bar "|."
 }
 
@@ -25,11 +25,10 @@ alto = \fixed c' {
 
 tenor = \fixed c {
     \global
-    c'2 2 d'2 2 c'2 b b c'
-    d' c'4(bes) 2 2 c'2 2 d'4(c') b2
-    g g b c' d' es'4(c') b1
-    \bar "||"
-    c'2 g g4(c') 2 2 g2 1
+    c'2 2 d'2 2 c'2 b b c'\fermata
+    d' c'4(bes) 2 2 c'2 2 d'4(c') b2\fermata
+    g g b c' d' es'4(c') b1\fermata
+    c'2 g g4(c') 2 2 g2 1\fermata
 }
 
 bass = \fixed c {
@@ -68,7 +67,12 @@ verseThree = \lyricmode {
 
 \paper {
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup {
   \pad-to-box #'(0 . 40) #'(0 . 0)

@@ -88,7 +88,12 @@ verseFour = \lyricmode {
 
 \paper {
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup "Douce nuit"
 \score {
@@ -129,5 +134,5 @@ verseFour = \lyricmode {
     >>
   >>
   \layout {\context{\Staff \RemoveAllEmptyStaves}}
-  \midi {\tempo 4=70}
+  \midi {\tempo 4=80}
 }

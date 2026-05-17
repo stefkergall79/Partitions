@@ -1,14 +1,4 @@
-\version "2.24.4"
-
-\header {
-  title = "ANIMA CHRISTI"
-  composer = "Mgr Marco Frisina (né en 1954)"
-  % Supprimer le pied de page par défaut
-  tagline = ##f
-}
-\paper {
-  #(set-paper-size "a4")
-}
+\version "2.26.0"
 
 global = {
   \key d \major
@@ -30,7 +20,8 @@ sopranoVoice = \fixed c' {
   % En avant la musique.
   r2 R1*8
   b4 8[ 8] 4 cis'8[ d'] d'[ cis'] b [a] b4~4
-  a8[g] fis e g4 fis8[ b,] fis4 e fis2
+  \set Staff.shortInstrumentName = ""
+   a8[g] fis e g4 fis8[ b,] fis4 e fis2
   fis4 g8[a] b4 cis'8[ d'] d'4( cis') b2
   a8[g fis e] g4( fis8[ b,]) d4( cis) b,2
 }
@@ -39,24 +30,24 @@ verseOne = \lyricmode {
    2  1*9
   \set stanza = "1."
   Pas4 -- si8 -- o8 Chri4 -- sti8 con8 -- for4 -- ta4 me,2
-o4 bo8 -- ne Je4 -- su8 e -- xau4 -- di me,2
-in4 -- tra vul -- ne8 -- ra tu2 -- a ab -- scon4 -- de,8 ab -- scon4 -- de me.2
+  o4 bo8 -- ne Je4 -- su8 e -- xau4 -- di me,2
+  in4 -- tra vul -- ne8 -- ra tu2 -- a ab -- scon4 -- de,8 ab -- scon4 -- de me.2
 }
 
 verseTwo = \lyricmode {
   2 1*9
-  \set stanza = "2."
+  \set stanza = \markup \italic 2.
   Ne4 per4 -- mit4 -- tas8 a8 te8 me8 se8 -- pa8 -- ra4 -- ri,4
-ab8 hos -- te ma -- li4 -- gno8 de -- fen4 -- de me,2
-in4 ho8 -- ra mor4 -- tis me2 -- æ vo4 -- ca me,2 vo4 -- ca me.2
+  ab8 hos -- te ma -- li4 -- gno8 de -- fen4 -- de me,2
+  in4 ho8 -- ra mor4 -- tis me2 -- æ vo4 -- ca me,2 vo4 -- ca me.2
 }
 
 verseThree = \lyricmode {
    2 1*9
   \set stanza = "3."
   Et4 ju8 -- be me4 ve -- ni -- re8 ad te,2
-ut8 cum sanc -- tis tu4 -- is lau -- dem te,2
-per4 in8 -- fi -- ni4 -- ta sæ -- cu -- la2 sæ4 -- cu -- lo -- rum. A2 -- men.
+  ut8 cum sanc -- tis tu4 -- is lau -- dem te,2
+  per4 in8 -- fi -- ni4 -- ta sæ -- cu -- la2 sæ4 -- cu -- lo -- rum. A2 -- men.
 }
 
 soprano = \fixed c' {
@@ -157,45 +148,35 @@ sopranoVoicePart = << \new Staff \with {
   shortInstrumentName = "Sl."
   midiInstrument = "choir aahs"
 } \new Voice = "sopranoVoice" \sopranoVoice
-\new Lyrics \verseOne
-\new Lyrics \verseTwo
-\new Lyrics \verseThree >>
+  \new Lyrics \verseOne
+  \new Lyrics \verseTwo
+  \new Lyrics \verseThree
+>>
 
 
 choirPart = \new ChoirStaff <<
-  \new Staff \with {
-    midiInstrument = "choir aahs"
-    instrumentName = "S."
-  } \new Voice = "soprano" \soprano
-  \new Lyrics \with {
-    \override VerticalAxisGroup.staff-affinity = #CENTER
-  } \lyricsto "soprano" \verse
-
-  \new Staff \with {
-    midiInstrument = "choir aahs"
-    instrumentName = "A."
-  } \new Voice = "alto" \alto
-  \new Lyrics \with {
-    \override VerticalAxisGroup.staff-affinity = #CENTER
-  } \lyricsto "alto" \verse
-
-  \new Staff \with {
-    midiInstrument = "choir aahs"
-    instrumentName = "T."
-  } {
-    \clef "treble_8"
-    \new Voice = "tenor" \tenor}
-  \new Lyrics \with {
-    \override VerticalAxisGroup.staff-affinity = #CENTER
-  } \lyricsto "tenor" \verse
-
-  \new Staff \with {
-    midiInstrument = "choir aahs"
-    instrumentName = "B."
-  } {
-    \clef bass
-    \new Voice = "bass" \bass}
->>
+      \new Staff \with {
+        midiInstrument = "choir aahs"
+        \consists Merge_rests_engraver
+        instrumentName =  \markup \center-column { "S." "A." }
+      } <<
+        \new Voice = "soprano" { \voiceOne \soprano }
+        \new Voice = "alto" { \voiceTwo \alto }
+      >>
+      \new Lyrics \with {
+        \override VerticalAxisGroup.staff-affinity = #CENTER
+      } \lyricsto "soprano" \verse
+      
+      \new Staff \with {
+        midiInstrument = "choir aahs"
+        \consists Merge_rests_engraver
+        instrumentName =  \markup \center-column { "T." "B." }
+      } <<
+        \clef bass
+        \new Voice = "tenor" { \voiceOne \tenor }
+        \new Voice = "bass" { \voiceTwo \bass }
+      >>
+    >>
 
 
 orguePart = \new PianoStaff \with {
@@ -210,8 +191,21 @@ orguePart = \new PianoStaff \with {
   } { \clef bass << \leftOne \\ \leftTwo >> }
 >>
 
-
+\paper {
+  print-all-headers = ##t
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
+}
 \score {
+  \header {
+    title = "ANIMA CHRISTI"
+    composer = "Mgr Marco Frisina (né en 1954)"
+  }
+
   <<
     \sopranoVoicePart
     \choirPart

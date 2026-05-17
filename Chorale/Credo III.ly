@@ -1,4 +1,4 @@
-\version "2.24.3"
+\version "2.26.0"
 #(ly:set-option 'backend 'cairo)
 
 global = {

@@ -104,10 +104,18 @@ bassVerse = \lyricmode {
 tempog = #60
 instrument = "acoustic grand"
 
-\tocItem \markup "O Jesu Christe"
+\tocItem \markup {
+  \pad-to-box #'(0 . 40) #'(0 . 0)
+  "O Jesu Christe" "Van Berchem"
+}
 \paper {
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \score {
   \header {
@@ -146,13 +154,13 @@ instrument = "acoustic grand"
 }
 
 
-\markup { \column {
-    \line { Ô Jésus-Christ, ayez pitié de moi, }
-    \line { Quand la douleur m'épuise. }
-    \line { Seigneur, Vous êtes mon espérance. }
-    \line { J'ai crié vers Vous. }
-    \line { Ayez pitié de moi. }
-    }}
+\markup \column {
+  "Ô Jésus-Christ, ayez pitié de moi,"
+  "Quand la douleur m'épuise."
+  "Seigneur, Vous êtes mon espérance."
+  "J'ai crié vers Vous."
+  "Ayez pitié de moi"
+}
 
 
 %{rehearsalMidi = #

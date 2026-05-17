@@ -1,16 +1,4 @@
-\version "2.24.4"
-
-\header {
-  title = "O FILII ET FILIÆ"
-  composer = "Jean Tisserand (XVe)"
-  arranger = "Harmonisation : J.B."
-  % Supprimer le pied de page par défaut
-  tagline = ##f
-}
-
-\paper {
-  #(set-paper-size "a4")
-}
+\version "2.26.0"
 
 global = {
   \key c \major
@@ -85,8 +73,24 @@ verseThree = \lyricmode {
   cu -- cúr -- rit Pé -- tro cí -- ti -- us,
   ad se -- púl -- crum vé -- nit pri -- us. Al -- le -- lú -- ia.
 }
+\paper {
+  print-all-headers = ##t
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
+}
+\tocItem \markup "O Filii et filiæ"
 
-\score {\new ChoirStaff <<
+\score {
+  \header {
+    title = "O FILII ET FILIÆ"
+    composer = "Jean Tisserand (XVe)"
+    arranger = "Harmonisation : J.B."
+  }
+  \new ChoirStaff <<
       \new Staff \with {
         midiInstrument = "choir aahs"
         instrumentName = \markup \center-column { "S." "A." }
