@@ -212,6 +212,5 @@ orguePart = \new PianoStaff \with {
     \orguePart
   >>
   \layout {\context{\Staff \RemoveAllEmptyStaves}}
-  \midi {
-    \tempo 4=85}
+  \midi { \tempo 4=85 }
 }
