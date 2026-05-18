@@ -80,6 +80,7 @@ verst = \lyricmode {
 
     \new Staff \with {
       midiInstrument = "choir aahs"
+      instrumentName = "H."
     } << \clef bass \new Voice = "tenor" \tenors >>
     \new Lyrics \with { \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "tenor" \verst

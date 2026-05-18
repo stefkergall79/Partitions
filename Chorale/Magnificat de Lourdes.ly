@@ -5,18 +5,20 @@ global = {
   \cadenzaOn
   \autoBeamOff
   \override Staff.Parentheses.font-size = 1
+  \omit Staff.TimeSignature
 }
 
 psalm = \fixed c' {
   \global
-  \once \omit Staff.TimeSignature
-  \sectionLabel "Psalmodia"
-  f8 g8[a] a\breve c'8 bes a8 g2 \bar "|"
-  g\breve a8 bes8[a] g4 f2 \bar "||"
+ 
 }
 
 soprano = \fixed c' {
   \global
+  \sectionLabel "Psalmodia"
+  f8 g8[a] a\breve c'8 bes a8 g2 \bar "|"
+  g\breve a8 bes8[a] g4 f2 \bar "||" \break
+  
   \sectionLabel "Falsus bordonus"
   c'\breve \bar "|" \cadenzaOff
   f'4(e' d'4 4) c'2. r4
@@ -26,18 +28,21 @@ soprano = \fixed c' {
 
 alto = \fixed c' {
   \global
+  s1*6 s4.
   f\breve 4(g a g8[f]) e2. r4
   f\breve 2.(e4) f1^\fermata
 }
 
 tenor = \fixed c {
   \global
+  s1*6 r4.
   a\breve 4(c'2 b4) c'2. r4
   \breve bes4(c' d' c'8[bes]) c'1\fermata
 }
 
 bass = \fixed c {
   \global
+  s1*6 r4.
   f\breve d4(e f g) c2. r4
   f\breve bes4(a g4 4) f1
 }
@@ -55,14 +60,15 @@ verseTwo = \lyricmode {
 verseThree = \lyricmode {
   \override LyricText.font-shape = #'italic
   \set stanza = \markup \italic 3.
-  Qui -- a "respéxit humilitátem an" -- cíl -- læ sú -- æ,
-  "ecce enim ex hoc beátam me dícent ómnes gene - " -- ra -- ti -- ó -- nes.
+  Qui8 -- a4 "respéxit humilitátem an"\breve -- cíl8 -- læ sú -- æ,2
+  "ecce enim ex hoc beátam me dícent ómnes gene - "\breve -- ra8 -- ti4 -- ó4 -- nes.2
 }
 
 verseFour = \lyricmode {
   \override LyricText.font-shape = #'italic
-  \set stanza = \markup \italic 4.
-  "Quia fécit míhi mágna qui"\breve pó2. -- tens4 est_:1
+  \set stanza = \markup \italic "4."
+  "Quia fécit míhi mágna qui"\breve
+  "pó       -             -     tens" est_:1
   "et sánctum nómen"\breve é1 -- jus.1
 }
 
@@ -130,40 +136,15 @@ verseTwelve = \lyricmode {
   \pad-to-box #'(0 . 40) #'(0 . 0)
   "Magnificat" "ton royal"
 }
+
 \score {
-    \header {
+  \header {
     title = "MAGNIFICAT"
     subtitle = \markup{\concat{VI \super ème} ton royal}
     composer = "Ton dit “de Lourdes” "
     arranger = "Harmonisation : J. Besnier"
   }
   
-  \new Staff \with {
-        midiInstrument = "choir aahs"
-    }
-      <<
-          \new Voice = "psalm" { \voiceOne \psalm }
-          \new Lyrics \with{\override LyricText.self-alignment-X = #LEFT
-          } \lyricsto "psalm" \verseOne
-          \new Lyrics \with{\override LyricText.self-alignment-X = #LEFT
-          } \lyricsto "psalm" \verseThree
-          \new Lyrics \with{\override LyricText.self-alignment-X = #LEFT
-          } \lyricsto "psalm" \verseFive
-          \new Lyrics \with{\override LyricText.self-alignment-X = #LEFT
-          } \lyricsto "psalm" \verseSeven
-          \new Lyrics \with{\override LyricText.self-alignment-X = #LEFT
-          } \lyricsto "psalm" \verseNine
-          \new Lyrics \with{\override LyricText.self-alignment-X = #LEFT
-          } \lyricsto "psalm" \verseEleven
-
-      >>
-    \layout {}
-    \midi{\tempo 4=90}
-}
-
-\markup {\vspace #1 }
-
-\score {
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -175,17 +156,17 @@ verseTwelve = \lyricmode {
     >>
 
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
-    } \lyricsto "soprano" \verseTwo
+    } \lyricsto "soprano" {\verseOne \verseTwo }
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
-    } \verseFour
+    } \lyricsto "soprano" {\verseThree \verseFour }
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
-    }\lyricsto "soprano" \verseSix
+    } \lyricsto "soprano" {\verseFive \verseSix }
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
-    }\lyricsto "soprano" \verseEight
+    } \lyricsto "soprano" { \verseSeven \verseEight }
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
-    } \verseTen
+    } \lyricsto "soprano" {\verseNine \verseTen }
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
-    }\lyricsto "soprano" \verseTwelve
+    } \lyricsto "soprano" {\verseEleven \verseTwelve }
 
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -197,6 +178,6 @@ verseTwelve = \lyricmode {
       \new Voice = "bass" { \voiceTwo \bass }
     >>
   >>
-  \layout { }
+  \layout {\context{\Staff \RemoveAllEmptyStaves}}
   \midi { \tempo 4=90 }
 }
