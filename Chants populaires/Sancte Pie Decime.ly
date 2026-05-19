@@ -41,7 +41,12 @@ verseOne = \lyricmode {
 
 \paper {
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup "Sáncte Píe Décime"
 \score {

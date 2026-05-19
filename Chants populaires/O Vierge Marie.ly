@@ -1,4 +1,4 @@
-\version "2.24.3"
+\version "2.26.0"
 
 global = {
   \once \omit Staff.TimeSignature
@@ -31,7 +31,7 @@ alto = \fixed c' {
 tenor = \fixed c {
   \global
   s1*6
-  g2 4 as g2 4 fis g2 fis bes
+  g2 4 a g2 4 fis g2 fis bes
 }
 
 bass = \fixed c {
@@ -61,7 +61,12 @@ verseTwo = \lyricmode {
 
 \paper {
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup "Ô Vierge Marie"
 \score {

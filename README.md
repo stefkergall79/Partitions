@@ -5,7 +5,7 @@ nano ~/.bashrc
 ```
 et collez à la fin du fichier ceci :
 ```bash
-alias wash-ly='find ~/Partitions/ -type f \( -name "*.pdf" -o -name "*.midi" \) -delete'
+alias wash-ly='find ~/Partitions/ -type f \( -name "*.pdf" -o -name "*.mid*" \) -delete'
 ```
 `Ctrl+O` puis `Entrée` pour enregistrer, puis `Ctrl+X` pour sortir.
 Si vous devez l'utilisez tout de suite, entrez la commande :
