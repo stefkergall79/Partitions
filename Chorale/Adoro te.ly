@@ -88,7 +88,7 @@ verseOne = \lyricmode {
   quí -- a Te con -- tém -- plans
   tó -- tum dé -- fi -- cit.
   
-  Ave, Jé -- su, vé -- rum Mán -- hu,
+  A -- ve, Jé -- su, vé -- rum Mán -- hu,
   Chrí -- ste Jé -- su, ad -- áu -- ge fí -- dem
   óm -- ni -- um cre -- dén -- ti -- um.
 }
@@ -150,6 +150,6 @@ verseTwo = \lyricmode {
       >>
     >>
     \layout {\context{\Staff \RemoveAllEmptyStaves}}
-    \midi {\tempo 4=70}
+    \midi {\tempo 4=100}
   }
 
