@@ -1,5 +1,5 @@
 *.midi
 *.mid
 *.pdf
-!Grégorien/
+!*Grégorien/*.pdf
 Chants/
