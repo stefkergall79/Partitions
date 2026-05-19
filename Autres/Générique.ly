@@ -1,12 +1,8 @@
-\version "2.24.3"
+\version "2.26.0"
 \include "articulate.ly"
 
 \header {
   tagline = ##f
-}
-
-\paper {
-  #(set-paper-size "a4")
 }
 
 global = {
@@ -291,13 +287,6 @@ fullMusic = \transpose c e {
 
 \score {
   \fullMusic
-  \layout { }
-}
-
-% Score pour MIDI
-\score {
-  \fullMusic
-  \midi {
-    \tempo 4=170
-  }
+  \layout {\context{\Staff \RemoveAllEmptyStaves} }
+  \midi { \tempo 4=170 }
 }

@@ -1,13 +1,4 @@
-\version "2.24.4"
-
-\header {
-  title = "DEUS MEUS"
-  subtitle = \markup { \concat {IV \super{ème}} PAROLE}
-  composer = "César Franck (1822-1890)"
-  poet = "Les Sept Paroles du Christ en Croix"
-  % Supprimer le pied de page par défaut
-  tagline = ##f
-}
+\version "2.26.0"
 
 global = {
   \key as \major
@@ -151,7 +142,7 @@ pianoPart = \new PianoStaff  <<
 >>
 
 rehearsalMidi = #(define-music-function
- (parser location name midiInstrument lyrics) (string? string? ly:music?)
+ (parser location name lyrics) (string? ly:music?)
  #{
    \unfoldRepeats <<
      \new Staff = "soprano" \new Voice = "soprano" { \soprano }
@@ -164,7 +155,7 @@ rehearsalMidi = #(define-music-function
        \set Score.tempoWholesPerMinute = #(ly:make-moment 60 4)
        \set Staff.midiMinimumVolume = #0.8
        \set Staff.midiMaximumVolume = #1.0
-       \set Staff.midiInstrument = $midiInstrument
+       \set Staff.midiInstrument = "choir aahs"
      }
      \new Lyrics \with {
        alignBelowContext = $name
@@ -172,7 +163,22 @@ rehearsalMidi = #(define-music-function
    >>
  #})
 
+\paper {
+  print-all-headers = ##t
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
+}
 \score {
+  \header {
+    title = "DEUS MEUS"
+    subtitle = \markup { \concat {IV \super{ème}} PAROLE}
+    composer = "César Franck (1822-1890)"
+    poet = "Les Sept Paroles du Christ en Croix"
+  }
   <<
     \choirPart
     \pianoPart
@@ -184,7 +190,7 @@ rehearsalMidi = #(define-music-function
 \book {
   \bookOutputSuffix "soprano"
   \score {
-    \rehearsalMidi "soprano" "choir aahs" \verse
+    \rehearsalMidi "soprano" \verse
     \midi {}
   }
 }
@@ -192,7 +198,7 @@ rehearsalMidi = #(define-music-function
 \book {
   \bookOutputSuffix "alto"
   \score {
-    \rehearsalMidi "alto" "choir aahs" \verse
+    \rehearsalMidi "alto" \verse
     \midi {}
   }
 }
@@ -200,7 +206,7 @@ rehearsalMidi = #(define-music-function
 \book {
   \bookOutputSuffix "tenor"
   \score {
-    \rehearsalMidi "tenor" "choir aahs" \verset
+    \rehearsalMidi "tenor" \verset
     \midi {}
   }
 }
@@ -208,7 +214,7 @@ rehearsalMidi = #(define-music-function
 \book {
   \bookOutputSuffix "bass"
   \score {
-    \rehearsalMidi "bass" "choir aahs" \verse
+    \rehearsalMidi "bass" \verse
     \midi {}
   }
 }
