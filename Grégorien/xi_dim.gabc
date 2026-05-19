@@ -27,7 +27,8 @@ transcriber: Andrew Hinkley;
 commentary: Ps 27: 7, 1;
 annotation: Grad.;
 annotation: v;
-%font: GaramondPremierPro;
+%fontsize: 14;
+%font: Crimson;
 %width: 7.27;
 %height: 11.69;
 %%
@@ -44,7 +45,8 @@ book: Graduale Romanum, 1961, p. 348 & The Liber Usualis, 1961, p. 1026;
 transcriber: Andrew Hinkley;
 commentary: Ps 80: 2-3;
 annotation: vii;
-%font: GaramondPremierPro;
+%fontsize: 14;
+%font: Crimson;
 %width: 7.27;
 %height: 11.69;
 %%
@@ -61,7 +63,8 @@ transcriber: Andrew Hinkley;
 commentary: Ps 29: 2-3;
 annotation: Offert.;
 annotation: ii;
-%font: GaramondPremierPro;
+%fontsize: 14;
+%font: Crimson;
 %width: 7.27;
 %height: 11.69;
 %%
@@ -77,7 +80,8 @@ transcriber: Andrew Hinkley;
 commentary: Prov 3: 9-10;
 annotation: Comm.;
 annotation: vi;
-%font: GaramondPremierPro;
+%fontsize: 14;
+%font: Crimson;
 %width: 7.27;
 %height: 11.69;
 %%
