@@ -43,7 +43,7 @@ alto = \fixed c' {
   c es d r |
   g es c es|
   as g f es |
-  4 d es r |
+  4 d es r\bar"||"\break |
   es f8[g]as4 g |
   es f4 8[es]d4 |
   es(g)f(es) |
@@ -79,13 +79,32 @@ bass = \fixed c {
 
 verseOne = \lyricmode {
   \set stanza = "1."
+  A -- dó -- ro Te de -- vó -- te,
+  lá -- tens Dé -- i -- tas,
+  quæ sub his fi -- gú -- ris
+  vé -- re lá -- ti -- tas_:
+  Tí -- bi se cor mé -- um
+  to -- tum súb -- ji -- cit,
+  quí -- a Te con -- tém -- plans
+  tó -- tum dé -- fi -- cit.
   
+  Ave, Jé -- su, vé -- rum Mán -- hu,
+  Chrí -- ste Jé -- su, ad -- áu -- ge fí -- dem
+  óm -- ni -- um cre -- dén -- ti -- um.
 }
 
 verseTwo = \lyricmode {
   \override LyricText.font-shape = #'italic
+  \skip1
   \set stanza = \markup \italic 2.
-  
+  Jé -- su, quem ve -- lá -- tum
+  nunc as -- pí -- ci -- o,
+  ó -- ro fí -- at íl -- lud,
+  quod tam sí -- ti -- o_;
+  ut, te re -- ve -- lá -- ta
+  cér -- nens fá -- ci -- e,
+  ví -- su sim be -- á -- tus
+  Tú -- æ gló -- ri -- æ.
 }
 
 \paper {
@@ -103,7 +122,7 @@ verseTwo = \lyricmode {
 }
 \score {
   \header {
-    title = "ADORO TE"
+    title = "ADORO TE DEVOTE"
     composer = "1625"
   }
   \new ChoirStaff <<
