@@ -104,17 +104,14 @@ verseAlto = \lyricmode {
   e -- xúl -- tent, e -- xúl -- tent in re -- ge su -- o,
 }
 
-verseTenor = \lyricmode {
-  
-}
-
-verseBass = \lyricmode {
-  
-}
-
 \paper {
   print-all-headers = ##t
-  tagline = ##f
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
 }
 \tocItem \markup {
   \pad-to-box #'(0 . 40) #'(0 . 0)
@@ -164,7 +161,7 @@ verseBass = \lyricmode {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "bass" \verseSoprano
   >>
-  \layout {\context{\Staff \RemoveAllEmptyStaves}}
+  \layout {}
   \midi {\tempo 2.=50}
 }
 \markup \column{
