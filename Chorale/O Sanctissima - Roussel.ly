@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
   \key d \major
   \time 4/4
@@ -76,19 +76,7 @@ verseThree = \lyricmode {
   ó -- ra, ó -- ra pro nó -- bis.
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "O Sanctissima" "Roussel"
-}
+\tocItemComposer "O Sanctissima" "Roussel"
 \score {
   \header {
     title = "O SANCTISSIMA"
