@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
   \key f \major
   \time 2/2
@@ -31,12 +31,12 @@ bass = \fixed c {
 }
 
 verseOne = \lyricmode {
-  \sectionLabel "Refrain"
+  \markChanson "Refrain"
   Chrí -- stus vín -- cit,
   Chrí -- stus ré -- gnat,
   Chrí -- stus, Chrí -- stus ím -- pe -- rat_!
   \set stanza = "1."
-  \sectionLabel "Couplets"
+  \markChanson "Couplets"
   Dó -- mi -- "nus regnávit, decórem" in -- dú -- "tus est :"
   "indútus est Dóminus fortitúdinem," et præ -- cín -- xit_se.
 }
@@ -101,14 +101,7 @@ verseNine = \lyricmode {
   "et in sǽcula sæcu" -- ló -- rum. A -- men.
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = ##f
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "Christus vincit" ""
-}
+\tocItem \markup "Christus vincit"
 \score {
   \header {
     title = "CHRISTUS VINCIT"

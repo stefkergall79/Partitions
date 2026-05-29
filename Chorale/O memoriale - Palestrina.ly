@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
   \key e \major
   \time 4/4
@@ -66,19 +66,7 @@ verseOne = \lyricmode {
   A -- men.
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "O Memoriále" "Palestrina"
-}
+\tocItemComposer "O Memoriále" "Palestrina"
 \score {
   \header {
     title = "O MEMORIALE"

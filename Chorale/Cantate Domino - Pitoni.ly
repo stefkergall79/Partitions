@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
   \key bes \major
   \time 3/4
@@ -104,19 +104,7 @@ verseAlto = \lyricmode {
   e -- xúl -- tent, e -- xúl -- tent in re -- ge su -- o,
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "Cantáte Dómino" "Pitoni"
-}
+\tocItemComposer "Cantáte Dómino" "Pitoni"
 \score {
   \header {
     title = "CANTATE DOMINO"

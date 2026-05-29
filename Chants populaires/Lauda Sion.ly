@@ -1,5 +1,5 @@
-\version "2.24.3"
-
+\version "2.26.0"
+\include "../settings.ily"
 global = {
   \key d \major
   \autoBeamOff
@@ -9,7 +9,7 @@ global = {
 
 soprano = \fixed c' {
   \global
-  \sectionLabel "Refrain"
+  \markChanson "Refrain"
   \cadenzaOn
   d'4 4 4 \bar"|" 2 \bar"|"
   4 cis' d'\bar"|" b2 \bar"|"
@@ -17,7 +17,7 @@ soprano = \fixed c' {
   4 a b\bar"|" cis'2 \bar"|"
   d'4 4\bar"|" 2 \bar"|"
   4 cis'4. d'8\bar"|" 2 \bar "||" \break
-  \cadenzaOff \time 3/4 \sectionLabel "Couplets" \once \omit Score.MetronomeMark \tempo 2.=60
+  \cadenzaOff \time 3/4 \markChanson "Couplets" \once \omit Score.MetronomeMark \tempo 2.=60
   fis4 4 4 b2. cis'4 d' cis' b2.
   fis4 4 4 a2. g4 fis e d2
   fis4 4 e d d(cis) b, fis2. \bar "||"

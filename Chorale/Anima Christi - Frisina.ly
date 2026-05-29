@@ -17,7 +17,6 @@ globalO = {
 sopranoVoice = \fixed c' {
   \global
   \dynamicUp
-  % En avant la musique.
   r2 R1*8
   b4 8[ 8] 4 cis'8[ d'] d'[ cis'] b [a] b4~4
   \set Staff.shortInstrumentName = ""
@@ -52,20 +51,19 @@ verseThree = \lyricmode {
 
 soprano = \fixed c' {
   \global
-  % En avant la musique.
-  \sectionLabel "Refrain" fis4 8 8 b4 8 8 a4 8 g fis2
+  \sectionLabel \markup \bold "Refrain"
+  fis4 8 8 b4 8 8 a4 8 g fis2
   e4 fis8[g] d4 e fis4. e8 fis2
   fis4 4 b cis'8 d' d'[cis'] b a b2
   4 fis a8[g] fis e d4 e fis4. 8 2\bar "||"
 
-  \sectionLabel "Couplets"
+  \sectionLabel \markup \bold "Couplets"
   fis2 g fis2. e8[d] e4 b,2 d4 4 e fis2
   2. e4 2 d2 4 cis2 b,4 d cis b,2
 }
 
 alto = \fixed c' {
   \global
-  % En avant la musique.
   d4 8 8 4 e8 8 4 8 8 d2
   b,4 4 4 4 d4. 8 cis2
   d4 fis fis e8 8 4 8 8 d2
@@ -76,7 +74,6 @@ alto = \fixed c' {
 
 tenor = \fixed c {
   \global
-  % En avant la musique.
   b4 8 8 4 8 8 d'4 cis'8 8 d'2
   g4 4 fis4 4 g4. b8 ais2
   fis4 4 b4 8 8 a4 cis'8 8 b2
@@ -87,16 +84,14 @@ tenor = \fixed c {
 
 bass = \fixed c {
   \global
-  % En avant la musique.
   b4 8 a g4 8 8 a4 a,8 8 b,2
   e4 d8[cis] b,4 4 4. 8 fis2
   b,4 4 g, g8 8 a4 fis8 8 g2
   d4 d e4 8 8 fis4 4 4. 8 b,2
-  b,2 g, a, b, e d g fis d g, a, b, e d g,4 a, b,2
+  b,2 g, a, b, e d g4~4 fis2 d g, a, b, e d g,4 a, b,2
 }
 
 verse = \lyricmode {
-  % Ajouter ici des paroles.
   A -- ni -- ma Chri -- sti, san -- cti -- fi -- ca -- me.
   Cor -- pus Chri -- sti, sal -- va me.
   San -- guis Chri -- sti, i -- ne -- bri -- a me.
@@ -106,7 +101,6 @@ verse = \lyricmode {
 
 rightOne = \fixed c' {
   \globalO
-  % En avant la musique.
   fis1~\bar".|"2 g2 e d e d4 e fis4. e8 fis2
   2 b4 cis'8 d' d' cis' b a b2 4 fis a8 g fis e d4 e fis2 2
 
@@ -116,7 +110,6 @@ rightOne = \fixed c' {
 
 rightTwo = \fixed c' {
   \globalO
-  % En avant la musique.
   fis4 e d2~2~2. cis4 b,1~2 d2 cis
   d4 fis4~4 e4 2 d fis e4 b,4 2 cis d
 
@@ -126,7 +119,6 @@ rightTwo = \fixed c' {
 
 leftOne = \fixed c {
   \globalO
-  % En avant la musique.
   r2 d'4 cis' b2~2a4. g8 fis2 g fis g4.b8 ais2
   b~2 a4 cis' b1~4 g b2 ais b
 
@@ -136,8 +128,7 @@ leftOne = \fixed c {
 
 leftTwo = \fixed c, {
   \globalO
-  % En avant la musique.
-  r2 r2 b4. a8 g2 a b e'4 d'8 cis' b2 2 fis'
+  r2 s2 b4. a8 g2 a b e'4 d'8 cis' b2 2 fis'
   b g4 g' a' fis' g'2 d' e' fis'~2 b
 
   b g a b e' d' g' fis'

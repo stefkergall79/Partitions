@@ -1,5 +1,5 @@
-\version "2.24.3"
-
+\version "2.26.0"
+\include "../settings.ily"
 global = {
   \key d \major
   \time 4/4
@@ -17,7 +17,6 @@ soprano = \fixed c' {
 
 alto = \fixed c' {
   \global
-  % En avant la musique.
   d2. 4 1 2 r4 fis~4 e4 fis(gis) a4 g4 fis4. 8 a4 g2 fis4 e1  fis1
 
   d\breve 2 cis(d1) d\breve cis4.~8 b,2(cis1)
@@ -25,7 +24,6 @@ alto = \fixed c' {
 
 tenor = \fixed c {
   \global
-  % En avant la musique.
   a2. 4 b1\espressivo a2 r4 d'~4 e'4 d'2 e'4 4 d'4. e'8 fis'4 d'2 4 4(cis'8 b cis'2) d'1\fermata
 
  a\breve g2 e( s1)\fermata d\breve fis4.~8 d2(a1)\fermata
@@ -33,7 +31,6 @@ tenor = \fixed c {
 
 bass = \fixed c {
   \global
-  % En avant la musique.
   d2. 4 g1 d2 r4 d'4~4 cis'4 b2 a4 4 b4. 8 fis4 g2 d4 a,1 d1
 
   d\breve g,2 a,(d1) b,\breve fis,4.~8 g,2(a,1)
@@ -85,23 +82,12 @@ versete = \lyricmode {
   \markup \italic B.F.
 }
 
-\paper{
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "Adoremus" "Haller"
-}
+\tocItemComposer "Adoremus" "Haller"
 \score {
   \header {
-    title = "ADORÉMUS"
+    title = "ADOREMUS"
     composer = "Michael Georg Haller (1840-1915)"
+    poet = "Ps. 84"
   }
   \new ChoirStaff <<
     \new Staff \with {
@@ -114,7 +100,7 @@ versete = \lyricmode {
     >>
     \new Lyrics \with {
       \override LyricText.self-alignment-X = #LEFT
-      \override VerticalAxisGroup.staff-affinity = #CENTER
+      \override VerticalAxisGroup.staff-affinity = #DOWN
     } \lyricsto "soprano" \verseOne
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
     } \lyricsto "soprano" \verseTwo

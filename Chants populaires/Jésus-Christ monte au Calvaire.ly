@@ -1,4 +1,5 @@
-\version "2.24.3"
+\version "2.26.0"
+\include "../settings.ily"
 global={
   \key g \major
   \time 3/4
@@ -83,12 +84,7 @@ verseThree = \lyricmode {
   et que vous n’en pou -- vez plus.
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = ##f
-}
 \tocItem \markup "Jésus-Christ monte au Calvaire"
-  
 \score {
   \header {
     title = "JÉSUS-CHRIST MONTE AU CALVAIRE"

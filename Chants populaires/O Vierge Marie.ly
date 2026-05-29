@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
   \once \omit Staff.TimeSignature
   \key bes \major
@@ -9,16 +9,16 @@ global = {
 soprano = \fixed c' {
   \global
   \cadenzaOn
-  \sectionLabel "Chantre"
+  \markChanson \markup \italic "Chantre"
   d'8 8 8 bes es' c' \bar"|" d' c' bes c' d'4 \bar"||"\break
-  \sectionLabel "Tous"
+  \markChanson \markup \italic "Tous"
   d'8 8 8 bes es' c' \bar"|" d' c' bes c' d'4 \bar"||"\break
-  \sectionLabel "Chantre"
+  \markChanson \markup \italic "Chantre"
   bes8 8 8 d' c' g\bar"|" bes a g a bes4 \bar"||"\break
-  \sectionLabel "Tous"
+  \markChanson \markup \italic "Tous"
   bes8 8 8 d' c' g\bar"|" bes a g a bes4 \bar"||"\break
   
-  \break \sectionLabel "Refrain" \cadenzaOff \time 4/4
+  \break \markChanson "Refrain" \cadenzaOff \time 4/4
   c'2 4 d' g2 4 a4 bes2 a g \bar "||"
 }
 
@@ -59,15 +59,6 @@ verseTwo = \lyricmode {
   Mè -- re très ai -- mé -- e, Por -- te du sa -- lut.
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
 \tocItem \markup "Ô Vierge Marie"
 \score {
   \header {

@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 globalo = {
   \key f \major
   \time 4/4
@@ -8,7 +8,6 @@ globalo = {
 
 soprane = \fixed c' {
   \globalo
-  % En avant la musique.
   d'2 4 c' f' e' d'4. 8 4 4 c' d' c' bes a4. 8 2 r2
   d' e' e' f'4 d' c'4. 8 2~2 r4 f' f' e' d'4. 8 4 c' bes bes d' c' bes4. 8 4 a g2
   \bar "|."
@@ -16,14 +15,12 @@ soprane = \fixed c' {
 
 alti = \fixed c' {
   \globalo
-  % En avant la musique.
   bes2 a4 g a a bes4. 8 4 4 a bes a g fis4. 8 2 r2
   a cis' cis' d'4 bes a4. 8 4 4 4 g a4. 8 4 4 bes2 r d' bes4 a g4. 8 4 fis g2
 }
 
 tenors = \fixed c {
   \globalo
-  % En avant la musique.
   g2 f4 e d c bes,4. 8 4 4 f bes, c c d4. 8 2 r
   d a, a, d4 4 f4. f,8 4 f f e d4. 8 4 c bes,4 4 4 a, g,2 f, g,8([ a, bes, c] d4.) 8 g,2
 }
@@ -49,17 +46,12 @@ verst = \lyricmode {
 }
 
 \paper {
-  print-all-headers = ##t
-  tagline = ##f
   system-system-spacing.basic-distance = #15
 }
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "Jesu Rex admirabilis" "Palestrina"
-}
+\tocItemComposer "Jesu Rex admirabilis" "Palestrina"
 \score {
   \header {
-    title = "JESU, REX ADMIRÁBILIS"
+    title = "JESU, REX ADMIRABILIS"
     composer = "Giovanni da Palestrina (1525-1594)"
     }
   \new ChoirStaff <<
@@ -92,7 +84,7 @@ verst = \lyricmode {
 \markup \fill-line {
   \null
   \column {
-      \line { \bold "2-"
+      \line \italic { \bold "2-"
         \column {
           "Quándo cor nóstrum vísita,"
           "Tunc lúcet et véritas,"
@@ -112,7 +104,7 @@ verst = \lyricmode {
 
   \null
   \column {
-      \line { \bold "4-"
+      \line \italic { \bold "4-"
         \column {
           "Jésum ómnes agnóscite,"
           "Amórem éjus póscite :"

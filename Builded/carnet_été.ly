@@ -1,14 +1,9 @@
 \version "2.26.0"
+\include "../settings.ily"
 \paper {
   tocTitleMarkup = \markup \column {
     \fontsize #5 \bold \fill-line {INDEX}
     \vspace #2 
-  }
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
   }
   tocItemMarkup = \markup \fill-line {
     \normal-text \fromproperty #'toc:text

@@ -1,5 +1,5 @@
-\version "2.24.3"
-
+\version "2.26.0"
+\include "../settings.ily"
 global = {
   \key c \major
   \time 4/4
@@ -63,14 +63,7 @@ verseOne = \lyricmode {
   et hú -- mi -- lis.
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = ##f
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "Panis angelicus" "Casciolini"
-}
+\tocItemComposer "Panis angelicus" "Casciolini"
 \score {
   \header {
     title = "PANIS ANGELICUS"

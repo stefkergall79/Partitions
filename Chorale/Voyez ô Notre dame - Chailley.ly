@@ -9,7 +9,6 @@ global = {
 
 soprano = \fixed c' {
   \global
-  % En avant la musique.
   e8 e[a] b c'4 b8 g4. a4 e8 8[a] b c'[b] g a4. r4
   e8 e[a] b c'[b] c' d' c' b a4 b16([a] g4.) e4. r4
   e8 e[a] b c'[b] c' d'4. c' a4 b16([a] g4.) a4.\bar "|."
@@ -17,7 +16,6 @@ soprano = \fixed c' {
 
 alto = \fixed c' {
   \global
-  % En avant la musique.
   e8 4 g8 8[a] f e4(d8) c4 e8 4 g8 8[f] e e4. r4
   e8 4 g8 4 e8 f e d c4 f8(e4 d16[c]) b,4. r4
   e8 e4 g8 4 e8 f4. e c4 f8(e4 d8) c4.
@@ -25,7 +23,6 @@ alto = \fixed c' {
 
 tenor = \fixed c' {
   \global
-  % En avant la musique.
   c8 4 d8 e4 d8 b,4. a,4 b,8 c4 d8 e[d] b, c4. r4
   c8 c4 d8 e4 c8 a,8 g,8 8 c4 d16([c] b,4.) g,4. r4
   c8 4 d8 e4 c8 a,4. g, c4 d16([c] b,4.) a,4.
@@ -33,7 +30,6 @@ tenor = \fixed c' {
 
 bass = \fixed c {
   \global
-  % En avant la musique.
   a8 4 g8 c4 d8 e4. f4 g8 a4 g8 c[d] e a,4. r4
   a8 4 g8 c[e] a d e e f4 d8(e4.) 4. r4
   a8 4 g8 c[e] a d4. e f4 d8(e4.) <e a,>4.

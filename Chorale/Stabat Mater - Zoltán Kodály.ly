@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
     \key es \major
     \time 2/2
@@ -65,19 +65,7 @@ verseThree = \lyricmode {
     Má -- ter U -- ni -- gé -- ni -- ti_!
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "Stabat Mater" "Kodaly"
-}
+\tocItemComposer "Stabat Mater" "Kodaly"
 \score {
   \header {
     title = "STÁBAT MÁTER"

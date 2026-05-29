@@ -1,12 +1,5 @@
 \version "2.26.0"
 
-\header {
-  title = "NOBLE ÉPOUX DE MARIE"
-  composer = "Jean-Noël Laprise (né en 1945)"
-  arranger = "Harmonisation : Stéphane Kergall (né en 2007)"
-  tagline = ##f
-}
-
 global = {
   \key d \major
   \numericTimeSignature
@@ -16,8 +9,7 @@ global = {
 
 soprano = \fixed c' {
   \global
-  % En avant la musique.
-  \sectionLabel "Couplets"
+  \sectionLabel \markup \bold "Couplets"
   fis4 fis8 fis e fis
   a4(b8) a4.
   d4 d8 d cis d
@@ -26,7 +18,7 @@ soprano = \fixed c' {
   a4(b8) a4.
   d'4 cis'8 b cis' b
   a4 r8\break \bar "||"
-  \sectionLabel "Refrain"
+  \sectionLabel \markup \bold "Refrain"
   a4 fis8 a4 fis8
   a b a g4.
   g4 e8 g4 e8
@@ -37,7 +29,6 @@ soprano = \fixed c' {
 
 alto = \fixed c' {
   \global
-  % En avant la musique.
   d4 d8 d cis d
   fis4. fis
   b,4 b,8 b, a, b,
@@ -56,7 +47,6 @@ alto = \fixed c' {
 
 tenor = \fixed c {
   \global
-  % En avant la musique.
   a4 a8 a a a
   d'4. cis'
   b4 g8 g a g
@@ -75,7 +65,6 @@ tenor = \fixed c {
 
 bass = \fixed c {
   \global
-  % En avant la musique.
   d4 8 8 8 8
   fis4. 4.
   b,4 8 d cis d
@@ -112,7 +101,41 @@ verseTwo = \lyricmode {
   veil -- lez sur vos en -- fants_!
 }
 
+verseThree = \lyricmode {
+  \set stanza = "3."
+  Té -- moin de sa nais -- san -- ce,
+  et de ses jeu -- nes ans,
+  gar -- dien de son en -- fan -- ce,
+  veil -- lez sur vos en -- fants_!
+}
+
+verseFour = \lyricmode {
+  \override LyricText.font-shape = #'italic
+  \set stanza = \markup \italic 4.
+  Au jour de la co -- lè -- re,
+  vous ra -- vîtes aux ty -- rans
+  le Sau -- veur et sa Mè -- re_;
+  veil -- lez sur vos en -- fants_!
+}
+
+\paper {
+  print-all-headers = ##t
+  tagline = \markup {
+    \italic \with-color #blue 
+    \with-url #"mailto:stef.kergall@gmail.com"
+    "stef.kergall@gmail.com"
+    "- Partitions sur commande"
+  }
+}
+\tocItem \markup "Noble époux de Marie"
+
 \score {
+  \header {
+    title = "NOBLE ÉPOUX DE MARIE"
+    composer = "Jean-Noël Laprise (né en 1945)"
+    poet = "Harmonisation : Stéphane Kergall (né en 2007)"
+  }
+
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"
@@ -121,12 +144,20 @@ verseTwo = \lyricmode {
       \new Voice = "soprano" { \voiceOne \soprano }
       \new Voice = "alto" { \voiceTwo \alto }
     >>
+    
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseOne
     \new Lyrics \with {
       \override VerticalAxisGroup.staff-affinity = #CENTER
     } \lyricsto "soprano" \verseTwo
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "soprano" \verseThree
+    \new Lyrics \with {
+      \override VerticalAxisGroup.staff-affinity = #CENTER
+    } \lyricsto "soprano" \verseFour
+    
     \new Staff \with {
       midiInstrument = "choir aahs"
       \consists Merge_rests_engraver
@@ -143,40 +174,24 @@ verseTwo = \lyricmode {
 \markup \fill-line {
   \null
   \column {
-     \line { \bold \italic "3-"
+    \line { \bold \italic "5-"
        \column {
-         "Témoin de sa naissance,"
-         "Et de ses jeunes ans,"
-         "Gardien de son enfance,"
-         "Veillez sur vos enfants !"
-     }}
-     \vspace #1
-     \line { \bold \italic "4-"
-       \column {
-         "Au jour de la colère,"
-         \line {Vous \concat{ravît \italic \bold es } aux tyrans}
-         "Le Sauveur et sa Mère ;"
+         "Vous dont l'obéissance,"
+         "En ces dangers pressants,"
+         "Devint leur providence,"
          "Veillez sur vos enfants !"
       }}
-      \vspace #1
-      \line { \bold \italic "5-"
-        \column {
-          "Vous dont l'obéissance,"
-          "En ces dangers pressants,"
-          "Devint leur providence,"
-          "Veillez sur vos enfants !"
-        }}
-  }
-  \hspace #0.1
-  \column {
+    \vspace #1
     \line { \bold \italic "6-"
       \column {
         "Vous dont la main féconde"
         "A nourri si longtemps"
         "Le Créateur du monde,"
         "Veillez sur vos enfants !"
-    }}
-    \vspace #1
+     }}
+  }
+  \hspace #0.1
+  \column {
     \line { \bold \italic "7-"
       \column {
         "Que votre main bénisse,"

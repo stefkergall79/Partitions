@@ -4,6 +4,7 @@ global = {
   \time 4/4
   \autoBeamOff
   \partial 2
+  \mergeDifferentlyDottedOn
 }
 #(ly:set-option 'backend 'cairo)
 soprano = \fixed c' {
@@ -62,7 +63,7 @@ verseTwo = \lyricmode {
 }
 
 verseThree = \lyricmode {
-  \set stanza = "5."
+  \set stanza = "6."
   Ví -- tam prǽs -- ta pú -- ram,
   i -- ter pá -- ra tú -- tum,
   ut vi -- dén -- tes Jé -- sum,

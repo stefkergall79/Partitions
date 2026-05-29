@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 globalOne = {
   \key f \major
   \numericTimeSignature
@@ -10,18 +10,17 @@ globalOne = {
 
 sopranoVoice = \fixed c' {
   \globalOne
-  \sectionLabel "Couplets"
+  \markChanson "Couplets"
   \repeat unfold 2 {
     f4 8 8[e] f g a g f4.
     a4 8 4 c'8 8 bes a8 4. g
   } \bar "||" \break
-  \sectionLabel "Refrain"
+  \markChanson "Refrain"
   f8 g a bes4. g8 a bes c'4.
   d'4 8 c'4 a8 c' bes g a4.
   f8 g a bes4. g8 a bes c'4.
   d'4 8 c'4 a8 c' bes g f4.
   \bar "|."
-  
 }
 
 verseOne = \lyricmode {
@@ -54,10 +53,6 @@ verseThree = \lyricmode {
   en mou -- rant ra -- chè -- te le mon -- de.
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = ##f
-}
 \tocItem \markup "Vive Jésus, vive sa Croix"
 \score {
   \header {

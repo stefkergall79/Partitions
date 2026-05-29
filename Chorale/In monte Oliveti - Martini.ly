@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
   \key bes \major
   \time 4/4
@@ -34,27 +34,15 @@ alto = \fixed c' {
 }
 
 verse = \lyricmode {
-  In mon -- te O -- li -- vé -- ti o -- rá -- vit ad Pa -- trem_:
-  Pa -- ter, si fí -- e -- ri po -- test,
-  trán -- se -- at a me ca -- lix is -- te_;
-  spí -- ri -- tus qui -- dem promp -- tus est,
-  ca -- ro au -- tem in -- fír -- ma.
-  Fi -- at vo -- lún -- tas tu -- a.
+  In món -- te O -- li -- vé -- ti o -- rá -- vit ad Pá -- trem_:
+  Pá -- ter, si fí -- e -- ri pó -- test,
+  trán -- se -- at a me cá -- lix ís -- te_;
+  spí -- ri -- tus quí -- dem prómp -- tus est,
+  cá -- ro áu -- tem in -- fír -- ma.
+  Fí -- at vo -- lún -- tas tú -- a.
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "In monte Oliveti" "Martini"
-}
+\tocItemComposer "In monte Oliveti" "Martini"
 \score {
   \header {
     title = "IN MONTE OLIVETI"

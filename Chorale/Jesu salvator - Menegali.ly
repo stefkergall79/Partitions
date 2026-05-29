@@ -1,12 +1,9 @@
 \version "2.26.0"
+\include "../settings.ily"
 global = {
   \key g \major
   \time 4/4
   \autoBeamOff
-}
-\paper {
-  print-all-headers = ##t
-  tagline = ##f
 }
 
 soprano = \fixed c' {
@@ -43,22 +40,10 @@ quos pre -- ti -- ó -- so sán -- gui -- ne, quos pre -- ti -- ó -- so sán --
 re -- de -- mís -- ti.
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "Jesu Salvator Mundi" "Menegali"
-}
+\tocItemComposer "Jesu Salvator Mundi" "Menegali"
 \score {
   \header {
-    title = "JESU, SALVÁTOR MÚNDI"
+    title = "JESU, SALVATOR MUNDI"
     composer = "Menegali (XVIIIe)"
   }
   \new ChoirStaff <<

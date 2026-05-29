@@ -15,11 +15,13 @@ psalm = \fixed c' {
 
 soprano = \fixed c' {
   \global
-  \sectionLabel "Psalmodia"
+  \sectionLabel \markup \bold "Psalmodia"
   f8 g8[a] a\breve c'8 bes a8 g2 \bar "|"
   g\breve a8 bes8[a] g4 f2 \bar "||" \break
   
-  \sectionLabel "Falsus bordonus"
+  \sectionLabel \markup \bold "Falsus bordonus"
+  
+  \set Staff.shortInstrumentName = \markup \center-column { "S." "A." }
   c'\breve \bar "|" \cadenzaOff
   f'4(e' d'4 4) c'2. r4
   \cadenzaOn a\breve \bar "|"
@@ -36,6 +38,7 @@ alto = \fixed c' {
 tenor = \fixed c {
   \global
   s1*6 r4.
+  \set Staff.shortInstrumentName = \markup \center-column { "T." "B." }
   a\breve 4(c'2 b4) c'2. r4
   \breve bes4(c' d' c'8[bes]) c'1\fermata
 }
@@ -60,15 +63,17 @@ verseTwo = \lyricmode {
 verseThree = \lyricmode {
   \override LyricText.font-shape = #'italic
   \set stanza = \markup \italic 3.
-  Qui8 -- a4 "respéxit humilitátem an"\breve -- cíl8 -- læ sú -- æ,2
-  "ecce enim ex hoc beátam me dícent ómnes gene - "\breve -- ra8 -- ti4 -- ó4 -- nes.2
+  Qui8 -- a4 "respéxit humilitátem an"\breve
+  -- cíl8 -- læ sú -- æ,2
+  "ecce enim ex hoc beátam me dícent ómnes gene - "\breve
+  -- ra8 -- ti4 -- ó4 -- nes.2
 }
 
 verseFour = \lyricmode {
   \override LyricText.font-shape = #'italic
   \set stanza = \markup \italic "4."
   "Quia fécit míhi mágna qui"\breve
-  "pó       -             -     tens" est_:1
+  pó2. -- tens4 est_:1
   "et sánctum nómen"\breve é1 -- jus.1
 }
 
@@ -100,8 +105,8 @@ verseEight = \lyricmode {
 
 verseNine = \lyricmode {
   \set stanza = "9."
-   Sus -- cé -- "pit Israël" púe -- rum sú -- um,
-   "recordátus misericór" -- di -- æ sú -- æ.
+   Sus8 -- cé4 -- "pit Israël"\breve púe8 -- rum8 sú8 -- um,2
+   "recordátus misericór"\breve -- di8 -- æ4 sú4 -- æ.2
 }
 
 verseTen = \lyricmode {
@@ -140,15 +145,14 @@ verseTwelve = \lyricmode {
 \score {
   \header {
     title = "MAGNIFICAT"
-    subtitle = \markup{\concat{VI \super ème} ton royal}
+    subtitle = \markup{\concat{VI \super \italic ème} ton royal}
     composer = "Ton dit “de Lourdes” "
-    arranger = "Harmonisation : J. Besnier"
+    poet = "Harmonisation : Mgr Joseph Besnier (1898-1984)"
   }
   
   \new ChoirStaff <<
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = \markup \center-column { "S." "A." }
       \consists Merge_rests_engraver
     } <<
       \new Voice = "soprano" { \voiceOne \soprano }
@@ -158,19 +162,18 @@ verseTwelve = \lyricmode {
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
     } \lyricsto "soprano" {\verseOne \verseTwo }
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
-    } \lyricsto "soprano" {\verseThree \verseFour }
+    } {\verseThree \verseFour }
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
     } \lyricsto "soprano" {\verseFive \verseSix }
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
     } \lyricsto "soprano" { \verseSeven \verseEight }
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
-    } \lyricsto "soprano" {\verseNine \verseTen }
+    } {\verseNine \verseTen }
     \new Lyrics \with {\override LyricText.self-alignment-X = #LEFT
     } \lyricsto "soprano" {\verseEleven \verseTwelve }
 
     \new Staff \with {
       midiInstrument = "choir aahs"
-      instrumentName = \markup \center-column { "T." "B." }
       \consists Merge_rests_engraver
     } <<
       \clef bass

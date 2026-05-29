@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
   \key es \major
   \time 3/4
@@ -9,11 +9,11 @@ global = {
 
 soprano = \fixed c' {
   \global
-  \sectionLabel "Couplets"
+  \markChanson "Couplets"
   es4 2 g4 bes2 c'4 bes(g) as bes2
   es'4 d'(c') d' es'2 bes4 2 as4 g2
   4 f4(g) as g(f) g es(c) d es2 \bar "||"\break
-  \sectionLabel "Refrain"
+  \markChanson "Refrain"
   es4 2 g4 bes2 c'4 bes(g) as bes2
   es'4 d'(c') d' es'2 bes4 2 as4 g2
   4 f4(g) as g(f) g es(c) d es2 \bar "|."
@@ -83,15 +83,6 @@ verseFive= \lyricmode {
   sur les bre -- bis et les pas -- teurs_!
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
 \tocItem \markup "Règne à jamais"
 \score {
   \header {

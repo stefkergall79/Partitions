@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
   \key g \major
   \time 3/4
@@ -55,20 +55,7 @@ verseTwo = \lyricmode {
   qui vi -- tam si -- ne ter -- mi -- no
   no -- bis do -- net in pa -- tri -- a. 
 }
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-  system-system-spacing.basic-distance = #12
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "O salutaris Hostia" "Mozart"
-}
+\tocItemComposer "O salutaris Hostia" "Mozart"
 \score {
   \header {
     title = "O SALUTARIS HOSTIA"

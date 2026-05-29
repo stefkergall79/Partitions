@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
   \key d \major
   \time 4/4
@@ -8,13 +8,13 @@ global = {
 
 soprano = \fixed c' {
   \global
-  \sectionLabel "Refrain"
+  \markChanson "Refrain"
   fis4 8. g16 a8. 16 4 d'(b8.) 16 a2
   g4 4 fis8 8 d fis a4(fis)e2
   fis4 8.[e16] d2 a4 8.[g16]fis2
   d'4 cis'8.[b16] a8 g fis e fis4(e) d2
   \bar"||"\break \cadenzaOn
-  \sectionLabel "Couplets"
+  \markChanson "Couplets"
   d8 fis a\breve b8 a4\bar"|"
   a\breve b8 gis a fis4\bar"||"
 }
