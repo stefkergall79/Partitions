@@ -1,11 +1,13 @@
-# Suppression
+# Raccourcis
 Pour supprimer les fichiers compilés si le dépôt est placé dans le dossier personnel, dans un terminal, entrez la commande :
 ```bash
 nano ~/.bashrc 
 ```
 et collez à la fin du fichier ceci :
 ```bash
-alias wash-ly='find ~/Documents/Partitions/ -not -path "*/Grégorien/*" -type f \( -name "*.pdf" -o -name "*.mid*" \) -print -delete'
+alias ly-pwd = ~/Partitions/
+alias wash-ly='find ly-pwd -not -path "*/Grégorien/*" -type f \( -name "*.pdf" -o -name "*.mid*" \) -print -delete'
+alias save-ly='cd ly-pwd && git add . && git commit -a -m "Sauvegarde" && git push'
 ```
 `Ctrl+O` puis `Entrée` pour enregistrer, puis `Ctrl+X` pour sortir.
 Si vous devez l'utilisez tout de suite, entrez la commande :
@@ -17,19 +19,7 @@ Désormais, pour supprimer tous les fichiers compilés, entrez simplement la com
 ```bash
 wash-ly
 ```
-# Sauvegarde
-Pour sauvegarder les fichiers dans le dépôt git :
-
-```bash
-nano ~/.bashrc
-```
-et collez à la fin du fichier :
-```bash
-alias save-ly='cd ~/Documents/Partitions/ && git add . && git commit -a -m "Sauvegarde" && git push'
-```
-`Ctrl+O` puis `Entrée` pour enregistrer, puis `Ctrl+X` pour sortir.
-
-Désormais, pour sauvegarder sur le dépôt distant vos partitions, entrez simplement :
+Et pour sauvegarder vos modifications :
 ```bash
 save-ly
 ```
