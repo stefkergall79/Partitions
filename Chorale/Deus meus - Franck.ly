@@ -1,5 +1,5 @@
 \version "2.26.0"
-
+\include "../settings.ily"
 global = {
   \key as \major
   \time 4/4
@@ -163,15 +163,6 @@ rehearsalMidi = #(define-music-function
    >>
  #})
 
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
 \score {
   \header {
     title = "DEUS MEUS"
