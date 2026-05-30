@@ -29,12 +29,12 @@ def ctk_git_status():
     if fichiers_modifies:
         ctk_git_label("Fichiers modifiés", title=True)
         for file in fichiers_modifies:
-            ctk_git_label(f"{file.a_path}")
+            ctk_git_label(f"\t- {file.a_path}")
     
     if fichiers_non_suivis:
         ctk_git_label("\nNouveaux fichiers", title=True)
         for file in fichiers_non_suivis:
-            ctk_git_label(f"{file.a_path}")
+            ctk_git_label(f"\t- {file.a_path}")
 
     if not fichiers_modifies and not fichiers_non_suivis:
         ctk_git_label("Aucun changement à sauvegarder.", title=True)
