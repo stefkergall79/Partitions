@@ -6,7 +6,7 @@
   subsubtitle = "Trois violons et clavier"
   tagline = ##f
 }
-
+ 
 \paper {
   #(set-paper-size "a4")
 }
