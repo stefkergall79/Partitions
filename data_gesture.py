@@ -21,22 +21,42 @@ def ctk_git_label(text, bold=False):
 	ctk.CTkLabel(liste_fichiers, text=text, font=font).pack(fill="x")
 
 def ctk_git_status():
-	fichiers_modifies = REPO.index.diff(None)
-	fichiers_non_suivis = REPO.untracked_files
-	
-	if fichiers_modifies:
-		ctk_git_label("Fichiers modifiés", bold=True)
-		for file in fichiers_modifies:
-			ctk_git_label(f"{file.a_path}")
-	
-	if fichiers_non_suivis:
-		ctk_git_label("\nNouveaux fichiers", bold=True)
-		for file in fichiers_non_suivis:
-			ctk_git_label(f"{file}")
+    # 1. On interroge Git de la manière la plus rapide qui existe (en C / natif)
+    statut_brut = REPO.git.status('--porcelain')
+    
+    fichiers_modifies = []
+    fichiers_non_suivis = []
+    
+    # 2. On trie le résultat texte en mémoire (ultra rapide)
+    if statut_brut:
+        for ligne in statut_brut.splitlines():
+            if len(ligne) < 4:
+                continue
+            code_statut = ligne[:2]
+            nom_fichier = ligne[3:]
+            
+            if code_statut == '??':
+                fichiers_non_suivis.append(nom_fichier)
+            elif code_statut in (' M', 'M ', 'MM', ' D', 'D '):
+                fichiers_modifies.append(nom_fichier)
+                
+    # --- À partir d'ici, ton code reste le même, mais utilise les nouvelles listes ---
 
-	if not fichiers_modifies and not fichiers_non_suivis:
-		ctk_git_label("Aucun changement à sauvegarder.", bold=True)
-		raise git.exc.GitCommandError("git", "Rien à sauvegarder")
+    if fichiers_modifies:
+        ctk_git_label("Fichiers modifiés", bold=True)
+        for file in fichiers_modifies:
+            # Note : 'file' est déjà une chaîne de caractères (str) avec cette méthode, 
+            # donc plus besoin de '.a_path'
+            ctk_git_label(f"{file}") 
+    
+    if fichiers_non_suivis:
+        ctk_git_label("\nNouveaux fichiers", bold=True)
+        for file in fichiers_non_suivis:
+            ctk_git_label(f"{file}")
+
+    if not fichiers_modifies and not fichiers_non_suivis:
+        ctk_git_label("Aucun changement à sauvegarder.", bold=True)
+        raise git.exc.GitCommandError("git", "Rien à sauvegarder")
 
 
 def ly_save():
