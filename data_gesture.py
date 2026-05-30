@@ -1,10 +1,11 @@
 import os
 import shutil
 from pathlib import Path
-import tkinter as tkt
+import tkinter
+import customtkinter as ctk
 import git
 
-app = tkt.Tk()
+app = ctk.CTk()
 app.title("Gestion des données de Lilypond")
 app.geometry("550x600")
 
@@ -26,7 +27,7 @@ def ly_save():
 		pwd.remote(name="origin").pull()
 		pwd.remote(name="origin").push()
 
-btn_save = tkt.Button(app, text="Sauvegarde", command=ly_save)
+btn_save = ctk.CTkButton(app, text="Sauvegarde", command=ly_save)
 btn_save.pack()
 
 app.mainloop()
