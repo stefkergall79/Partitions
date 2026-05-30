@@ -36,6 +36,8 @@ def ctk_git_status():
 		raise git.exc.GitCommandError("git", "Rien à sauvegarder")
 
 def ly_save():
+	for widget in liste_fichiers.winfo_children():
+		widget.destroy()
 	try:
 		ctk_git_status()
 	except git.exc.GitCommandError:
