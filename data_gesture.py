@@ -17,18 +17,19 @@ PWD = Path(__file__).resolve().parent
 REPO = git.Repo(PWD)
 
 def ctk_git_label(text, bold=False):
-	ctk.CTkLabel(liste_fichiers, text=text, font=ctk.CTkFont(family="Arial", size=16, weight="bold" if bold else "normal")).pack(fill="x")
+	font = ctk.CTkFont(family="Arial", size=16, weight="bold" if bold else "normal")
+	ctk.CTkLabel(liste_fichiers, text=text, font=font).pack(fill="x")
 
 def ctk_git_status():
-	ctk_git_label("Fichiers modifiés", True)
-
-	for file in REPO.index.diff(None):
-		ctk_git_label(f"{file.a_path}")
+	if REPO.index.diff(None):
+		ctk_git_label("Fichiers modifiés", bold=True)
+		for file in REPO.index.diff(None):
+			ctk_git_label(f"{file.a_path}")
 	
-	ctk_git_label("\nNouveaux fichiers", True)
-
-	for file in REPO.untracked_files:
-		ctk_git_label(f"{file}")
+	if REPO.untracked_files:
+		ctk_git_label("\nNouveaux fichiers", bold=True)
+		for file in REPO.untracked_files:
+			ctk_git_label(f"{file}")
 
 
 def ly_save():
@@ -48,7 +49,7 @@ def ly_save():
 		REPO.remote(name="origin").pull()
 		REPO.remote(name="origin").push()
 	finally:
-		ctk_git_label("Sauvegarde terminée.")
+		ctk_git_label("\nSauvegarde terminée.")
 
 btn_save = ctk.CTkButton(app, text="Sauvegarde", command=ly_save)
 btn_save.pack(pady=10)
