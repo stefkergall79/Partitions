@@ -35,9 +35,11 @@ def ctk_git_status():
 		ctk_git_label("Aucun changement à sauvegarder.", bold=True)
 		raise git.exc.GitCommandError("git", "Rien à sauvegarder")
 
+
 def ly_save():
 	for widget in liste_fichiers.winfo_children():
 		widget.destroy()
+	
 	try:
 		ctk_git_status()
 	except git.exc.GitCommandError:
@@ -50,13 +52,16 @@ def ly_save():
 	try:
 		REPO.remote(name="origin").pull()
 		REPO.remote(name="origin").push()
+	
 	except git.exc.GitCommandError:
 		git_config = git.Git().config
 		ctk_git_label("\nConfiguration de la sauvegarde nécessaire...")
 		git_config("user.name", "Stéphane Kergall")
 		git_config("user.email", "stef.kergall@gmail.com")
+
 		REPO.remote(name="origin").pull()
 		REPO.remote(name="origin").push()
+	
 	finally:
 		ctk_git_label("\nSauvegarde terminée.", bold=True)
 
