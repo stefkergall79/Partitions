@@ -4,7 +4,6 @@
   title = "Canon in D"
   subtitle = "Johann Pachelbel"
   subsubtitle = "Trois violons et clavier"
-  % Supprimer le pied de page par défaut
   tagline = ##f
 }
 
