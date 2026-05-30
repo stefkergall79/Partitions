@@ -14,9 +14,9 @@ PWD = Path(__file__).resolve().parent
 
 REPO = git.Repo(PWD)
 
-def ctk_git_label(text, bold=False):
-	font = ctk.CTkFont(family="Arial", size=16, weight="bold" if bold else "normal")
-	ctk.CTkLabel(liste_fichiers, text=text, font=font).pack(fill="x")
+def ctk_git_label(text, title=False):
+	font = ctk.CTkFont(family="Arial", size=16, weight="bold" if title else "normal")
+	ctk.CTkLabel(liste_fichiers, text=text, font=font, anchor=None if title else "w").pack(fill="x")
 
 
 def ctk_git_status():
@@ -27,17 +27,17 @@ def ctk_git_status():
     fichiers_non_suivis = REPO.untracked_files
     
     if fichiers_modifies:
-        ctk_git_label("Fichiers modifiés", bold=True)
+        ctk_git_label("Fichiers modifiés", title=True)
         for file in fichiers_modifies:
             ctk_git_label(f"{file.a_path}")
     
     if fichiers_non_suivis:
-        ctk_git_label("\nNouveaux fichiers", bold=True)
+        ctk_git_label("\nNouveaux fichiers", title=True)
         for file in fichiers_non_suivis:
             ctk_git_label(f"{file.a_path}")
 
     if not fichiers_modifies and not fichiers_non_suivis:
-        ctk_git_label("Aucun changement à sauvegarder.", bold=True)
+        ctk_git_label("Aucun changement à sauvegarder.", title=True)
 
 
 def ly_save():
@@ -67,7 +67,7 @@ def ly_save():
 		REPO.remote(name="origin").push()
 	
 	finally:
-		ctk_git_label("\nSauvegarde terminée.", bold=True)
+		ctk_git_label("\nSauvegarde terminée.", title=True)
 
 #----------------------------------
 def ly_wash():
