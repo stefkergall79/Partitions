@@ -92,12 +92,11 @@ def ly_wash():
 		except PermissionError:
 			pass
 
-	compteur_suppressions = 0
+	fichiers_supprimes = []
 	extensions_a_supprimer = ('.pdf', '.midi', '.mid')
 
 	# 2. 🧹 NETTOYAGE DES PARENTS
 	for chemin_cache in dossiers_cache:
-		# Comme entry.path est une chaîne, os.path.dirname est plus rapide pour choper le parent
 		dossier_parent = os.path.dirname(chemin_cache)
 		
 		try:
@@ -107,16 +106,24 @@ def ly_wash():
 						if entry.name.lower().endswith(extensions_a_supprimer):
 							try:
 								os.remove(entry.path)
-								compteur_suppressions += 1
-								print(f"Supprimé : {entry.path}")
+								# On stocke le nom du fichier pour l'affichage
+								fichiers_supprimes.append(entry.name)
 							except FileNotFoundError:
 								pass
 		except PermissionError:
 			pass
 
-	print(f"--- Nettoyage terminé. {compteur_suppressions} fichiers supprimés. ---")
+	# 🎨 3. AFFICHAGE DANS L'INTERFACE GRAPHIQUE
+	# On vide d'abord la liste Tkinter existante pour faire propre
+	for widget in liste_fichiers.winfo_children():
+		widget.destroy()
 
-
+	if fichiers_supprimes:
+		ctk_git_label("Fichiers supprimés :", bold=True)
+		for nom_fichier in fichiers_supprimes:
+			ctk_git_label(nom_fichier)
+	else:
+		ctk_git_label("Aucun fichier à nettoyer.", bold=True)
 
 
 # Main
