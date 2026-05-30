@@ -21,16 +21,19 @@ def ctk_git_label(text, bold=False):
 	ctk.CTkLabel(liste_fichiers, text=text, font=font).pack(fill="x")
 
 def ctk_git_status():
-    # 1. On interroge Git de la manière la plus rapide qui existe (en C / natif)
+    # 🧹 ÉTAPE 1 : On vide l'ancienne liste de l'écran en ciblant la frame globale
+    for widget in liste_fichiers.winfo_children():
+        widget.destroy()
+
+    # ⏱️ ÉTAPE 2 : On récupère le statut via l'objet REPO global
     statut_brut = REPO.git.status('--porcelain')
     
     fichiers_modifies = []
     fichiers_non_suivis = []
     
-    # 2. On trie le résultat texte en mémoire (ultra rapide)
     if statut_brut:
         for ligne in statut_brut.splitlines():
-            if len(ligne) < 4:
+            if len(ligne) < 4: 
                 continue
             code_statut = ligne[:2]
             nom_fichier = ligne[3:]
@@ -39,15 +42,12 @@ def ctk_git_status():
                 fichiers_non_suivis.append(nom_fichier)
             elif code_statut in (' M', 'M ', 'MM', ' D', 'D '):
                 fichiers_modifies.append(nom_fichier)
-                
-    # --- À partir d'ici, ton code reste le même, mais utilise les nouvelles listes ---
 
+    # 🎨 ÉTAPE 3 : On crée les nouveaux labels avec ta fonction globale
     if fichiers_modifies:
         ctk_git_label("Fichiers modifiés", bold=True)
         for file in fichiers_modifies:
-            # Note : 'file' est déjà une chaîne de caractères (str) avec cette méthode, 
-            # donc plus besoin de '.a_path'
-            ctk_git_label(f"{file}") 
+            ctk_git_label(f"{file}")
     
     if fichiers_non_suivis:
         ctk_git_label("\nNouveaux fichiers", bold=True)
@@ -56,8 +56,6 @@ def ctk_git_status():
 
     if not fichiers_modifies and not fichiers_non_suivis:
         ctk_git_label("Aucun changement à sauvegarder.", bold=True)
-        raise git.exc.GitCommandError("git", "Rien à sauvegarder")
-
 
 def ly_save():
 	for widget in liste_fichiers.winfo_children():
