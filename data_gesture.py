@@ -70,8 +70,6 @@ def ly_save():
 		ctk_git_label("\nSauvegarde terminée.", title=True)
 
 #----------------------------------
-import os
-
 def ly_wash():
 	# On utilise directement ta variable globale PWD qui est déjà un Path
 	pile = [PWD]
