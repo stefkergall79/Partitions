@@ -70,9 +70,51 @@ def ly_save():
 		ctk_git_label("\nSauvegarde terminée.", title=True)
 
 #----------------------------------
-def ly_wash():
-	pass
+import os
 
+def ly_wash():
+	# On utilise directement ta variable globale PWD qui est déjà un Path
+	pile = [PWD]
+	dossiers_cache = []
+	
+	# 1. ⚡ RECHERCHE DES CACHES
+	while pile:
+		actuel = pile.pop()
+		try:
+			with os.scandir(actuel) as it:
+				for entry in it:
+					if entry.is_dir(follow_symlinks=False):
+						nom = entry.name.lower()
+						if nom in ('cache', '.cache') or 'cache' in nom:
+							dossiers_cache.append(entry.path)
+						else:
+							pile.append(entry.path)
+		except PermissionError:
+			pass
+
+	compteur_suppressions = 0
+	extensions_a_supprimer = ('.pdf', '.midi', '.mid')
+
+	# 2. 🧹 NETTOYAGE DES PARENTS
+	for chemin_cache in dossiers_cache:
+		# Comme entry.path est une chaîne, os.path.dirname est plus rapide pour choper le parent
+		dossier_parent = os.path.dirname(chemin_cache)
+		
+		try:
+			with os.scandir(dossier_parent) as it:
+				for entry in it:
+					if entry.is_file(follow_symlinks=False):
+						if entry.name.lower().endswith(extensions_a_supprimer):
+							try:
+								os.remove(entry.path)
+								compteur_suppressions += 1
+								print(f"Supprimé : {entry.path}")
+							except FileNotFoundError:
+								pass
+		except PermissionError:
+			pass
+
+	print(f"--- Nettoyage terminé. {compteur_suppressions} fichiers supprimés. ---")
 
 
 
