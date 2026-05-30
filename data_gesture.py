@@ -1,7 +1,5 @@
 import os
-import shutil
 from pathlib import Path
-import tkinter
 import customtkinter as ctk
 import git
 
@@ -21,11 +19,9 @@ def ctk_git_label(text, bold=False):
 	ctk.CTkLabel(liste_fichiers, text=text, font=font).pack(fill="x")
 
 def ctk_git_status():
-    # 🧹 ÉTAPE 1 : On vide l'ancienne liste de l'écran en ciblant la frame globale
     for widget in liste_fichiers.winfo_children():
         widget.destroy()
 
-    # ⏱️ ÉTAPE 2 : On récupère le statut via l'objet REPO global
     statut_brut = REPO.git.status('--porcelain')
     
     fichiers_modifies = []
@@ -43,7 +39,6 @@ def ctk_git_status():
             elif code_statut in (' M', 'M ', 'MM', ' D', 'D '):
                 fichiers_modifies.append(nom_fichier)
 
-    # 🎨 ÉTAPE 3 : On crée les nouveaux labels avec ta fonction globale
     if fichiers_modifies:
         ctk_git_label("Fichiers modifiés", bold=True)
         for file in fichiers_modifies:
@@ -86,13 +81,23 @@ def ly_save():
 	finally:
 		ctk_git_label("\nSauvegarde terminée.", bold=True)
 
-btn_save = ctk.CTkButton(app, text="Sauvegarde", command=ly_save)
-btn_save.pack(pady=10)
+#----------------------------------
+def ly_wash():
+	pass
+
+
+
+
+
+# Main
+cadre_boutons = ctk.CTkFrame(app, fg_color="transparent")
+cadre_boutons.pack(pady=10)
+btn_save = ctk.CTkButton(cadre_boutons, text="Sauvegarder", command=ly_save)
+btn_save.grid(row=0, column=0, padx=10)
+btn_wash = ctk.CTkButton(cadre_boutons, text="Nettoyer", command=ly_wash)
+btn_wash.grid(row=0, column=1, padx=10)
 
 liste_fichiers = ctk.CTkScrollableFrame(app)
 liste_fichiers.pack(pady=10, fill="both", expand=True)
-
-#----------------------------------
-
 
 app.mainloop()
