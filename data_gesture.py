@@ -18,6 +18,7 @@ def ctk_git_label(text, bold=False):
 	font = ctk.CTkFont(family="Arial", size=16, weight="bold" if bold else "normal")
 	ctk.CTkLabel(liste_fichiers, text=text, font=font).pack(fill="x")
 
+
 def ctk_git_status():
     for widget in liste_fichiers.winfo_children():
         widget.destroy()
@@ -37,6 +38,7 @@ def ctk_git_status():
 
     if not fichiers_modifies and not fichiers_non_suivis:
         ctk_git_label("Aucun changement à sauvegarder.", bold=True)
+
 
 def ly_save():
 	for widget in liste_fichiers.winfo_children():
