@@ -71,7 +71,6 @@ def ly_save():
 
 #----------------------------------
 def ly_wash():
-	# On utilise directement ta variable globale PWD qui est déjà un Path
 	pile = [PWD]
 	dossiers_cache = []
 	
@@ -93,7 +92,6 @@ def ly_wash():
 	fichiers_supprimes = []
 	extensions_a_supprimer = ('.pdf', '.midi', '.mid')
 
-	# 2. 🧹 NETTOYAGE DES PARENTS
 	for chemin_cache in dossiers_cache:
 		dossier_parent = os.path.dirname(chemin_cache)
 		
@@ -111,8 +109,6 @@ def ly_wash():
 		except PermissionError:
 			pass
 
-	# 🎨 3. AFFICHAGE DANS L'INTERFACE GRAPHIQUE
-	# On vide d'abord la liste Tkinter existante pour faire propre
 	for widget in liste_fichiers.winfo_children():
 		widget.destroy()
 
