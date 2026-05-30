@@ -22,23 +22,9 @@ def ctk_git_status():
     for widget in liste_fichiers.winfo_children():
         widget.destroy()
 
-    statut_brut = REPO.git.status('--porcelain')
+    fichiers_modifies = REPO.index.diff(None)
+    fichiers_non_suivis = REPO.untracked_files
     
-    fichiers_modifies = []
-    fichiers_non_suivis = []
-    
-    if statut_brut:
-        for ligne in statut_brut.splitlines():
-            if len(ligne) < 4: 
-                continue
-            code_statut = ligne[:2]
-            nom_fichier = ligne[3:]
-            
-            if code_statut == '??':
-                fichiers_non_suivis.append(nom_fichier)
-            elif code_statut in (' M', 'M ', 'MM', ' D', 'D '):
-                fichiers_modifies.append(nom_fichier)
-
     if fichiers_modifies:
         ctk_git_label("Fichiers modifiés", bold=True)
         for file in fichiers_modifies:
