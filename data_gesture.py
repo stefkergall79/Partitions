@@ -31,9 +31,15 @@ def ctk_git_status():
 		for file in REPO.untracked_files:
 			ctk_git_label(f"{file}")
 
+	if not REPO.index.diff(None) and not REPO.untracked_files:
+		raise git.exc.GitCommandError("git", "Rien à sauvegarder")
 
 def ly_save():
-	ctk_git_status()
+	try:
+		ctk_git_status()
+	except git.exc.GitCommandError:
+		return
+	
 	REPO.index.commit("Modifications")
 	REPO.git.add(".")
 	REPO.index.commit("Sauvegarde")
@@ -49,7 +55,7 @@ def ly_save():
 		REPO.remote(name="origin").pull()
 		REPO.remote(name="origin").push()
 	finally:
-		ctk_git_label("\nSauvegarde terminée.")
+		ctk_git_label("\nSauvegarde terminée.", bold=True)
 
 btn_save = ctk.CTkButton(app, text="Sauvegarde", command=ly_save)
 btn_save.pack(pady=10)
