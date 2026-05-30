@@ -21,17 +21,20 @@ def ctk_git_label(text, bold=False):
 	ctk.CTkLabel(liste_fichiers, text=text, font=font).pack(fill="x")
 
 def ctk_git_status():
-	if REPO.index.diff(None):
+	fichiers_modifies = REPO.index.diff(None)
+	fichiers_non_suivis = REPO.untracked_files
+	
+	if fichiers_modifies:
 		ctk_git_label("Fichiers modifiés", bold=True)
-		for file in REPO.index.diff(None):
+		for file in fichiers_modifies:
 			ctk_git_label(f"{file.a_path}")
 	
-	if REPO.untracked_files:
+	if fichiers_non_suivis:
 		ctk_git_label("\nNouveaux fichiers", bold=True)
-		for file in REPO.untracked_files:
+		for file in fichiers_non_suivis:
 			ctk_git_label(f"{file}")
 
-	if not REPO.index.diff(None) and not REPO.untracked_files:
+	if not fichiers_modifies and not fichiers_non_suivis:
 		ctk_git_label("Aucun changement à sauvegarder.", bold=True)
 		raise git.exc.GitCommandError("git", "Rien à sauvegarder")
 
