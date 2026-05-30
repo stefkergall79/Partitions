@@ -16,7 +16,7 @@ REPO = git.Repo(PWD)
 
 def ctk_git_label(text, title=False):
 	font = ctk.CTkFont(family="Arial", size=16, weight="bold" if title else "normal")
-	ctk.CTkLabel(liste_fichiers, text=text, font=font, anchor=None if title else "w").pack(fill="x")
+	ctk.CTkLabel(liste_fichiers, text=text, font=font, anchor="w").pack(fill="x")
 
 
 def ctk_git_status():
