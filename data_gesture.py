@@ -27,14 +27,14 @@ def ctk_git_status():
     fichiers_non_suivis = REPO.untracked_files
     
     if fichiers_modifies:
-        ctk_git_label("Fichiers modifiés", title=True)
+        ctk_git_label("Fichiers modifiés :", title=True)
         for file in fichiers_modifies:
             ctk_git_label(f"\t- {file.a_path}")
     
     if fichiers_non_suivis:
-        ctk_git_label("\nNouveaux fichiers", title=True)
+        ctk_git_label("\nNouveaux fichiers :", title=True)
         for file in fichiers_non_suivis:
-            ctk_git_label(f"\t- {file.a_path}")
+            ctk_git_label(f"\t- {file}")
 
     if not fichiers_modifies and not fichiers_non_suivis:
         ctk_git_label("Aucun changement à sauvegarder.", title=True)
@@ -119,11 +119,11 @@ def ly_wash():
 		widget.destroy()
 
 	if fichiers_supprimes:
-		ctk_git_label("Fichiers supprimés :", bold=True)
+		ctk_git_label("Fichiers supprimés :", title=True)
 		for nom_fichier in fichiers_supprimes:
 			ctk_git_label(nom_fichier)
 	else:
-		ctk_git_label("Aucun fichier à nettoyer.", bold=True)
+		ctk_git_label("Aucun fichier à nettoyer.", title=True)
 
 
 # Main
