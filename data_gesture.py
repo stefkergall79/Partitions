@@ -13,15 +13,15 @@ PWD = Path(__file__).resolve().parent
 repo = git.Repo(PWD)
 
 def ctk_git_status():
-	ctk.CTkLabel(liste_fichiers, text="Fichiers modifiés").pack()
+	ctk.CTkLabel(liste_fichiers, text="Fichiers modifiés").pack(fill="x")
 
 	for file in repo.index.diff(None):
-		ctk.CTkLabel(liste_fichiers, text=f"{file.a_path}\n").pack()
+		ctk.CTkLabel(liste_fichiers, text=f"{file.a_path}\n").pack(fill="x")
 	
-	ctk.CTkLabel(liste_fichiers, text="Nouveaux fichiers").pack()
+	ctk.CTkLabel(liste_fichiers, text="Nouveaux fichiers").pack(fill="x")
 
 	for file in repo.untracked_files:
-		ctk.CTkLabel(liste_fichiers, text=f"{file}\n").pack()
+		ctk.CTkLabel(liste_fichiers, text=f"{file}\n").pack(fill="x")
 
 
 def ly_save():
