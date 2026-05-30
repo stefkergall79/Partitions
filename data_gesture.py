@@ -66,8 +66,7 @@ def ly_save():
 		REPO.remote(name="origin").pull()
 		REPO.remote(name="origin").push()
 	
-	finally:
-		ctk_git_label("\nSauvegarde terminée.", title=True)
+	ctk_git_label("\nSauvegarde terminée.", title=True)
 
 #----------------------------------
 def ly_wash():
