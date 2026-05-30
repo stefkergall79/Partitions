@@ -12,16 +12,21 @@ app.geometry("550x600")
 PWD = Path(__file__).resolve().parent
 repo = git.Repo(PWD)
 
+
+def ctk_git_label(text):
+	ctk.CTkLabel(liste_fichiers, text=text).pack(fill="x")
+
+
 def ctk_git_status():
-	ctk.CTkLabel(liste_fichiers, text="Fichiers modifiés").pack(fill="x")
+	ctk_git_label("Fichiers modifiés")
 
 	for file in repo.index.diff(None):
-		ctk.CTkLabel(liste_fichiers, text=f"{file.a_path}\n").pack(fill="x")
+		ctk_git_label(f"{file.a_path}")
 	
-	ctk.CTkLabel(liste_fichiers, text="Nouveaux fichiers").pack(fill="x")
+	ctk_git_label("\nNouveaux fichiers")
 
 	for file in repo.untracked_files:
-		ctk.CTkLabel(liste_fichiers, text=f"{file}\n").pack(fill="x")
+		ctk_git_label(f"{file}")
 
 
 def ly_save():
@@ -36,10 +41,13 @@ def ly_save():
 		repo.remote(name="origin").push()
 	except git.exc.GitCommandError:
 		git_config = git.Git().config
-		git_config("--global", "user.name", "Stéphane Kergall")
-		git_config("--global", "user.email", "stef.kergall@gmail.com")
+		ctk_git_label("Configuration de la sauvegarde nécessaire...")
+		git_config("user.name", "Stéphane Kergall")
+		git_config("user.email", "stef.kergall@gmail.com")
 		repo.remote(name="origin").pull()
 		repo.remote(name="origin").push()
+	finally:
+		ctk_git_label("Sauvegarde terminée.")
 
 btn_save = ctk.CTkButton(app, text="Sauvegarde", command=ly_save)
 btn_save.pack(pady=10)
