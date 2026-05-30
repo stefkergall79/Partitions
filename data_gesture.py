@@ -32,6 +32,7 @@ def ctk_git_status():
 			ctk_git_label(f"{file}")
 
 	if not REPO.index.diff(None) and not REPO.untracked_files:
+		ctk_git_label("Aucun changement à sauvegarder.", bold=True)
 		raise git.exc.GitCommandError("git", "Rien à sauvegarder")
 
 def ly_save():
@@ -39,7 +40,7 @@ def ly_save():
 		ctk_git_status()
 	except git.exc.GitCommandError:
 		return
-	
+
 	REPO.index.commit("Modifications")
 	REPO.git.add(".")
 	REPO.index.commit("Sauvegarde")
