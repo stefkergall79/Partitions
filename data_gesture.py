@@ -13,16 +13,17 @@ PWD = Path(__file__).resolve().parent
 def ly_save():
 	pwd=git.Repo(PWD)
 	
-	pwd.index.commit("Modifications")
 	pwd.git.add(".")
-	pwd.index.commit("Sauvegarde")
+	pwd.index.commit("Modifications")
 	
 	try:
+		pwd.remote(name="origin").pull()
 		pwd.remote(name="origin").push()
 	except git.exc.GitCommandError:
 		git_config = git.Git().config
 		git_config("--global", "user.name", "Stéphane Kergall")
 		git_config("--global", "user.email", "stef.kergall@gmail.com")
+		pwd.remote(name="origin").pull()
 		pwd.remote(name="origin").push()
 
 btn_save = tkt.Button(app, text="Sauvegarde", command=ly_save)
