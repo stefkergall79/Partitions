@@ -55,7 +55,7 @@ def ly_save():
 	
 	except git.exc.GitCommandError as e:
 		tkt.messagebox.showwarning("Erreur de Git", str(e))
-		return
+		return 
 	ctk_git_label("\nSauvegarde terminée.", title=True)
 
  
