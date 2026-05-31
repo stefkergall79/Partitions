@@ -34,15 +34,15 @@ def ctk_git_status():
 
 	if not fichiers_modifies and not fichiers_non_suivis:
 		ctk_git_label("Aucun changement à sauvegarder.", title=True)
-		raise git.exc.GitCommandError("Aucun changement à sauvegarder.", "")
+		return False
+
+	return True
 
 def ly_save():
 	for widget in liste_fichiers.winfo_children():
 		widget.destroy()
 	
-	try:
-		ctk_git_status()
-	except git.exc.GitCommandError:
+	if not ctk_git_status():
 		return
 
 	REPO.index.commit("Modifications")
