@@ -12,12 +12,15 @@ REPO = git.Repo(PWD)
 
 def ctk_git_label(text, title=False):
 	font = ctk.CTkFont(family="Arial", size=16, weight="bold" if title else "normal")
-	ctk.CTkLabel(liste_fichiers, text=text, font=font, anchor="w").pack(fill="x")
+	label = ctk.CTkLabel(liste_fichiers, text=text, font=font, anchor="w")
+	label.pack(fill="x")
+	app.update_idletasks()
 
 
 def ctk_git_status():
 	for widget in liste_fichiers.winfo_children():
 		widget.destroy()
+	app.update_idletasks()
 
 	fichiers_modifies = REPO.index.diff(None)
 	fichiers_non_suivis = REPO.untracked_files
