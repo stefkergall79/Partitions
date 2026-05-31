@@ -5,6 +5,7 @@ import tkinter as tkt
 
 app = ctk.CTk()
 app.title("Sauvegarder Lilypond")
+app.geometry("300x200")
 
 PWD = Path(__file__).resolve().parent
 
