@@ -41,9 +41,6 @@ def ctk_git_status():
 	return True
 
 def ly_save():
-	for widget in liste_fichiers.winfo_children():
-		widget.destroy()
-	
 	if not ctk_git_status():
 		return
 
