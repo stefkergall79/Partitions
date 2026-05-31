@@ -52,15 +52,8 @@ def ly_save():
 		REPO.remote(name="origin").pull()
 		REPO.remote(name="origin").push()
 	
-	except git.exc.GitCommandError:
-		git_config = git.Git().config
-		ctk_git_label("\nConfiguration de la sauvegarde nécessaire...")
-		git_config("user.name", "Stéphane Kergall")
-		git_config("user.email", "stef.kergall@gmail.com")
-
-		REPO.remote(name="origin").pull()
-		REPO.remote(name="origin").push()
-	
+	except git.exc.GitCommandError as e:
+		ctk.CTkMessagebox(title="Erreur Git", message=e.stderr, icon="error")
 	ctk_git_label("\nSauvegarde terminée.", title=True)
 
 
