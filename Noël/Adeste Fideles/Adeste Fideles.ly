@@ -1,4 +1,5 @@
 \version "2.26.0"
+\include "../settings.ily"
 global = {
   \key g \major
   \time 4/4
@@ -85,10 +86,6 @@ verseFour = \lyricmode {
 
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = ##f
-}
 \tocItem \markup "Adeste, fideles"
 \score {
   \header {
