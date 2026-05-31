@@ -1,5 +1,5 @@
 \version "2.26.0"
-\include "../settings.ily"
+\include "../../settings.ily"
 globalo = {
   \key f \major
   \time 4/4

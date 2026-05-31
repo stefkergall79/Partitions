@@ -1,5 +1,5 @@
 \version "2.26.0"
-\include "../settings.ily"
+\include "../../settings.ily"
 global = {
   \key c \major
   \time 4/4
@@ -58,7 +58,7 @@ verseOne = \lyricmode {
 \tocItemComposer "Adoramus te" "Dubois"
 \score {
   \header {
-    title = "ADORÁMUS TE CHRISTE"
+    title = "ADORAMUS TE CHRISTE"
     composer = "Théodore Dubois (1837-1924)"
   }
   \new ChoirStaff <<

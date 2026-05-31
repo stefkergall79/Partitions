@@ -37,7 +37,7 @@ tenor = \fixed c {
 
 bass = \fixed c {
   \global
-  d4 8[c] bes4 c f(d) a,2
+  d4 8[c] bes,4 c f(d) a,2
   d4 c f g f2 c
   f4 d e c d(e) a,2
   d4 g c f g(a8)[a,]d2
@@ -78,7 +78,7 @@ verseThree = \lyricmode {
   \fill-line { \null "Mgr Louis-Lazare Perruchot (1852-1930)"}
   \vspace #0.8
   \fill-line {
-    \epsfile #X #115 #"cache/AVE MARIS STELLA.png"
+    \epsfile #X #115 #"../../Chorale/Ave Maris Stella - Perruchot/cache/AVE MARIS STELLA.png"
   }
   \vspace #1
 }
