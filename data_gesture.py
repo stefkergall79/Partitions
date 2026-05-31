@@ -16,34 +16,34 @@ def ctk_git_label(text, title=False):
 
 
 def ctk_git_status():
-    for widget in liste_fichiers.winfo_children():
-        widget.destroy()
+	for widget in liste_fichiers.winfo_children():
+		widget.destroy()
 
-    fichiers_modifies = REPO.index.diff(None)
-    fichiers_non_suivis = REPO.untracked_files
-    
-    if fichiers_modifies:
-        ctk_git_label("Fichiers modifiés :", title=True)
-        for file in fichiers_modifies:
-            ctk_git_label(f"\t- {file.a_path}")
-    
-    if fichiers_non_suivis:
-        ctk_git_label("\nNouveaux fichiers :", title=True)
-        for file in fichiers_non_suivis:
-            ctk_git_label(f"\t- {file}")
+	fichiers_modifies = REPO.index.diff(None)
+	fichiers_non_suivis = REPO.untracked_files
+	
+	if fichiers_modifies:
+		ctk_git_label("Fichiers modifiés :", title=True)
+		for file in fichiers_modifies:
+			ctk_git_label(f"\t- {file.a_path}")
+	
+	if fichiers_non_suivis:
+		ctk_git_label("\nNouveaux fichiers :", title=True)
+		for file in fichiers_non_suivis:
+			ctk_git_label(f"\t- {file}")
 
-    if not fichiers_modifies and not fichiers_non_suivis:
-        ctk_git_label("Aucun changement à sauvegarder.", title=True)
-
+	if not fichiers_modifies and not fichiers_non_suivis:
+		ctk_git_label("Aucun changement à sauvegarder.", title=True)
+		raise git.exc.GitCommandError()
 
 def ly_save():
 	for widget in liste_fichiers.winfo_children():
 		widget.destroy()
-	ctk_git_status()
-	"""try:
+	
+	try:
 		ctk_git_status()
 	except git.exc.GitCommandError:
-		return"""
+		return
 
 	REPO.index.commit("Modifications")
 	REPO.git.add(".")
