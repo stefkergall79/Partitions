@@ -1,6 +1,7 @@
 from pathlib import Path
 import customtkinter as ctk
 import git
+import tkinter as tkt
 
 app = ctk.CTk()
 app.title("Sauvegarder Lilypond")
@@ -53,7 +54,7 @@ def ly_save():
 		REPO.remote(name="origin").push()
 	
 	except git.exc.GitCommandError as e:
-		ctk.CTkMessagebox(title="Erreur Git", message=e.stderr, icon="error")
+		tkt.messagebox.showwarning(e)
 	ctk_git_label("\nSauvegarde terminée.", title=True)
 
  
