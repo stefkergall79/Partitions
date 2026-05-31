@@ -7,9 +7,7 @@ app = ctk.CTk()
 app.title("Sauvegarder Lilypond")
 app.geometry("300x200")
 
-PWD = Path(__file__).resolve().parent
-
-REPO = git.Repo(PWD)
+REPO = git.Repo(Path(__file__).resolve().parent)
 
 def ctk_git_label(text, title=False):
 	font = ctk.CTkFont(family="Arial", size=16, weight="bold" if title else "normal")
@@ -57,6 +55,7 @@ def ly_save():
 	except git.exc.GitCommandError as e:
 		tkt.messagebox.showwarning("Erreur de Git", str(e))
 		return
+	
 	ctk_git_label("\nSauvegarde terminée.", title=True)
 
  
