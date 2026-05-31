@@ -1,4 +1,5 @@
 \version "2.26.0"
+\include "../../settings.ily"
 #(ly:set-option 'backend 'cairo)
 
 global = {
@@ -33,17 +34,14 @@ bass = \fixed c \transpose a c' {
 verse = \lyricmode {
   Et in -- car -- ná -- tus est de Spí -- ri -- tu Sánc -- to
   ex Ma -- rí -- a Vír -- gi -- ne, et hó -- mo fac -- tus est.
-}
+}i
 
-\paper {
-  tagline = ##f
-}
 \tocItem \markup "Credo III"
 \markup \column {
   \fill-line {\bold \fontsize #5 "CREDO III" }
   \vspace #1
   \fill-line {
-    \epsfile #X #110 #"../Grégorien/credoiii_partie1.png"
+    \epsfile #X #110 #"cache/credoiii_partie1.png"
   }
   \vspace #2
 }
@@ -78,8 +76,8 @@ verse = \lyricmode {
 
 \markup \column {
   \vspace #2
-  \fill-line {\epsfile #X #110 #"../Grégorien/credoiii_partie2.png"}
+  \fill-line {\epsfile #X #110 #"cache/credoiii_partie2.png"}
 }
 \markup \column{
-  \fill-line {\epsfile #X #110 #"../Grégorien/credoiii_partie3.png"}
+  \fill-line {\epsfile #X #110 #"cache/credoiii_partie3.png"}
 }
