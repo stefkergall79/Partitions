@@ -88,7 +88,7 @@ verseThree = \lyricmode {
   \fill-line { \null "Mgr Louis-Lazare Perruchot (1852-1930)"}
   \vspace #0.8
   \fill-line {
-    \epsfile #X #115 #"../Grégorien/AVE MARIS STELLA.png"
+    \epsfile #X #115 #"AVE MARIS STELLA.png"
   }
   \vspace #1
 }

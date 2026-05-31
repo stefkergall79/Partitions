@@ -1,5 +1,5 @@
-\version "2.24.3"
-
+\version "2.26.0"
+\include "../../../settings.ily"
 global = {
   \key f \major
   \time 2/2
@@ -47,15 +47,6 @@ verseOne = \lyricmode {
 
 }
 
-\paper {
-  print-all-headers = ##t
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
 \tocItem \markup "Alta Trinita Beata"
 \score {
   \header {
