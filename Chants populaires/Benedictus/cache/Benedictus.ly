@@ -1,5 +1,5 @@
 \version "2.26.0"
-\include "../settings.ily"
+\include "../../../settings.ily"
 global = {
   \key f \major
   \time 4/4
@@ -14,7 +14,8 @@ soprano = \fixed c' {
   g8.[a16] bes2 4 4 d'2(c'4) bes a2 r4
   f8. 16 d'2 4 4 c'2 4 f bes2 4 a g4. f8 4
   4 d'2 4. 8 f'2 c'4 f bes c'8[d'] c'4 bes a2(g) f1\bar"||"\break
-  \markChanson "Couplets"\cadenzaOn
+  \markChanson "Couplets"
+  \cadenzaOn
   f8 g a\breve g8 a f4\bar"|"
   a\breve f8 g[a] g f4\bar "||"
 }
