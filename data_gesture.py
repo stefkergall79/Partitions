@@ -39,11 +39,11 @@ def ctk_git_status():
 def ly_save():
 	for widget in liste_fichiers.winfo_children():
 		widget.destroy()
-	
-	try:
+	ctk_git_status()
+	"""try:
 		ctk_git_status()
 	except git.exc.GitCommandError:
-		return
+		return"""
 
 	REPO.index.commit("Modifications")
 	REPO.git.add(".")
