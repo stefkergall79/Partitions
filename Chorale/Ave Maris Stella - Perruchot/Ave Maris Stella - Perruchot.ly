@@ -1,4 +1,5 @@
 \version "2.26.0"
+\include "../../settings.ily"
 global = {
   \key f \major
   \time 4/4
@@ -70,25 +71,14 @@ verseThree = \lyricmode {
   sem -- per col -- læ -- té -- mur.
 }
 
-\paper {
-  tagline = \markup {
-    \italic \with-color #blue 
-    \with-url #"mailto:stef.kergall@gmail.com"
-    "stef.kergall@gmail.com"
-    "- Partitions sur commande"
-  }
-}
-\tocItem \markup {
-  \pad-to-box #'(0 . 40) #'(0 . 0)
-  "Ave Maris Stella" "Perruchot"
-}
+\tocItemComposer "Ave Maris Stella" "Perruchot"
 \markup \column {
   \fill-line {\bold \fontsize #5 "AVE MARIS STELLA" }
   \vspace #0.2
   \fill-line { \null "Mgr Louis-Lazare Perruchot (1852-1930)"}
   \vspace #0.8
   \fill-line {
-    \epsfile #X #115 #"AVE MARIS STELLA.png"
+    \epsfile #X #115 #"cache/AVE MARIS STELLA.png"
   }
   \vspace #1
 }
