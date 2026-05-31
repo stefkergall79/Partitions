@@ -47,7 +47,7 @@ def ly_save():
 	REPO.index.commit("Modifications")
 	REPO.git.add(".")
 	REPO.index.commit("Sauvegarde")
-	 
+	
 	try:
 		REPO.remote(name="origin").pull()
 		REPO.remote(name="origin").push()
