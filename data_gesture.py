@@ -56,7 +56,7 @@ def ly_save():
 		ctk.CTkMessagebox(title="Erreur Git", message=e.stderr, icon="error")
 	ctk_git_label("\nSauvegarde terminée.", title=True)
 
-
+ 
 btn_save = ctk.CTkButton(app, text="Sauvegarder", command=ly_save)
 btn_save.pack(pady=10)
 liste_fichiers = ctk.CTkScrollableFrame(app)
