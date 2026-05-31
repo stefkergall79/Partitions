@@ -4,8 +4,7 @@ import customtkinter as ctk
 import git
 
 app = ctk.CTk()
-app.title("Gestion des données de Lilypond")
-#app.geometry("550x600")
+app.title("Sauvegarder Lilypond")
 
 PWD = Path(__file__).resolve().parent
 
