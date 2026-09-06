@@ -126,8 +126,6 @@ print()
 # Rendre exécutable en ligne de commande les programmes
 for appimage in PROG_DIR.glob("*.AppImage"):
     appimage.chmod(appimage.stat().st_mode | 0o111)
-for script in PROG_DIR.glob("*.py"):
-    script.chmod(script.stat().st_mode | 0o111)
 
 # Git
 print("Configuration de Git...")
