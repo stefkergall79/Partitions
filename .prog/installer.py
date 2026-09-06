@@ -10,7 +10,6 @@ PROG_DIR = ROOT_DIR / ".prog"
 
 APT_LIST = ["timidity", "frescobaldi", "python3-pip", "python3-tk"]
 PIP_LIST = ["customtkinter", "gitpython"]
-CODE_LIST = ["AISCGre-BR.vscode-gregorio", "lhl2617.VSLilyPond", "ms-python.python", "MS-CEINTL.vscode-language-pack-fr"]
 
 LILYPOND_URL = "https://gitlab.com/lilypond/lilypond/-/releases/v2.26.0/downloads/lilypond-2.26.0-linux-x86_64.tar.gz"
 MUSESCORE_URL = "https://cdn.jsdelivr.net/musescore/v4.7.4/MuseScore-Studio-4.7.4.260706075-x86_64.AppImage"
@@ -66,9 +65,6 @@ print()
 # code
 new_flatpak_code = not is_flatpak_installed("com.visualstudio.code")
 run("sudo", "flatpak", "install", "flathub", "com.visualstudio.code", "-y")
-new_code_extensions = [ext for ext in CODE_LIST if not is_code_extension_installed(ext)]
-for ext in CODE_LIST:
-    run("code", "--install-extension", ext)
 print()
 
 # uninstaller : ne retire que ce que cet installeur a réellement ajouté
@@ -81,7 +77,6 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 
 APT_PACKAGES = {apt_packages}
 PIP_PACKAGES = {pip_packages}
-CODE_EXTENSIONS = {code_extensions}
 NEW_FLATPAK_CODE = {new_flatpak_code}
 
 
@@ -96,9 +91,6 @@ if APT_PACKAGES:
 if PIP_PACKAGES:
     run("python3", "-m", "pip", "uninstall", "-y", *PIP_PACKAGES, "--break-system-packages")
 
-for ext in CODE_EXTENSIONS:
-    run("code", "--uninstall-extension", ext)
-
 if NEW_FLATPAK_CODE:
     run("sudo", "flatpak", "uninstall", "-y", "com.visualstudio.code")
 
@@ -109,7 +101,6 @@ if input("Supprimer définitivement '" + str(ROOT_DIR) + "' ? (o/N) ").strip().l
 (PROG_DIR / "uninstaller.py").write_text(UNINSTALLER_TEMPLATE.format(
     apt_packages=new_apt_packages,
     pip_packages=new_pip_packages,
-    code_extensions=new_code_extensions,
     new_flatpak_code=new_flatpak_code,
 ))
 
